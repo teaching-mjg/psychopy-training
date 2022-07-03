@@ -1,0 +1,50 @@
+project:
+  type: book
+  output-dir: docs
+
+# crossref:
+#     fig-title: Screencast
+#     fig-prefix: Screencast
+
+book:
+  title: "PsychoPy Training 1"
+  author: "Matt Green"
+  date: last-modified
+  date-format: "dddd D MMM YYYY [at] HH[:]mm[:]ss"
+
+  chapters:
+    - index.qmd
+    - part: part-one.qmd
+      chapters:
+        - cats-dogs.qmd
+        #- hello-world.qmd
+        #- add-response.qmd
+        #- different_text_per_trial.qmd
+        #- feedback.qmd
+    #- part: requests.qmd
+      #chapters:
+        #- present-images-sequentially-in-different-locations.qmd
+        #- online.qmd
+        #- randomising.qmd
+        #- conditional_branching.qmd
+    - references.qmd
+  appendices:
+    - authoring-tools.qmd
+
+bibliography: 
+  references.bib
+
+format:
+  html:
+    theme: 
+      dark: [cosmo, theme-dark.scss]
+      light: cosmo
+      
+editor: 
+  source
+  
+title-block-banner: 
+  true
+
+
+

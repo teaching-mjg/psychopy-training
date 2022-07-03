@@ -1,0 +1,251 @@
+6.4831 	EXP 	Created window1 = Window(allowGUI=True, allowStencil=False, autoLog=True, backendConf=UNKNOWN, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x000001193A170FA0>, gamma=None, gammaErrorPolicy='raise', lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x000001193A5A3A00>, multiSample=False, name='window1', numSamples=2, pos=(0, 0), screen=0, size=array([1920, 1080]), stencilBits=0, stereo=False, units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+6.4832 	EXP 	window1: mouseVisible = True
+6.4832 	EXP 	window1: mouseVisible = True
+6.4832 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+6.4833 	EXP 	window1: recordFrameIntervals = False
+6.6497 	EXP 	window1: recordFrameIntervals = True
+6.8341 	EXP 	Screen (0) actual frame rate measured at 60.04Hz
+6.8342 	EXP 	window1: recordFrameIntervals = False
+6.8597 	WARNING 	launchHubServer: If using the iohub mouse or eyetracker devices, fullScr should be True.
+9.0583 	EXP 	Created intro_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='intro_text', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+9.0744 	EXP 	Created stimulus = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='stimulus', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([0.75, 0.5 ]), texRes=128.0, units='height', win=Window(...))
+9.0757 	EXP 	Created text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='text', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+9.0769 	EXP 	Created rtmess = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='rtmess', opacity=1.0, ori=0.0, pos=array([0.  , 0.15]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+9.0802 	EXP 	Created acmess = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='acmess', opacity=1.0, ori=0.0, pos=array([ 0.  , -0.15]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+9.1016 	EXP 	intro_text: autoDraw = True
+10.5514 	DATA 	Keypress: space
+10.5768 	EXP 	Imported trial_sequence.xlsx as conditions, 10 conditions, 3 params
+10.5785 	EXP 	Created sequence: random, trialTypes=10, nReps=1, seed=None
+10.5803 	EXP 	New trial (rep=0, index=0): {'animal_image': 'dog4.jpg', 'animal_type': 'dog', 'expected_answer': 'd'}
+10.5809 	EXP 	window1: recordFrameIntervals = False
+10.5897 	EXP 	intro_text: autoDraw = False
+10.6187 	EXP 	window1: recordFrameIntervals = False
+11.1234 	EXP 	stimulus: image = 'dog4.jpg'
+11.1234 	EXP 	stimulus: autoDraw = True
+12.9997 	DATA 	Keypress: d
+13.0037 	EXP 	stimulus: autoDraw = False
+13.0037 	EXP 	text: height = 0.05
+13.0037 	EXP 	text: height = 0.05
+13.0037 	EXP 	text: height = 0.05
+13.0037 	EXP 	text: text = 'CORRECT!'
+13.0037 	EXP 	text: autoDraw = True
+15.0359 	EXP 	text: autoDraw = False
+15.0359 	EXP 	rtmess: height = 0.05
+15.0359 	EXP 	rtmess: height = 0.05
+15.0359 	EXP 	rtmess: height = 0.05
+15.0359 	EXP 	rtmess: text = 'Your mean RT is: 1837.0ms'
+15.0359 	EXP 	acmess: height = 0.05
+15.0359 	EXP 	acmess: height = 0.05
+15.0359 	EXP 	acmess: height = 0.05
+15.0359 	EXP 	acmess: text = 'Your mean accuracy is: 100.0%'
+15.0359 	EXP 	rtmess: autoDraw = True
+15.0359 	EXP 	acmess: autoDraw = True
+17.9887 	EXP 	New trial (rep=0, index=1): {'animal_image': 'dog2.jpg', 'animal_type': 'dog', 'expected_answer': 'd'}
+17.9890 	EXP 	window1: recordFrameIntervals = False
+18.0040 	EXP 	rtmess: autoDraw = False
+18.0040 	EXP 	acmess: autoDraw = False
+18.0096 	EXP 	window1: recordFrameIntervals = False
+18.4817 	EXP 	stimulus: image = 'dog2.jpg'
+18.4817 	EXP 	stimulus: autoDraw = True
+19.6514 	DATA 	Keypress: c
+19.6612 	EXP 	stimulus: autoDraw = False
+19.6612 	EXP 	text: height = 0.05
+19.6612 	EXP 	text: height = 0.05
+19.6612 	EXP 	text: height = 0.05
+19.6612 	EXP 	text: text = 'Wrong!'
+19.6612 	EXP 	text: autoDraw = True
+21.6918 	EXP 	text: autoDraw = False
+21.6918 	EXP 	rtmess: height = 0.05
+21.6918 	EXP 	rtmess: height = 0.05
+21.6918 	EXP 	rtmess: height = 0.05
+21.6918 	EXP 	rtmess: text = 'Your mean RT is: 1491.0ms'
+21.6918 	EXP 	acmess: height = 0.05
+21.6918 	EXP 	acmess: height = 0.05
+21.6918 	EXP 	acmess: height = 0.05
+21.6918 	EXP 	acmess: text = 'Your mean accuracy is: 50.0%'
+21.6918 	EXP 	rtmess: autoDraw = True
+21.6918 	EXP 	acmess: autoDraw = True
+24.6387 	EXP 	New trial (rep=0, index=2): {'animal_image': 'cat3.jpg', 'animal_type': 'cat', 'expected_answer': 'c'}
+24.6390 	EXP 	window1: recordFrameIntervals = False
+24.6593 	EXP 	rtmess: autoDraw = False
+24.6593 	EXP 	acmess: autoDraw = False
+24.6900 	EXP 	window1: recordFrameIntervals = False
+25.1372 	EXP 	stimulus: image = 'cat3.jpg'
+25.1585 	EXP 	stimulus: autoDraw = True
+26.8655 	DATA 	Keypress: d
+26.8864 	EXP 	stimulus: autoDraw = False
+26.8864 	EXP 	text: text = 'Wrong!'
+26.8864 	EXP 	text: autoDraw = True
+28.9014 	EXP 	text: autoDraw = False
+28.9014 	EXP 	rtmess: height = 0.05
+28.9014 	EXP 	rtmess: height = 0.05
+28.9014 	EXP 	rtmess: height = 0.05
+28.9014 	EXP 	rtmess: text = 'Your mean RT is: 1559.0ms'
+28.9014 	EXP 	acmess: height = 0.05
+28.9014 	EXP 	acmess: height = 0.05
+28.9014 	EXP 	acmess: height = 0.05
+28.9014 	EXP 	acmess: text = 'Your mean accuracy is: 33.0%'
+28.9014 	EXP 	rtmess: autoDraw = True
+28.9014 	EXP 	acmess: autoDraw = True
+31.8681 	EXP 	New trial (rep=0, index=3): {'animal_image': 'dog5.jpg', 'animal_type': 'dog', 'expected_answer': 'd'}
+31.8685 	EXP 	window1: recordFrameIntervals = False
+31.8833 	EXP 	rtmess: autoDraw = False
+31.8833 	EXP 	acmess: autoDraw = False
+31.9013 	EXP 	window1: recordFrameIntervals = False
+32.3623 	EXP 	stimulus: image = 'dog5.jpg'
+32.3623 	EXP 	stimulus: autoDraw = True
+34.3749 	EXP 	stimulus: autoDraw = False
+34.3749 	EXP 	stimulus: autoDraw = False
+34.3749 	EXP 	text: height = 0.05
+34.3749 	EXP 	text: height = 0.05
+34.3749 	EXP 	text: height = 0.05
+34.3749 	EXP 	text: text = 'Timed out - please respond faster!'
+34.3749 	EXP 	text: autoDraw = True
+36.4059 	EXP 	text: autoDraw = False
+36.4059 	EXP 	rtmess: height = 0.05
+36.4059 	EXP 	rtmess: height = 0.05
+36.4059 	EXP 	rtmess: height = 0.05
+36.4059 	EXP 	rtmess: text = 'Your mean RT is: 1669.0ms'
+36.4059 	EXP 	acmess: height = 0.05
+36.4059 	EXP 	acmess: height = 0.05
+36.4059 	EXP 	acmess: height = 0.05
+36.4059 	EXP 	acmess: text = 'Your mean accuracy is: 25.0%'
+36.4059 	EXP 	rtmess: autoDraw = True
+36.4059 	EXP 	acmess: autoDraw = True
+39.3562 	EXP 	New trial (rep=0, index=4): {'animal_image': 'cat4.jpg', 'animal_type': 'cat', 'expected_answer': 'c'}
+39.3564 	EXP 	window1: recordFrameIntervals = False
+39.3732 	EXP 	rtmess: autoDraw = False
+39.3732 	EXP 	acmess: autoDraw = False
+39.3893 	EXP 	window1: recordFrameIntervals = False
+39.8521 	EXP 	stimulus: image = 'cat4.jpg'
+39.8521 	EXP 	stimulus: autoDraw = True
+41.8550 	EXP 	stimulus: autoDraw = False
+41.8550 	EXP 	stimulus: autoDraw = False
+41.8550 	EXP 	text: text = 'Timed out - please respond faster!'
+41.8550 	EXP 	text: autoDraw = True
+43.8823 	EXP 	text: autoDraw = False
+43.8823 	EXP 	text: autoDraw = False
+43.8823 	EXP 	rtmess: height = 0.05
+43.8823 	EXP 	rtmess: height = 0.05
+43.8823 	EXP 	rtmess: height = 0.05
+43.8823 	EXP 	rtmess: text = 'Your mean RT is: 1735.0ms'
+43.8823 	EXP 	acmess: height = 0.05
+43.8823 	EXP 	acmess: height = 0.05
+43.8823 	EXP 	acmess: height = 0.05
+43.8823 	EXP 	acmess: text = 'Your mean accuracy is: 20.0%'
+43.8823 	EXP 	rtmess: autoDraw = True
+43.8823 	EXP 	acmess: autoDraw = True
+46.8491 	EXP 	New trial (rep=0, index=5): {'animal_image': 'dog3.jpg', 'animal_type': 'dog', 'expected_answer': 'd'}
+46.8495 	EXP 	window1: recordFrameIntervals = False
+46.8623 	EXP 	rtmess: autoDraw = False
+46.8623 	EXP 	acmess: autoDraw = False
+46.8828 	EXP 	window1: recordFrameIntervals = False
+47.3420 	EXP 	stimulus: image = 'dog3.jpg'
+47.3420 	EXP 	stimulus: autoDraw = True
+49.3422 	EXP 	stimulus: autoDraw = False
+49.3422 	EXP 	stimulus: autoDraw = False
+49.3422 	EXP 	text: text = 'Timed out - please respond faster!'
+49.3422 	EXP 	text: autoDraw = True
+51.3534 	EXP 	text: autoDraw = False
+51.3534 	EXP 	text: autoDraw = False
+51.3534 	EXP 	rtmess: height = 0.05
+51.3534 	EXP 	rtmess: height = 0.05
+51.3534 	EXP 	rtmess: height = 0.05
+51.3534 	EXP 	rtmess: text = 'Your mean RT is: 1779.0ms'
+51.3534 	EXP 	acmess: height = 0.05
+51.3534 	EXP 	acmess: height = 0.05
+51.3534 	EXP 	acmess: height = 0.05
+51.3534 	EXP 	acmess: text = 'Your mean accuracy is: 17.0%'
+51.3534 	EXP 	rtmess: autoDraw = True
+51.3534 	EXP 	acmess: autoDraw = True
+54.3371 	EXP 	New trial (rep=0, index=6): {'animal_image': 'cat1.jpg', 'animal_type': 'cat', 'expected_answer': 'c'}
+54.3373 	EXP 	window1: recordFrameIntervals = False
+54.3581 	EXP 	rtmess: autoDraw = False
+54.3581 	EXP 	acmess: autoDraw = False
+54.3774 	EXP 	window1: recordFrameIntervals = False
+54.8341 	EXP 	stimulus: image = 'cat1.jpg'
+54.8550 	EXP 	stimulus: autoDraw = True
+56.8541 	EXP 	stimulus: autoDraw = False
+56.8541 	EXP 	text: text = 'Timed out - please respond faster!'
+56.8541 	EXP 	text: autoDraw = True
+58.8760 	EXP 	text: autoDraw = False
+58.8760 	EXP 	rtmess: height = 0.05
+58.8760 	EXP 	rtmess: height = 0.05
+58.8760 	EXP 	rtmess: height = 0.05
+58.8760 	EXP 	rtmess: text = 'Your mean RT is: 1811.0ms'
+58.8760 	EXP 	acmess: height = 0.05
+58.8760 	EXP 	acmess: height = 0.05
+58.8760 	EXP 	acmess: height = 0.05
+58.8760 	EXP 	acmess: text = 'Your mean accuracy is: 14.000000000000002%'
+58.8760 	EXP 	rtmess: autoDraw = True
+58.8760 	EXP 	acmess: autoDraw = True
+61.8424 	EXP 	New trial (rep=0, index=7): {'animal_image': 'cat5.jpg', 'animal_type': 'cat', 'expected_answer': 'c'}
+61.8426 	EXP 	window1: recordFrameIntervals = False
+61.8592 	EXP 	rtmess: autoDraw = False
+61.8592 	EXP 	acmess: autoDraw = False
+61.8751 	EXP 	window1: recordFrameIntervals = False
+62.3388 	EXP 	stimulus: image = 'cat5.jpg'
+62.3388 	EXP 	stimulus: autoDraw = True
+64.3398 	EXP 	stimulus: autoDraw = False
+64.3398 	EXP 	stimulus: autoDraw = False
+64.3398 	EXP 	text: text = 'Timed out - please respond faster!'
+64.3398 	EXP 	text: autoDraw = True
+66.3516 	EXP 	text: autoDraw = False
+66.3516 	EXP 	text: autoDraw = False
+66.3516 	EXP 	rtmess: height = 0.05
+66.3516 	EXP 	rtmess: height = 0.05
+66.3516 	EXP 	rtmess: height = 0.05
+66.3516 	EXP 	rtmess: text = 'Your mean RT is: 1834.0ms'
+66.3516 	EXP 	acmess: height = 0.05
+66.3516 	EXP 	acmess: height = 0.05
+66.3516 	EXP 	acmess: height = 0.05
+66.3516 	EXP 	acmess: text = 'Your mean accuracy is: 12.0%'
+66.3516 	EXP 	rtmess: autoDraw = True
+66.3516 	EXP 	acmess: autoDraw = True
+69.3326 	EXP 	New trial (rep=0, index=8): {'animal_image': 'cat2.jpg', 'animal_type': 'cat', 'expected_answer': 'c'}
+69.3331 	EXP 	window1: recordFrameIntervals = False
+69.3529 	EXP 	rtmess: autoDraw = False
+69.3529 	EXP 	acmess: autoDraw = False
+69.3717 	EXP 	window1: recordFrameIntervals = False
+69.8290 	EXP 	stimulus: image = 'cat2.jpg'
+69.8505 	EXP 	stimulus: autoDraw = True
+71.8487 	EXP 	stimulus: autoDraw = False
+71.8487 	EXP 	text: text = 'Timed out - please respond faster!'
+71.8487 	EXP 	text: autoDraw = True
+73.8898 	EXP 	text: autoDraw = False
+73.8898 	EXP 	rtmess: height = 0.05
+73.8898 	EXP 	rtmess: height = 0.05
+73.8898 	EXP 	rtmess: height = 0.05
+73.8898 	EXP 	rtmess: text = 'Your mean RT is: 1853.0ms'
+73.8898 	EXP 	acmess: height = 0.05
+73.8898 	EXP 	acmess: height = 0.05
+73.8898 	EXP 	acmess: height = 0.05
+73.8898 	EXP 	acmess: text = 'Your mean accuracy is: 11.0%'
+73.8898 	EXP 	rtmess: autoDraw = True
+73.8898 	EXP 	acmess: autoDraw = True
+76.8425 	EXP 	New trial (rep=0, index=9): {'animal_image': 'dog1.jpg', 'animal_type': 'dog', 'expected_answer': 'd'}
+76.8428 	EXP 	window1: recordFrameIntervals = False
+76.8570 	EXP 	rtmess: autoDraw = False
+76.8570 	EXP 	acmess: autoDraw = False
+76.8688 	EXP 	window1: recordFrameIntervals = False
+77.3367 	EXP 	stimulus: image = 'dog1.jpg'
+77.3367 	EXP 	stimulus: autoDraw = True
+79.3375 	EXP 	stimulus: autoDraw = False
+79.3375 	EXP 	stimulus: autoDraw = False
+79.3375 	EXP 	text: text = 'Timed out - please respond faster!'
+79.3375 	EXP 	text: autoDraw = True
+81.3498 	EXP 	text: autoDraw = False
+81.3498 	EXP 	text: autoDraw = False
+81.3498 	EXP 	rtmess: height = 0.05
+81.3498 	EXP 	rtmess: height = 0.05
+81.3498 	EXP 	rtmess: height = 0.05
+81.3498 	EXP 	rtmess: text = 'Your mean RT is: 1868.0ms'
+81.3498 	EXP 	acmess: height = 0.05
+81.3498 	EXP 	acmess: height = 0.05
+81.3498 	EXP 	acmess: height = 0.05
+81.3498 	EXP 	acmess: text = 'Your mean accuracy is: 10.0%'
+81.3498 	EXP 	rtmess: autoDraw = True
+81.3498 	EXP 	acmess: autoDraw = True
+84.3466 	EXP 	rtmess: autoDraw = False
+84.3466 	EXP 	acmess: autoDraw = False
+84.4212 	EXP 	window1: mouseVisible = True

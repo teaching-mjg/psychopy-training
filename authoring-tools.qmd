@@ -1,0 +1,78 @@
+# authoring tools
+
+## Callouts
+
+There are five types of callouts:
+
+* note; warning; important; tip; caution.
+
+:::{.callout-note}
+This is a callout-note.
+:::
+
+:::{.callout-warning}
+This is a callout-warning.
+:::
+
+:::{.callout-important}
+This is a callout-important.
+:::
+
+:::{.callout-tip}
+This is a callout-tip.
+:::
+
+:::{.callout-caution}
+This is a callout-caution that actually says danger
+:::
+
+You can issue a second-level header inside the callout to edit the text content at the top of the box in the coloured bit: here the header is hash hash Tip Your Waiter, and Tip Your Waiter is considered to be a caption
+
+:::{.callout-tip}
+## Tip Your Waiter
+This is an example of a callout with a caption.
+:::
+
+You can imitate rmarkdown's code='hide' approach to get boxes of text that reveal on being clicked - in quarto jargon this is __*collapse*__ done by adding the chunk option `collapse="true"` to get collapsed until clicked
+
+:::{.callout-caution collapse="true"}
+## Click to reveal the answer
+The answer is 42
+:::
+
+or `collapse="false"` to get expanded until dismissed.
+
+:::{.callout-caution collapse="false"}
+## Click to hide the code
+This code gets rolled up when you click
+:::
+
+
+## Citations
+
+Here's an example of quarto citation syntax:
+
+"Have a look in the PsychoPy textbook [@peirce2022building, pp. 34-35] for more information."
+
+## Cross-references {#sec-crossref}
+
+This is how you do a cross-reference - see @sec-crossref.
+
+## Definition Lists
+
+Term 1
+  ~ Definition 1
+
+Term 2
+  ~ Definition 2a
+  ~ Definition 2b
+
+## Margin Note
+
+::: {.column-margin}
+This is a margin note
+:::
+
+## Footnotes
+
+This shows how to use a footnote^[This is the content of the footnote]

@@ -1,0 +1,256 @@
+# Cats and Dogs
+
+In this chapter we create a simple experiment, bit by bit, with instructions, stimuli, and responses, where the stimuli are pictures of dogs and cats, and the task is to identify whether the current trial's animal is a dog or a cat using the keyboard to press 'c' for cat or 'd' for dog. 
+
+<!-- Doing this might seem trivial but doing this gives us a way to cover the following topics: -->
+
+<!-- * How to present text where you know in advance what the content will be - like instructions to the participant at the start of the experiment. -->
+<!-- * How to vary the duration that the text is presented for. -->
+<!-- * How to vary the properties of the text (font, colour, size, location) -->
+<!-- * How to use the basic building blocks of a PsychoPy experiment - its _Routines_ and _Components_ -->
+<!-- * How to collect a response from the participant; record its RT; and evaluate it for accuracy. -->
+<!-- * How to present an image (when you don't know in advance what its content should be because the order of presentation should be randomised over trials) [using a spreadsheet to supply the image filenames and handle randomisation] -->
+<!-- * How to present many stimuli over the course of an experiment without creating a new image every time - by using a _loop_ over a single stimulus Component. -->
+<!-- * [How to vary the properties of the image like position, size, rotation so that they can be different on different trials] -->
+<!-- * How to show feedback whose content differs according to the response given on each trial. -->
+
+
+
+## Instructions Routine
+
+We start with a blank psyexp^['.psyexp' is the file extension for a PsychoPy experiment, and in this document we use 'psyexp' to refer to PsychoPy experiments in the same way as we use 'jpeg' to refer to images with '.jpeg' extensions and so on] 
+
+We then add:
+
+* instructions to the participant about the task and which buttons to press - including an instruction to press space to continue.
+* a keyboard component so the participant can press space to continue
+
+During the course, I will show you live in PsychoPy while sharing my screen how to build this up. This website is intended to be used for reference after the course though, so I include a screencast of me building this up in  @fig-instructions_to_participant below.
+
+::: {.column-margin .callout-tip}
+All the screencasts in this document can be viewed full-screen using the standard YouTube-style controls in the bottom-right:  
+![](img/chrome_dUU1V4QI5z.png){width="50%"}
+:::
+
+```{r}
+#| echo: false
+#| label: fig-instructions_to_participant
+#| fig-cap: How to add instructions to the participant and let them press space to continue
+htmltools::tags$video(src = "obs/2022-07-02 20-49-04.mkv", type = "video/mp4", width="100%",  controls=1, muted=1)
+```
+
+During the course, you should reproduce this partial experiment on your own machine. The best advice is to build it up bit by bit yourself. However I will include links to download partial experiments and complete experiments every now and then in this document. See for example the blue box below. The links will be to zip files which you must extract properly before opening: in Windows right-click on the zip file and do "extract all", then use the folder that appears without the '.zip' file extension
+
+:::{.callout-note}
+## Download
+Click [file1](psy/file1.zip) to download the psyexp so far. Notice that these files have fullscreen unticked: you should change this by ticking the fullscreen box for real experiments. I'm only unticking fullscreen so that my screencast software can see the window.
+:::
+
+@fig-runtime001 is a screencast of PsychoPy running this (partial) experiment on my machine. 
+
+```{r}
+#| echo: false
+#| label: fig-runtime001
+#| fig-cap: Runtime
+htmltools::tags$video(src = "obs/2022-07-02 23-21-28.mkv", type = "video/mp4", width="100%", controls=1)
+```
+
+
+## Trial Procedure
+
+We now deal with what happens after they press 'space' to continue past the instructions screen.
+
+On each trial we want to present one of our animal images for some duration during which the participant has the chance to type a response. If they don't respond in time, we want the trial to time out, to encourage quick responses. Let's say we want the duration to be one second, so it's: _"display the image for one second then take it off the screen, and they can only respond while the image is on screen."_
+
+We want to record the RT and evaluate the response for correctness.
+
+We want to add feedback saying "CORRECT!" in green ink, or "WRONG!" in red ink, or "RESPOND FASTER!" in black ink if they timed out. 
+
+Then we'll have an inter-trial interval of one second, then start the next trial.^[It's actually better to put the inter-trial interval *before* the trial. If you do it this way, then the inter-trial interval can be used to prepare the image for the trial -- which is good because it improves the consistency of the stimulus duration.] We'll run ten trials, and use 5 cats and 5 dogs.
+
+## Trial Sequence
+
+In PsychoPy, you use a spreadsheet to define the trials of your experiment. The convention is that each row of the spreadsheet after the header row corresponds to a single trial. So to plan a sequence of 10 trials we need a spreadsheet with 10 rows after the header row.^[If you want, say, the same trial contents but just repeated 10 times, there is a way to do it with one row representing that trial, and then telling PsychoPy to run the spreadsheet 10 times - but the 'one row per trial' way always works so it's better to learn that way first].
+
+If the rows represent trials, how should we think about the columns? Each column is an opportunity to pass in some property of that trial. In our cats and dogs experiment, each trial is going to need an image of a cat or dog. So we make a column called, say, "animal_image"^[must not have any spaces in the column's header] which will hold the filename for the image you want to show on that trial -- so the first row of "animal_image" might contain "cat1.jpg" and the second "dog1.jpg" and so on for ten rows.
+
+We also have the opportunity to use the trial sequence spreadsheet to have a column saying, for each trial, what the correct answer is based on which kind of image is being presented in the same row / trial. See the column 'expected_answer' in @fig-xls1 that contains 'c' on rows where a cat is presented and 'd' on rows where a dog is presented.
+
+::: {.column-margin}
+```{r, fig.link="img/trial_defs_cats_dogs.png", echo=F, out.width="100%"}
+#| label: fig-xls1
+#| fig-cap: Trial Sequence File (click to view bigger)
+knitr::include_graphics("img/trial_defs_cats_dogs.png")
+```
+:::
+
+If we do supply the expected answer like this, then, since everything we put in the input spreadsheet is available to the code at runtime, we can say things like the following to evaluate the response for accuracy:
+```{python}
+#| eval: false
+#| echo: true
+if response.keys:
+  if response.keys == expected_answer:
+    feedback.text="CORRECT!"
+    feedback.text="green"
+  if response_keys != expected_answer:
+    feedback.text="WRONG!"
+    feedback.text="red"
+else:
+  feedback.text="Timeout - please respond faster!"
+  feedback.text="black"
+```
+
+## Stimulus Files
+
+We need to track down images of 5 cats and 5 dogs, and then name them according to the scheme in @fig-xls1
+
+:::{.callout-note}
+## Download
+Click [stimuli](img/stimuli.zip) to download the cats and dogs pictures
+:::
+
+## Making the trial loop
+
+See @{fig-mkTrialLoop} for:
+
+* add trials Routine
+  * add image
+    * set duration (1.0 seconds)
+    * use `$animal_image` for `image.Image` field and change drop-down from _constant_ to _set every repeat_
+  * add keyboard
+    * set allowed_keys field to `'c','d'`
+    * set duration to 1.0 seconds - now they won't be able to respond after the image disappears. The keyboard's start and stop times are the same as the image's
+  * enclose with loop
+    * The `Conditions` field is where you put the name of the spreadsheet
+    * leave 'random' - the default - but notice that sequential is also available
+    * change the default from 5 to 1 (because we only want to run the ten trials once)
+
+```{r}
+#| echo: false
+#| label: fig-mkTrialLoop
+#| fig-cap: Making the trial loop
+htmltools::tags$video(src = "obs/addTrialsLoop.mp4", type = "video/mp4", width="100%", controls=1)
+```
+
+See @fig-runTrialLoop for the runtime as things stand now.
+
+```{r}
+#| echo: false
+#| label: fig-runTrialLoop
+#| fig-cap: Running the basic loop
+htmltools::tags$video(src = "obs/2022-07-03 01-27-54.mkv", type = "video/mp4", width="100%", controls=1)
+```
+
+:::{.callout-note}
+## Download
+Click [file2](psy/file2.zip) to download the psyexp in a crude but working state.
+:::
+
+## Finessing the Trial Loop
+
+At this stage things are basically working - the trial sequence is being randomised correctly; the images come up for the right amount of time; etc.
+
+However we can improve some things quite easily going into the `file3.psyexp`
+
+* add an inter-trial interval (0.5 seconds)
+* set the images to be prepared during the inter-trial interval (better stimulus duration consistency)
+* give the components names that will help us understand better what they do when we see them later in results files
+* make the stimulus duration longer (the images were going by without responses because the duration was too short) - try 1.5 seconds.
+* set the aspect ratio on the images to the original for the pictures to avoid the squashed look.
+
+@fig-finesseTrialLoop shows how to do this finessing.
+
+```{r}
+#| echo: false
+#| label: fig-finesseTrialLoop
+#| fig-cap: Finessing the trial loop
+htmltools::tags$video(src = "obs/2022-07-03 01-38-39.mkv", type = "video/mp4", width="100%", controls=1)
+```
+
+@fig-finesseTrialLoopRunTime shows the runtime now after a little finessing.
+
+```{r}
+#| echo: false
+#| label: fig-finesseTrialLoopRunTime
+#| fig-cap: Finessing the trial loop - runtime
+htmltools::tags$video(src = "obs/2022-07-03 02-01-24.mkv", type = "video/mp4", width="100%", controls=1)
+```
+
+:::{.callout-note}
+## Download
+Click [file3](psy/file3.zip) to download the file3 psyexp as it stands after a little finessing.
+:::
+
+
+## Handling the keyboard response {#sec-kbcorrectness}
+
+The keyboard component has 3 attributes. They are named using the name of the keyboard component (which is `key_resp` by default).
+
+1. `key_resp.keys`: a list of the allowed keys that were pressed while the keyboard component was listening for key-presses. Usually this list only has one member, but it's possible to collect multiple key-presses.
+2. `key_resp.rt`: simply RT, in seconds, i.e., how long the keyboard component was active for until an allowed key was pressed
+3. `key_resp.corr`: accuracy coded 0 or 1, but it only exists in cases where you have requested it using the `Store Correct` tick-box of the keyboard component in the `data` tab, and only then if you also supply the correct response in the `Correct answer` field (see screenshot)
+    * ![](img/pythonw_E2393TEDCF.png){width="100%"}
+    
+In our `file3.psyexp`, we have supplied the correct answer on each trial in the column of the input spreadsheet called `$expected_answer`. If we then tick `Store correct` for the keyboard component in the stimulus presentation Routine, and fill out the field `Correct answer`, PsychoPy will create a variable `response.corr` that holds the accuracy on that trial as 0 or 1, and it will write that variable as a a column in the results file, with an entry on each row that was a trial.
+
+
+@fig-finessekb shows how to set up the keyboard to record accuracy.
+
+```{r}
+#| echo: false
+#| label: fig-finessekb
+#| fig-cap: Set up the keyboard to record accuracy
+htmltools::tags$video(src = "obs/2022-07-03 03-13-51.mkv", type = "video/mp4", width="100%", controls=1)
+```
+
+@fig-accresults shows what it looks like in the results file after enabling accuracy recording.
+
+```{r out.width="100%"}
+#| echo: false
+#| label: fig-accresults
+#| fig-cap: Results file showing variables from the keyboard response
+knitr::include_graphics("img/EXCEL_AdOfuIYoer.png")
+```
+
+
+## Feedback
+
+There are several ways to implement feedback in PsychoPy for stimulus-response experiments like our cats and dogs example. What they have in common is that they all assume that the `response.corr` variable that we looked at in @sec-kbcorrectness is available.
+
+One style is to present the participant with text indicating whether they respond correctly or not for each trial.
+
+Within that style there is more than one way to implement the feedback in PsychoPy.
+
+* Method 1: One way is to insert a feedback Routine after the Trial Routine that contains a single Text Component whose contents and colour are set to variables  whose values we calculate using a Code component, based on the value of `response.corr`. See @fig-fbackmethod1 for a screencast of writing this method., and see @fig-fbackmethod1runtime for the runtime. This is file5.psyexp.
+```{r}
+#| echo: false
+#| label: fig-fbackmethod1
+#| fig-cap: Feedback using a single text component and passing variables in for text content and text colour
+htmltools::tags$video(src = "obs/2022-07-03 03-43-24.mkv", type = "video/mp4", width="100%", controls=1)
+```
+
+```{r}
+#| echo: false
+#| label: fig-fbackmethod1runtime
+#| fig-cap: Feedback using a single text component and passing variables in for text content and text colour (runtime)
+htmltools::tags$video(src = "obs/2022-07-03 03-52-45.mkv", type = "video/mp4", width="100%", controls=1)
+```
+
+* Method 2: Another way is to insert the Feedback Routine after the Trial Routine, in the same way, but this time to create a Text component for each of the possible outcomes of the trial - normally _correct_ and _incorrect_ but also sometimes _time-out_. We then select one single outcome to display with reference to the value of `response.corr`. This is file6.psyexp.
+
+```{r}
+#| echo: false
+#| label: fig-fbackmethod2
+#| fig-cap: Feedback using multiple text components, one for each outcome, with fixed content and colour, and then supplying as the `Start` value not a time but a condition
+htmltools::tags$video(src = "obs/2022-07-03 04-17-38.mkv", type = "video/mp4", width="100%", controls=1)
+```
+
+```{r}
+#| echo: false
+#| label: fig-fbackmethod2runtime
+#| fig-cap: Feedback using multiple text components, one for each outcome, with fixed content and colour, and then supplying as the `Start` value not a time but a condition (runtime)
+htmltools::tags$video(src = "obs/2022-07-03 04-21-17.mkv", type = "video/mp4", width="100%", controls=1)
+```
+
+
+

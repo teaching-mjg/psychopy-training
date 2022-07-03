@@ -1,0 +1,18 @@
+# About {.unnumbered}
+
+This is training in PsychoPy, for the July 2022 cohort, w/c 11th July 2022.
+
+Last compiled `r format(Sys.time(), '%A %d %B %Y at %X')`
+
+```{r include=FALSE}
+# screencasts go in obs
+dir.create("docs/obs")
+file.copy("obs","docs",recursive=TRUE)
+# psyexps go in psy
+dir.create("docs/psy")
+file.copy("psy","docs",recursive=TRUE)
+# stills go in img
+dir.create("docs/img")
+file.copy("img","docs",recursive=TRUE)
+```
+

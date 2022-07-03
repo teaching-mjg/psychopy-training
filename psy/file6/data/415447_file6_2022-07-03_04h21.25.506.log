@@ -1,0 +1,139 @@
+6.6579 	EXP 	Created window1 = Window(allowGUI=True, allowStencil=False, autoLog=True, backendConf=UNKNOWN, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x000002BC06C60F70>, gamma=None, gammaErrorPolicy='raise', lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x000002BC07B83A60>, multiSample=False, name='window1', numSamples=2, pos=(0, 0), screen=0, size=array([1920, 1080]), stencilBits=0, stereo=False, units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+6.6580 	EXP 	window1: mouseVisible = True
+6.6580 	EXP 	window1: mouseVisible = True
+6.6580 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+6.6581 	EXP 	window1: recordFrameIntervals = False
+6.8249 	EXP 	window1: recordFrameIntervals = True
+7.2773 	WARNING 	t of last frame was 20.08ms (=1/49)
+7.6415 	EXP 	Screen (0) actual frame rate measured at 60.19Hz
+7.6415 	EXP 	window1: recordFrameIntervals = False
+7.6721 	WARNING 	launchHubServer: If using the iohub mouse or eyetracker devices, fullScr should be True.
+9.8700 	EXP 	Created intro_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='intro_text', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+9.8866 	EXP 	Created stimulus = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='stimulus', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([0.75, 0.5 ]), texRes=128.0, units='height', win=Window(...))
+9.8976 	EXP 	Created wrong = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([ 1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='wrong', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='WRONG!!', units='height', win=Window(...), wrapWidth=1)
+9.9088 	EXP 	Created right = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([-1.        ,  0.00392157, -1.        ]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='right', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='CORRECT!!', units='height', win=Window(...), wrapWidth=1)
+9.9187 	EXP 	Created timedout = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='timedout', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='Time out - please respond faster!', units='height', win=Window(...), wrapWidth=1)
+9.9391 	EXP 	intro_text: autoDraw = True
+11.2726 	EXP 	Imported trial_sequence.xlsx as conditions, 10 conditions, 3 params
+11.2733 	EXP 	Created sequence: random, trialTypes=10, nReps=1, seed=None
+11.2737 	EXP 	New trial (rep=0, index=0): {'animal_image': 'dog1.jpg', 'animal_type': 'dog', 'expected_answer': 'd'}
+11.2739 	EXP 	window1: recordFrameIntervals = False
+11.2749 	DATA 	Keypress: space
+11.2786 	EXP 	intro_text: autoDraw = False
+11.2954 	EXP 	window1: recordFrameIntervals = False
+11.8289 	EXP 	stimulus: image = 'dog1.jpg'
+11.8289 	EXP 	stimulus: autoDraw = True
+12.6235 	DATA 	Keypress: c
+12.6602 	EXP 	stimulus: autoDraw = False
+12.6602 	EXP 	wrong: autoDraw = True
+14.6458 	EXP 	New trial (rep=0, index=1): {'animal_image': 'cat4.jpg', 'animal_type': 'cat', 'expected_answer': 'c'}
+14.6461 	EXP 	window1: recordFrameIntervals = False
+14.6618 	EXP 	wrong: autoDraw = False
+14.6618 	EXP 	wrong: autoDraw = False
+14.6618 	EXP 	right: autoDraw = False
+14.6618 	EXP 	timedout: autoDraw = False
+14.6792 	EXP 	window1: recordFrameIntervals = False
+15.1404 	EXP 	stimulus: image = 'cat4.jpg'
+15.1619 	EXP 	stimulus: autoDraw = True
+16.0687 	DATA 	Keypress: c
+16.0772 	EXP 	stimulus: autoDraw = False
+16.0772 	EXP 	right: autoDraw = True
+18.0755 	EXP 	New trial (rep=0, index=2): {'animal_image': 'cat1.jpg', 'animal_type': 'cat', 'expected_answer': 'c'}
+18.0757 	EXP 	window1: recordFrameIntervals = False
+18.0921 	EXP 	right: autoDraw = False
+18.0921 	EXP 	wrong: autoDraw = False
+18.0921 	EXP 	right: autoDraw = False
+18.0921 	EXP 	timedout: autoDraw = False
+18.1048 	EXP 	window1: recordFrameIntervals = False
+18.5706 	EXP 	stimulus: image = 'cat1.jpg'
+18.5933 	EXP 	stimulus: autoDraw = True
+20.6072 	EXP 	stimulus: autoDraw = False
+20.6072 	EXP 	timedout: autoDraw = True
+22.6052 	EXP 	New trial (rep=0, index=3): {'animal_image': 'dog5.jpg', 'animal_type': 'dog', 'expected_answer': 'd'}
+22.6057 	EXP 	window1: recordFrameIntervals = False
+22.6186 	EXP 	timedout: autoDraw = False
+22.6186 	EXP 	wrong: autoDraw = False
+22.6186 	EXP 	right: autoDraw = False
+22.6186 	EXP 	timedout: autoDraw = False
+22.6381 	EXP 	window1: recordFrameIntervals = False
+23.0966 	EXP 	stimulus: image = 'dog5.jpg'
+23.1185 	EXP 	stimulus: autoDraw = True
+24.0407 	DATA 	Keypress: d
+24.0495 	EXP 	stimulus: autoDraw = False
+24.0495 	EXP 	right: autoDraw = True
+26.0472 	EXP 	New trial (rep=0, index=4): {'animal_image': 'dog4.jpg', 'animal_type': 'dog', 'expected_answer': 'd'}
+26.0478 	EXP 	window1: recordFrameIntervals = False
+26.0631 	EXP 	right: autoDraw = False
+26.0631 	EXP 	wrong: autoDraw = False
+26.0631 	EXP 	right: autoDraw = False
+26.0631 	EXP 	timedout: autoDraw = False
+26.0825 	EXP 	window1: recordFrameIntervals = False
+26.5419 	EXP 	stimulus: image = 'dog4.jpg'
+26.5627 	EXP 	stimulus: autoDraw = True
+27.3704 	DATA 	Keypress: d
+27.3777 	EXP 	stimulus: autoDraw = False
+27.3777 	EXP 	right: autoDraw = True
+29.3777 	EXP 	New trial (rep=0, index=5): {'animal_image': 'cat2.jpg', 'animal_type': 'cat', 'expected_answer': 'c'}
+29.3780 	EXP 	window1: recordFrameIntervals = False
+29.3926 	EXP 	right: autoDraw = False
+29.3926 	EXP 	wrong: autoDraw = False
+29.3926 	EXP 	right: autoDraw = False
+29.3926 	EXP 	timedout: autoDraw = False
+29.4047 	EXP 	window1: recordFrameIntervals = False
+29.8741 	EXP 	stimulus: image = 'cat2.jpg'
+29.8926 	EXP 	stimulus: autoDraw = True
+30.5352 	DATA 	Keypress: c
+30.5550 	EXP 	stimulus: autoDraw = False
+30.5550 	EXP 	right: autoDraw = True
+32.5427 	EXP 	New trial (rep=0, index=6): {'animal_image': 'dog2.jpg', 'animal_type': 'dog', 'expected_answer': 'd'}
+32.5429 	EXP 	window1: recordFrameIntervals = False
+32.5579 	EXP 	right: autoDraw = False
+32.5579 	EXP 	wrong: autoDraw = False
+32.5579 	EXP 	right: autoDraw = False
+32.5579 	EXP 	timedout: autoDraw = False
+32.5638 	EXP 	window1: recordFrameIntervals = False
+33.0354 	EXP 	stimulus: image = 'dog2.jpg'
+33.0576 	EXP 	stimulus: autoDraw = True
+33.8119 	DATA 	Keypress: d
+33.8240 	EXP 	stimulus: autoDraw = False
+33.8240 	EXP 	right: autoDraw = True
+35.8205 	EXP 	New trial (rep=0, index=7): {'animal_image': 'cat3.jpg', 'animal_type': 'cat', 'expected_answer': 'c'}
+35.8208 	EXP 	window1: recordFrameIntervals = False
+35.8337 	EXP 	right: autoDraw = False
+35.8337 	EXP 	wrong: autoDraw = False
+35.8337 	EXP 	right: autoDraw = False
+35.8337 	EXP 	timedout: autoDraw = False
+35.8482 	EXP 	window1: recordFrameIntervals = False
+36.3127 	EXP 	stimulus: image = 'cat3.jpg'
+36.3344 	EXP 	stimulus: autoDraw = True
+37.3732 	DATA 	Keypress: c
+37.3807 	EXP 	stimulus: autoDraw = False
+37.3807 	EXP 	right: autoDraw = True
+39.3801 	EXP 	New trial (rep=0, index=8): {'animal_image': 'cat5.jpg', 'animal_type': 'cat', 'expected_answer': 'c'}
+39.3804 	EXP 	window1: recordFrameIntervals = False
+39.3958 	EXP 	right: autoDraw = False
+39.3958 	EXP 	wrong: autoDraw = False
+39.3958 	EXP 	right: autoDraw = False
+39.3958 	EXP 	timedout: autoDraw = False
+39.4119 	EXP 	window1: recordFrameIntervals = False
+39.8747 	EXP 	stimulus: image = 'cat5.jpg'
+39.8956 	EXP 	stimulus: autoDraw = True
+40.9351 	DATA 	Keypress: c
+40.9441 	EXP 	stimulus: autoDraw = False
+40.9441 	EXP 	right: autoDraw = True
+42.9435 	EXP 	right: autoDraw = False
+42.9445 	EXP 	New trial (rep=0, index=9): {'animal_image': 'dog3.jpg', 'animal_type': 'dog', 'expected_answer': 'd'}
+42.9446 	EXP 	window1: recordFrameIntervals = False
+42.9584 	EXP 	wrong: autoDraw = False
+42.9584 	EXP 	right: autoDraw = False
+42.9584 	EXP 	timedout: autoDraw = False
+42.9704 	EXP 	window1: recordFrameIntervals = False
+43.4398 	EXP 	stimulus: image = 'dog3.jpg'
+43.4595 	EXP 	stimulus: autoDraw = True
+45.4749 	EXP 	stimulus: autoDraw = False
+45.4749 	EXP 	timedout: autoDraw = True
+47.4856 	EXP 	timedout: autoDraw = False
+47.4856 	EXP 	wrong: autoDraw = False
+47.4856 	EXP 	right: autoDraw = False
+47.4856 	EXP 	timedout: autoDraw = False
+47.5483 	EXP 	window1: mouseVisible = True

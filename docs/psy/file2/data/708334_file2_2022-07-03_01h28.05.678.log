@@ -1,0 +1,64 @@
+10.5189 	EXP 	Created window1 = Window(allowGUI=True, allowStencil=False, autoLog=True, backendConf=UNKNOWN, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x0000024EA04E0F70>, gamma=None, gammaErrorPolicy='raise', lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x0000024EA0972A60>, multiSample=False, name='window1', numSamples=2, pos=(0, 0), screen=0, size=array([1920, 1080]), stencilBits=0, stereo=False, units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+10.5200 	EXP 	window1: mouseVisible = True
+10.5202 	EXP 	window1: mouseVisible = True
+10.5203 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+10.5203 	EXP 	window1: recordFrameIntervals = False
+10.8137 	EXP 	window1: recordFrameIntervals = True
+11.2367 	WARNING 	t of last frame was 39.78ms (=1/25)
+12.6940 	EXP 	Screen (0) actual frame rate measured at 30.19Hz
+12.6940 	EXP 	window1: recordFrameIntervals = False
+12.7233 	WARNING 	launchHubServer: If using the iohub mouse or eyetracker devices, fullScr should be True.
+14.8137 	EXP 	Created text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='text', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+14.8297 	EXP 	Created image = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='image', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([0.75, 0.5 ]), texRes=128.0, units='height', win=Window(...))
+14.8615 	EXP 	text: autoDraw = True
+16.1789 	EXP 	Imported trial_sequence.xlsx as conditions, 10 conditions, 3 params
+16.1798 	EXP 	Created sequence: random, trialTypes=10, nReps=1, seed=None
+16.1803 	EXP 	New trial (rep=0, index=0): {'animal_image': 'cat4.jpg', 'animal_type': 'cat', 'expected_answer': 'c'}
+16.2571 	DATA 	Keypress: space
+16.2783 	EXP 	text: autoDraw = False
+16.2783 	EXP 	image: image = 'cat4.jpg'
+16.2783 	EXP 	image: autoDraw = True
+17.1801 	EXP 	New trial (rep=0, index=1): {'animal_image': 'dog1.jpg', 'animal_type': 'dog', 'expected_answer': 'd'}
+17.2112 	EXP 	image: autoDraw = False
+17.2112 	EXP 	image: image = 'dog1.jpg'
+17.2112 	EXP 	image: autoDraw = True
+18.1885 	EXP 	New trial (rep=0, index=2): {'animal_image': 'dog5.jpg', 'animal_type': 'dog', 'expected_answer': 'd'}
+18.2257 	EXP 	image: autoDraw = False
+18.2257 	EXP 	image: image = 'dog5.jpg'
+18.2257 	EXP 	image: autoDraw = True
+19.1878 	EXP 	New trial (rep=0, index=3): {'animal_image': 'cat3.jpg', 'animal_type': 'cat', 'expected_answer': 'c'}
+19.2253 	EXP 	image: autoDraw = False
+19.2253 	EXP 	image: image = 'cat3.jpg'
+19.2253 	EXP 	image: autoDraw = True
+19.9052 	EXP 	New trial (rep=0, index=4): {'animal_image': 'cat2.jpg', 'animal_type': 'cat', 'expected_answer': 'c'}
+19.9225 	DATA 	Keypress: c
+19.9402 	EXP 	image: autoDraw = False
+19.9402 	EXP 	image: image = 'cat2.jpg'
+20.1666 	EXP 	image: autoDraw = True
+21.1538 	EXP 	New trial (rep=0, index=5): {'animal_image': 'cat1.jpg', 'animal_type': 'cat', 'expected_answer': 'c'}
+21.1910 	EXP 	image: autoDraw = False
+21.1910 	EXP 	image: autoDraw = False
+21.1910 	EXP 	image: image = 'cat1.jpg'
+21.1910 	EXP 	image: autoDraw = True
+21.1932 	DATA 	Keypress: c
+21.3552 	EXP 	New trial (rep=0, index=6): {'animal_image': 'dog3.jpg', 'animal_type': 'dog', 'expected_answer': 'd'}
+21.3903 	EXP 	image: autoDraw = False
+21.3903 	EXP 	image: image = 'dog3.jpg'
+22.1835 	EXP 	image: autoDraw = True
+22.9216 	EXP 	New trial (rep=0, index=7): {'animal_image': 'cat5.jpg', 'animal_type': 'cat', 'expected_answer': 'c'}
+22.9327 	DATA 	Keypress: c
+22.9579 	EXP 	image: autoDraw = False
+22.9579 	EXP 	image: image = 'cat5.jpg'
+23.1741 	EXP 	image: autoDraw = True
+24.0734 	EXP 	New trial (rep=0, index=8): {'animal_image': 'dog2.jpg', 'animal_type': 'dog', 'expected_answer': 'd'}
+24.0898 	DATA 	Keypress: d
+24.1038 	EXP 	image: autoDraw = False
+24.1038 	EXP 	image: image = 'dog2.jpg'
+24.2039 	EXP 	image: autoDraw = True
+25.1977 	EXP 	New trial (rep=0, index=9): {'animal_image': 'dog4.jpg', 'animal_type': 'dog', 'expected_answer': 'd'}
+25.2503 	EXP 	image: autoDraw = False
+25.2503 	EXP 	image: image = 'dog4.jpg'
+25.2503 	EXP 	image: autoDraw = True
+25.2552 	DATA 	Keypress: d
+25.3777 	EXP 	image: autoDraw = False
+25.4440 	EXP 	window1: mouseVisible = True

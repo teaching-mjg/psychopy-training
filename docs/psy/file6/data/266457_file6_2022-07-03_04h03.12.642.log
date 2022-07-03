@@ -1,0 +1,30 @@
+5.9586 	EXP 	Created window1 = Window(allowGUI=True, allowStencil=False, autoLog=True, backendConf=UNKNOWN, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x000001ACDB760F40>, gamma=None, gammaErrorPolicy='raise', lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x000001ACDC663A30>, multiSample=False, name='window1', numSamples=2, pos=(0, 0), screen=0, size=array([1920, 1080]), stencilBits=0, stereo=False, units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+5.9586 	EXP 	window1: mouseVisible = True
+5.9587 	EXP 	window1: mouseVisible = True
+5.9587 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+5.9587 	EXP 	window1: recordFrameIntervals = False
+6.1246 	EXP 	window1: recordFrameIntervals = True
+6.3087 	EXP 	Screen (0) actual frame rate measured at 59.99Hz
+6.3088 	EXP 	window1: recordFrameIntervals = False
+6.3332 	WARNING 	launchHubServer: If using the iohub mouse or eyetracker devices, fullScr should be True.
+8.3008 	EXP 	Created intro_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='intro_text', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+8.3153 	EXP 	Created stimulus = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='stimulus', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([0.75, 0.5 ]), texRes=128.0, units='height', win=Window(...))
+8.3260 	EXP 	Created correct_feedback = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([-1.        ,  0.00392157, -1.        ]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='correct_feedback', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='CORRECT!', units='height', win=Window(...), wrapWidth=1)
+8.3354 	EXP 	Created incorrect_feedback = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([ 1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='incorrect_feedback', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='WRONG!', units='height', win=Window(...), wrapWidth=1)
+8.3421 	EXP 	Created timeout_feedback = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='timeout_feedback', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='Timeout - please respond faster!', units='height', win=Window(...), wrapWidth=1)
+8.3592 	EXP 	intro_text: autoDraw = True
+9.1508 	EXP 	Imported trial_sequence.xlsx as conditions, 10 conditions, 3 params
+9.1517 	EXP 	Created sequence: random, trialTypes=10, nReps=1, seed=None
+9.1521 	EXP 	New trial (rep=0, index=0): {'animal_image': 'dog4.jpg', 'animal_type': 'dog', 'expected_answer': 'd'}
+9.1523 	EXP 	window1: recordFrameIntervals = False
+9.1538 	DATA 	Keypress: space
+9.1685 	EXP 	intro_text: autoDraw = False
+9.1845 	EXP 	window1: recordFrameIntervals = False
+9.6839 	EXP 	stimulus: image = 'dog4.jpg'
+9.6839 	EXP 	stimulus: autoDraw = True
+10.6931 	DATA 	Keypress: c
+10.7027 	EXP 	stimulus: autoDraw = False
+10.7027 	EXP 	incorrect_feedback: autoDraw = True
+12.7155 	EXP 	incorrect_feedback: autoDraw = False
+21.2407 	DATA 	Keypress: escape
+21.6123 	EXP 	window1: mouseVisible = True
