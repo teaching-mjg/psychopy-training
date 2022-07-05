@@ -9,6 +9,7 @@ Last compiled `r format(Sys.time(), '%A %d %B %Y at %X')`
 dir.create("docs/obs")
 file.copy("obs","docs",recursive=TRUE)
 # psyexps go in psy
+unlink("psy/*/data/*")
 dir.create("docs/psy")
 file.copy("psy","docs",recursive=TRUE)
 # stills go in img

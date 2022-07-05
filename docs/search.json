@@ -1,0 +1,156 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "PsychoPy Training",
+    "section": "",
+    "text": "This is training in PsychoPy, for the July 2022 cohort, w/c 11th July 2022.\nLast compiled Tuesday 05 July 2022 at 12:06:31"
+  },
+  {
+    "objectID": "part-one.html",
+    "href": "part-one.html",
+    "title": "Part One: Cats and Dogs",
+    "section": "",
+    "text": "Doing this might seem trivial but doing this gives us a way to cover the following topics:\n\nHow to present text where you know in advance what the content will be - like instructions to the participant at the start of the experiment.\nHow to vary the duration that the text is presented for.\nHow to vary the properties of the text (font, colour, size, location)\nHow to use the basic building blocks of a PsychoPy experiment - its Routines and Components\nHow to collect a response from the participant; record its RT; and evaluate it for accuracy.\nHow to present an image (when you don’t know in advance what its content should be because the order of presentation should be randomised over trials) [using a spreadsheet to supply the image filenames and handle randomisation]\nHow to present many stimuli over the course of an experiment without creating a new image every time - by using a loop over a single stimulus Component.\n[How to vary the properties of the image like position, size, rotation so that they can be different on different trials]\nHow to show feedback whose content differs according to the response given on each trial."
+  },
+  {
+    "objectID": "instructions-routine.html",
+    "href": "instructions-routine.html",
+    "title": "1  Instructions Routine",
+    "section": "",
+    "text": "We then add:\n\ninstructions to the participant about the task and which buttons to press - including an instruction to press space to continue.\na keyboard component so the participant can press space to continue\n\nDuring the course, I will show you live in PsychoPy while sharing my screen how to build this up. This website is intended to be used for reference after the course though, so I include a screencast of me building this up in Figure 1.1 below.\n\n\n\n\n\n\n\nTip\n\n\n\nAll the screencasts in this document can be viewed full-screen using the standard YouTube-style controls in the bottom-right:\n\n\n\n\n\n\nFigure 1.1: How to add instructions to the participant and let them press space to continue\n\n\n\nDuring the course, you should reproduce this partial experiment on your own machine. The best advice is to build it up bit by bit yourself. However I will include links to download partial experiments and complete experiments every now and then in this document. See for example the blue box below. The links will be to zip files which you must extract properly before opening: in Windows right-click on the zip file and do “extract all”, then use the folder that appears without the ‘.zip’ file extension\n\n\n\n\n\n\nDownload\n\n\n\nClick file1 to download the psyexp so far. Notice that these files have fullscreen unticked: you should change this by ticking the fullscreen box for real experiments. I’m only unticking fullscreen so that my screencast software can see the window.\n\n\nFigure 1.2 is a screencast of PsychoPy running this (partial) experiment on my machine.\n\n\n\n\nFigure 1.2: Runtime\n\n\n\n\n\n\n\n\n‘.psyexp’ is the file extension for a PsychoPy experiment, and in this document we use ‘psyexp’ to refer to PsychoPy experiments in the same way as we use ‘jpeg’ to refer to images with ‘.jpeg’ extensions and so on↩︎"
+  },
+  {
+    "objectID": "trial-procedure.html",
+    "href": "trial-procedure.html",
+    "title": "2  Trial Procedure",
+    "section": "",
+    "text": "On each trial we want to present one of our animal images for some duration during which the participant has the chance to type a response. If they don’t respond in time, we want the trial to time out, to encourage quick responses. Let’s say we want the duration to be one second, so it’s: “display the image for one second then take it off the screen, and they can only respond while the image is on screen.”\nWe want to record the RT and evaluate the response for correctness.\nWe want to add feedback saying “CORRECT!” in green ink, or “WRONG!” in red ink, or “RESPOND FASTER!” in black ink if they timed out.\nThen we’ll have an inter-trial interval of one second, then start the next trial.1 We’ll run ten trials, and use 5 cats and 5 dogs.\n\n\n\n\n\nIt’s actually better to put the inter-trial interval before the trial. If you do it this way, then the inter-trial interval can be used to prepare the image for the trial – which is good because it improves the consistency of the stimulus duration.↩︎"
+  },
+  {
+    "objectID": "trial-sequence.html",
+    "href": "trial-sequence.html",
+    "title": "3  Trial Sequence",
+    "section": "",
+    "text": "If we do supply the expected answer like this, then, since everything we put in the input spreadsheet is available to the code at runtime, we can say things like the following to evaluate the response for accuracy:\n\nif response.keys:\n  if response.keys == expected_answer:\n    feedback.text=\"CORRECT!\"\n    feedback.text=\"green\"\n  if response_keys != expected_answer:\n    feedback.text=\"WRONG!\"\n    feedback.text=\"red\"\nelse:\n  feedback.text=\"Timeout - please respond faster!\"\n  feedback.text=\"black\"\n\n\n\n\n\n\nIf you want, say, the same trial contents but just repeated 10 times, there is a way to do it with one row representing that trial, and then telling PsychoPy to run the spreadsheet 10 times - but the ‘one row per trial’ way always works so it’s better to learn that way first↩︎\nmust not have any spaces in the column’s header↩︎"
+  },
+  {
+    "objectID": "stimulus-files.html",
+    "href": "stimulus-files.html",
+    "title": "4  Stimulus Files",
+    "section": "",
+    "text": "We need to track down images of 5 cats and 5 dogs, and then name them according to the scheme in Figure 3.1\nIn Figure 4.1 are a couple of examples of the ones we’ll use.\nWe use a PsychoPy image component to display an image (Figure 4.2).\nWe can set various properties of the image, including size and position.\nThe PsychoPy co-ordinate system has (0,0) at screen centre. Negative values represent lower and more leftwards places; Positive value correspond with higher and more rightwards places.\nThe size parameter is expressed, not as a single number to be used as a multiplier to scale the picture up and down by, but as an x value and a y value indicating how wide and tall the image should be presented. The default is a square image, 0.5 units of screen height by 0.5 units of screen height.1\nFrom eye-balling the example pictures above in Figure 4.1 we can see that they are not square. If we don’t set custom size the images will look odd, squashed in from the sides.\nHow do we determine the custom size values in such a way that the stimuli will show at their original aspect ratio?\nFirst we need to access the dimensions of the image file. One way to do this is to use Windows Explorer which has a column for dimensions that is hidden by default."
+  },
+  {
+    "objectID": "stimulus-files.html#aspect-ratio",
+    "href": "stimulus-files.html#aspect-ratio",
+    "title": "4  Stimulus Files",
+    "section": "4.1 Aspect ratio",
+    "text": "4.1 Aspect ratio\nAll our images are the same dimensions, 612 wide x 408 tall. That is an aspect ratio of 612/408 which is 1.5:1. So, as long as the width is 1.5 times the height, the pictures will show at their native aspect ratio.\nI thought the height of 0.5 was about right, so I just made the width be 1.5 * 0.5 = 0.75 for the width and 0.5 for the height, see Figure 4.4\n\n\n\n\n\nFigure 4.4: Setting the correct aspect ratio"
+  },
+  {
+    "objectID": "making-the-trial-loop.html",
+    "href": "making-the-trial-loop.html",
+    "title": "5  Making the trial loop",
+    "section": "",
+    "text": "add trials Routine\n\nadd image\n\nset duration (1.0 seconds)\nuse $animal_image for image.Image field and change drop-down from constant to set every repeat\n\nadd keyboard\n\nset allowed_keys field to 'c','d'\nset duration to 1.0 seconds - now they won’t be able to respond after the image disappears. The keyboard’s start and stop times are the same as the image’s\n\nenclose with loop\n\nThe Conditions field is where you put the name of the spreadsheet\nleave ‘random’ - the default - but notice that sequential is also available\nchange the default from 5 to 1 (because we only want to run the ten trials once)\n\n\n\n\n\n\n\nFigure 5.1: Making the trial loop\n\n\n\nSee Figure 5.2 for the runtime as things stand now.\n\n\n\n\nFigure 5.2: Running the basic loop\n\n\n\n\n\n\n\n\n\nDownload\n\n\n\nClick file2 to download the psyexp in a crude but working state."
+  },
+  {
+    "objectID": "finessing-the-trial-loop.html",
+    "href": "finessing-the-trial-loop.html",
+    "title": "6  Finessing the Trial Loop",
+    "section": "",
+    "text": "However we can improve some things quite easily going into the file3.psyexp\n\nadd an inter-trial interval (0.5 seconds)\nset the images to be prepared during the inter-trial interval (better stimulus duration consistency)\ngive the components names that will help us understand better what they do when we see them later in results files\nmake the stimulus duration longer (the images were going by without responses because the duration was too short) - try 1.5 seconds.\n\nFigure 6.1 shows how to do this finessing.\n\n\n\n\nFigure 6.1: Finessing the trial loop\n\n\n\nFigure 6.2 shows the runtime now after a little finessing.\n\n\n\n\nFigure 6.2: Finessing the trial loop - runtime\n\n\n\n\n\n\n\n\n\nDownload\n\n\n\nClick file3 to download the file3 psyexp as it stands after a little finessing."
+  },
+  {
+    "objectID": "keyboard-handling.html",
+    "href": "keyboard-handling.html",
+    "title": "7  Keyboard Handling",
+    "section": "",
+    "text": "key_resp.keys: a list of the allowed keys that were pressed while the keyboard component was listening for key-presses. Usually this list only has one member, but it’s possible to collect multiple key-presses.\nkey_resp.rt: simply RT, in seconds, i.e., how long the keyboard component was active for until an allowed key was pressed\nkey_resp.corr: accuracy coded 0 or 1, but it only exists in cases where you have requested it using the Store Correct tick-box of the keyboard component in the data tab, and only then if you also supply the correct response in the Correct answer field (see screenshot)\n\n\n\n\nIn our file3.psyexp, we have supplied the correct answer on each trial in the column of the input spreadsheet called $expected_answer. If we then tick Store correct for the keyboard component in the stimulus presentation Routine, and fill out the field Correct answer, PsychoPy will create a variable response.corr that holds the accuracy on that trial as 0 or 1, and it will write that variable as a a column in the results file, with an entry on each row that was a trial.\nFigure 7.1 shows how to set up the keyboard to record accuracy.\n\n\n\n\nFigure 7.1: Set up the keyboard to record accuracy\n\n\n\nFigure 7.2 shows what it looks like in the results file after enabling accuracy recording.\n\n\n\n\n\nFigure 7.2: Results file showing variables from the keyboard response"
+  },
+  {
+    "objectID": "implementing-feedback.html",
+    "href": "implementing-feedback.html",
+    "title": "8  Feedback",
+    "section": "",
+    "text": "There are several ways to implement feedback in PsychoPy for stimulus-response experiments like our cats and dogs example. What they have in common is that they all assume that the response.corr variable that we looked at in Chapter 7 is available.\nOne style is to present the participant with text indicating whether they respond correctly or not for each trial.\nWithin that style there is more than one way to implement the feedback in PsychoPy."
+  },
+  {
+    "objectID": "implementing-feedback.html#average-rt-and-accuracy",
+    "href": "implementing-feedback.html#average-rt-and-accuracy",
+    "title": "8  Feedback",
+    "section": "8.1 Average RT and accuracy",
+    "text": "8.1 Average RT and accuracy\nfile7.psyexp includes a screen at the end of each trial that presents the cumulative mean RT and mean accuracy.\nthe code for this is part of the evaluate_response component that we used in method one of providing feedback, where we had a single feedback component and used variables to decide what it should show.\n\nif response.keys:\n    if response.corr==1:\n        sum_ac=sum_ac+1\n        sum_rt=sum_rt+response.rt\n        feedback_colour=\"green\"\n        feedback_text=\"CORRECT!\"\n    if response.corr==0:\n        sum_rt=sum_rt+response.rt\n        feedback_colour=\"red\"\n        feedback_text=\"Wrong!\"\nelse:\n    sum_rt=sum_rt+2.0\n    feedback_colour=\"black\"\n    feedback_text=\"Timed out - please respond faster!\"\nmean_ac=sum_ac/(trials.thisTrialN+1)\nmean_rt=sum_rt/(trials.thisTrialN+1)"
+  },
+  {
+    "objectID": "part-two.html",
+    "href": "part-two.html",
+    "title": "Part Two: User Requests",
+    "section": "",
+    "text": "This is requests."
+  },
+  {
+    "objectID": "using-sound.html",
+    "href": "using-sound.html",
+    "title": "9  Using Sound",
+    "section": "",
+    "text": "Sometimes we want to play a sound file while a visual stimulus is presented1. For example, there are people in the department who investigate the various effects of different kinds of background sounds on reading comprehension. To do this, we need to present text for them to read while playing sound files into their headphones.\nSee the experiment in the folder psy/sound1 for an example.\n\n\n\n\n\nFede’s request↩︎"
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Peirce, Jonathan, Rebecca Hirst, and Michael MacAskill. 2022.\nBuilding Experiments in PsychoPy. Sage."
+  },
+  {
+    "objectID": "authoring-tools.html",
+    "href": "authoring-tools.html",
+    "title": "Appendix A — Authoring Tools",
+    "section": "",
+    "text": "There are five types of callouts:\n\nnote; warning; important; tip; caution.\n\n\n\n\n\n\n\nNote\n\n\n\nThis is a callout-note.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nThis is a callout-warning.\n\n\n\n\n\n\n\n\nImportant\n\n\n\nThis is a callout-important.\n\n\n\n\n\n\n\n\nTip\n\n\n\nThis is a callout-tip.\n\n\n\n\n\n\n\n\nDanger\n\n\n\nThis is a callout-caution that actually says danger\n\n\nYou can issue a second-level header inside the callout to edit the text content at the top of the box in the coloured bit: here the header is hash hash Tip Your Waiter, and Tip Your Waiter is considered to be a caption\n\n\n\n\n\n\nTip Your Waiter\n\n\n\nThis is an example of a callout with a caption.\n\n\nYou can imitate rmarkdown’s code=‘hide’ approach to get boxes of text that reveal on being clicked - in quarto jargon this is collapse done by adding the chunk option collapse=\"true\" to get collapsed until clicked\n\n\n\n\n\n\nClick to reveal the answer\n\n\n\n\n\nThe answer is 42\n\n\n\nor collapse=\"false\" to get expanded until dismissed.\n\n\n\n\n\n\nClick to hide the code\n\n\n\n\n\nThis code gets rolled up when you click"
+  },
+  {
+    "objectID": "authoring-tools.html#citations",
+    "href": "authoring-tools.html#citations",
+    "title": "Appendix A — Authoring Tools",
+    "section": "A.2 Citations",
+    "text": "A.2 Citations\nHere’s an example of quarto citation syntax:\n“Have a look in the PsychoPy textbook (Peirce, Hirst, and MacAskill 2022, 34–35) for more information.”"
+  },
+  {
+    "objectID": "authoring-tools.html#sec-crossref",
+    "href": "authoring-tools.html#sec-crossref",
+    "title": "Appendix A — Authoring Tools",
+    "section": "A.3 Cross-references",
+    "text": "A.3 Cross-references\nThis is how you do a cross-reference - see Section A.3."
+  },
+  {
+    "objectID": "authoring-tools.html#definition-lists",
+    "href": "authoring-tools.html#definition-lists",
+    "title": "Appendix A — Authoring Tools",
+    "section": "A.4 Definition Lists",
+    "text": "A.4 Definition Lists\n\nTerm 1\n\nDefinition 1\n\nTerm 2\n\nDefinition 2a\n\n\nDefinition 2b"
+  },
+  {
+    "objectID": "authoring-tools.html#margin-note",
+    "href": "authoring-tools.html#margin-note",
+    "title": "Appendix A — Authoring Tools",
+    "section": "A.5 Margin Note",
+    "text": "A.5 Margin Note\n\n\nThis is a margin note"
+  },
+  {
+    "objectID": "authoring-tools.html#footnotes",
+    "href": "authoring-tools.html#footnotes",
+    "title": "Appendix A — Authoring Tools",
+    "section": "A.6 Footnotes",
+    "text": "A.6 Footnotes\nThis shows how to use a footnote1"
+  },
+  {
+    "objectID": "authoring-tools.html#unnumbered-sections",
+    "href": "authoring-tools.html#unnumbered-sections",
+    "title": "Appendix A — Authoring Tools",
+    "section": "A.7 Unnumbered sections",
+    "text": "A.7 Unnumbered sections\nUse this on the same line as the section definition, after the section definition: >{.unnumbered}\n\n\n\n\nPeirce, Jonathan, Rebecca Hirst, and Michael MacAskill. 2022. Building Experiments in PsychoPy. Sage."
+  }
+]
