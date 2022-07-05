@@ -1,0 +1,9 @@
+# Using Sound
+
+PsychoPy has methods for playing back sound files; and recording sound files generated during the experiment (like when a Stroop participant says the name of the ink colour out loud - a recent update in PsychoPy allows for spoken responses to be transcribed using speech-to-text).
+
+Sometimes we want to play a sound file while a visual stimulus is presented^[Fede's request]. For example, there are people in the department who investigate the various effects of different kinds of background sounds on reading comprehension. To do this, we need to present text for them to read while playing sound files into their headphones.
+
+
+
+See the experiment in the folder psy/sound1 for an example.

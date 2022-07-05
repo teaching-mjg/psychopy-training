@@ -7,7 +7,7 @@ project:
 #     fig-prefix: Screencast
 
 book:
-  title: "PsychoPy Training 1"
+  title: "PsychoPy Training"
   author: "Matt Green"
   date: last-modified
   date-format: "dddd D MMM YYYY [at] HH[:]mm[:]ss"
@@ -16,13 +16,17 @@ book:
     - index.qmd
     - part: part-one.qmd
       chapters:
-        - cats-dogs.qmd
-        #- hello-world.qmd
-        #- add-response.qmd
-        #- different_text_per_trial.qmd
-        #- feedback.qmd
-    #- part: requests.qmd
-      #chapters:
+        - instructions-routine.qmd
+        - trial-procedure.qmd
+        - trial-sequence.qmd
+        - stimulus-files.qmd
+        - making-the-trial-loop.qmd
+        - finessing-the-trial-loop.qmd
+        - keyboard-handling.qmd
+        - implementing-feedback.qmd
+    - part: part-two.qmd
+      chapters:
+        - using-sound.qmd
         #- present-images-sequentially-in-different-locations.qmd
         #- online.qmd
         #- randomising.qmd
@@ -37,8 +41,9 @@ bibliography:
 format:
   html:
     theme: 
-      dark: [cosmo, theme-dark.scss]
       light: cosmo
+      dark: [cosmo, theme-dark.scss]
+      
       
 editor: 
   source

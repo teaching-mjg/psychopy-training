@@ -1,0 +1,69 @@
+# Feedback
+
+There are several ways to implement feedback in PsychoPy for stimulus-response experiments like our cats and dogs example. What they have in common is that they all assume that the `response.corr` variable that we looked at in @sec-kbcorrectness is available.
+
+One style is to present the participant with text indicating whether they respond correctly or not for each trial.
+
+Within that style there is more than one way to implement the feedback in PsychoPy.
+
+* Method 1: One way is to insert a feedback Routine after the Trial Routine that contains a single Text Component whose contents and colour are set to variables  whose values we calculate using a Code component, based on the value of `response.corr`. See @fig-fbackmethod1 for a screencast of writing this method., and see @fig-fbackmethod1runtime for the runtime. This is file5.psyexp.
+```{r}
+#| echo: false
+#| label: fig-fbackmethod1
+#| fig-cap: Feedback using a single text component and passing variables in for text content and text colour
+htmltools::tags$video(src = "obs/2022-07-03 03-43-24.mkv", type = "video/mp4", width="100%", controls=1)
+```
+
+```{r}
+#| echo: false
+#| label: fig-fbackmethod1runtime
+#| fig-cap: Feedback using a single text component and passing variables in for text content and text colour (runtime)
+htmltools::tags$video(src = "obs/2022-07-03 03-52-45.mkv", type = "video/mp4", width="100%", controls=1)
+```
+
+* Method 2: Another way is to insert the Feedback Routine after the Trial Routine, in the same way, but this time to create a Text component for each of the possible outcomes of the trial - normally _correct_ and _incorrect_ but also sometimes _time-out_. We then select one single outcome to display with reference to the value of `response.corr`. This is file6.psyexp.
+
+```{r}
+#| echo: false
+#| label: fig-fbackmethod2
+#| fig-cap: Feedback using multiple text components, one for each outcome, with fixed content and colour, and then supplying as the `Start` value not a time but a condition
+htmltools::tags$video(src = "obs/2022-07-03 04-17-38.mkv", type = "video/mp4", width="100%", controls=1)
+```
+
+```{r}
+#| echo: false
+#| label: fig-fbackmethod2runtime
+#| fig-cap: Feedback using multiple text components, one for each outcome, with fixed content and colour, and then supplying as the `Start` value not a time but a condition (runtime)
+htmltools::tags$video(src = "obs/2022-07-03 04-21-17.mkv", type = "video/mp4", width="100%", controls=1)
+```
+
+
+
+## Average RT and accuracy
+
+file7.psyexp includes a screen at the end of each trial that presents the cumulative mean RT and mean accuracy.
+
+the code for this is part of the `evaluate_response` component that we used in method one of providing feedback, where we had a single feedback component and used variables to decide what it should show.
+
+```{python}
+#| echo: true
+#| eval: false
+if response.keys:
+    if response.corr==1:
+        sum_ac=sum_ac+1
+        sum_rt=sum_rt+response.rt
+        feedback_colour="green"
+        feedback_text="CORRECT!"
+    if response.corr==0:
+        sum_rt=sum_rt+response.rt
+        feedback_colour="red"
+        feedback_text="Wrong!"
+else:
+    sum_rt=sum_rt+2.0
+    feedback_colour="black"
+    feedback_text="Timed out - please respond faster!"
+mean_ac=sum_ac/(trials.thisTrialN+1)
+mean_rt=sum_rt/(trials.thisTrialN+1)
+
+```
+

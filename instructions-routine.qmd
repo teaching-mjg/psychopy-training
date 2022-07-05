@@ -1,0 +1,38 @@
+# Instructions Routine
+
+We start with a blank psyexp^['.psyexp' is the file extension for a PsychoPy experiment, and in this document we use 'psyexp' to refer to PsychoPy experiments in the same way as we use 'jpeg' to refer to images with '.jpeg' extensions and so on] 
+
+We then add:
+
+* instructions to the participant about the task and which buttons to press - including an instruction to press space to continue.
+* a keyboard component so the participant can press space to continue
+
+During the course, I will show you live in PsychoPy while sharing my screen how to build this up. This website is intended to be used for reference after the course though, so I include a screencast of me building this up in  @fig-instructions_to_participant below.
+
+::: {.column-margin .callout-tip}
+All the screencasts in this document can be viewed full-screen using the standard YouTube-style controls in the bottom-right:  
+![](img/chrome_dUU1V4QI5z.png){width="50%"}
+:::
+
+```{r}
+#| echo: false
+#| label: fig-instructions_to_participant
+#| fig-cap: How to add instructions to the participant and let them press space to continue
+htmltools::tags$video(src = "obs/2022-07-02 20-49-04.mkv", type = "video/mp4", width="100%",  controls=1, muted=1)
+```
+
+During the course, you should reproduce this partial experiment on your own machine. The best advice is to build it up bit by bit yourself. However I will include links to download partial experiments and complete experiments every now and then in this document. See for example the blue box below. The links will be to zip files which you must extract properly before opening: in Windows right-click on the zip file and do "extract all", then use the folder that appears without the '.zip' file extension
+
+:::{.callout-note}
+## Download
+Click [file1](psy/file1.zip) to download the psyexp so far. Notice that these files have fullscreen unticked: you should change this by ticking the fullscreen box for real experiments. I'm only unticking fullscreen so that my screencast software can see the window.
+:::
+
+@fig-runtime001 is a screencast of PsychoPy running this (partial) experiment on my machine. 
+
+```{r}
+#| echo: false
+#| label: fig-runtime001
+#| fig-cap: Runtime
+htmltools::tags$video(src = "obs/2022-07-02 23-21-28.mkv", type = "video/mp4", width="100%", controls=1)
+```

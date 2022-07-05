@@ -1,0 +1,33 @@
+# Finessing the Trial Loop
+
+At this stage things are basically working - the trial sequence is being randomised correctly; the images come up for the right amount of time; etc.
+
+However we can improve some things quite easily going into the `file3.psyexp`
+
+* add an inter-trial interval (0.5 seconds)
+* set the images to be prepared during the inter-trial interval (better stimulus duration consistency)
+* give the components names that will help us understand better what they do when we see them later in results files
+* make the stimulus duration longer (the images were going by without responses because the duration was too short) - try 1.5 seconds.
+
+@fig-finesseTrialLoop shows how to do this finessing.
+
+```{r}
+#| echo: false
+#| label: fig-finesseTrialLoop
+#| fig-cap: Finessing the trial loop
+htmltools::tags$video(src = "obs/2022-07-03 01-38-39.mkv", type = "video/mp4", width="100%", controls=1)
+```
+
+@fig-finesseTrialLoopRunTime shows the runtime now after a little finessing.
+
+```{r}
+#| echo: false
+#| label: fig-finesseTrialLoopRunTime
+#| fig-cap: Finessing the trial loop - runtime
+htmltools::tags$video(src = "obs/2022-07-03 02-01-24.mkv", type = "video/mp4", width="100%", controls=1)
+```
+
+:::{.callout-note}
+## Download
+Click [file3](psy/file3.zip) to download the file3 psyexp as it stands after a little finessing.
+:::

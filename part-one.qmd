@@ -1,2 +1,18 @@
-# Part One
+# Part One: Cats and Dogs
+
+In this part we create a simple experiment, bit by bit, with instructions, stimuli, and responses, where the stimuli are pictures of dogs and cats, and the task is to identify whether the current trial's animal is a dog or a cat using the keyboard to press 'c' for cat or 'd' for dog. 
+
+Doing this might seem trivial but doing this gives us a way to cover the following topics:
+
+* How to present text where you know in advance what the content will be - like instructions to the participant at the start of the experiment.
+* How to vary the duration that the text is presented for.
+* How to vary the properties of the text (font, colour, size, location)
+* How to use the basic building blocks of a PsychoPy experiment - its _Routines_ and _Components_
+* How to collect a response from the participant; record its RT; and evaluate it for accuracy.
+* How to present an image (when you don't know in advance what its content should be because the order of presentation should be randomised over trials) [using a spreadsheet to supply the image filenames and handle randomisation]
+* How to present many stimuli over the course of an experiment without creating a new image every time - by using a _loop_ over a single stimulus Component.
+* [How to vary the properties of the image like position, size, rotation so that they can be different on different trials]
+* How to show feedback whose content differs according to the response given on each trial.
+
+
 

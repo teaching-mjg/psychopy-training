@@ -1,0 +1,11 @@
+# Trial Procedure
+
+We now deal with what happens after they press 'space' to continue past the instructions screen.
+
+On each trial we want to present one of our animal images for some duration during which the participant has the chance to type a response. If they don't respond in time, we want the trial to time out, to encourage quick responses. Let's say we want the duration to be one second, so it's: _"display the image for one second then take it off the screen, and they can only respond while the image is on screen."_
+
+We want to record the RT and evaluate the response for correctness.
+
+We want to add feedback saying "CORRECT!" in green ink, or "WRONG!" in red ink, or "RESPOND FASTER!" in black ink if they timed out. 
+
+Then we'll have an inter-trial interval of one second, then start the next trial.^[It's actually better to put the inter-trial interval *before* the trial. If you do it this way, then the inter-trial interval can be used to prepare the image for the trial -- which is good because it improves the consistency of the stimulus duration.] We'll run ten trials, and use 5 cats and 5 dogs.

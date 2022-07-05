@@ -1,0 +1,4 @@
+# Advanced images
+
+* sequentially
+* in different places

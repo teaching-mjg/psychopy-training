@@ -1,0 +1,61 @@
+# Stimulus Files
+
+We need to track down images of 5 cats and 5 dogs, and then name them according to the scheme in @fig-xls1
+
+In @fig-animalstimuli are a couple of examples of the ones we'll use.
+
+::: {#fig-animalstimuli layout-ncol=2}
+
+![cat1.jpg](img/stimuli/cat1.jpg){#fig-cat1}
+
+![dog4.jpg](img/stimuli/dog4.jpg){#fig-dog4}
+
+Examples of pictures of cats and dogs that we use as stimuli
+:::
+
+
+:::{.callout-note}
+## Download
+Click [stimuli](img/stimuli.zip) to download the cats and dogs pictures
+:::
+
+We use a PsychoPy `image` component to display an image (@fig-imageComponent).
+
+```{r, fig.link="img/pythonw_image_component_1dFQnwS2WD.png", echo=F, out.width="100%"}
+#| label: fig-imageComponent
+#| fig-cap: Image component
+knitr::include_graphics("img/pythonw_image_component_1dFQnwS2WD.png")
+```
+
+We can set various properties of the image, including `size` and `position`.
+
+The PsychoPy co-ordinate system has (0,0) at screen centre. Negative values represent lower and more leftwards places; Positive value correspond with higher and more rightwards places.
+
+The `size` parameter is expressed, not as a single number to be used as a multiplier to scale the picture up and down by, but as an x value and a y value indicating how wide and tall the image should be presented. The default is a square image, 0.5 units of screen height by 0.5 units of screen height.^[other units are available including number of pixels]
+
+From eye-balling the example pictures above in @fig-animalstimuli we can see that they are not square. If we don't set custom `size` the images will look odd, squashed in from the sides.
+
+How do we determine the custom `size` values in such a way that the stimuli will show at their original aspect ratio?
+
+First we need to access the dimensions of the image file. One way to do this is to use Windows Explorer which has a column for dimensions that is hidden by default.
+
+```{r}
+#| echo: false
+#| label: fig-finddimensionsofimages
+#| fig-cap: How to get the dimensions of any image
+htmltools::tags$video(src = "obs/2022-07-03 14-03-11.mkv", type = "video/mp4", width="100%",  controls=1, muted=1)
+```
+
+
+## Aspect ratio
+
+All our images are the same dimensions, 612 wide x 408 tall.
+That is an aspect ratio of 612/408 which is 1.5:1. So, as long as the width is 1.5 times the height, the pictures will show at their native aspect ratio.
+
+I thought the height of 0.5 was about right, so I just made the width be 1.5 * 0.5 = 0.75 for the width and 0.5 for the height, see @fig-aspectratioset
+
+```{r, fig.link="img/pythonw_aspectauHaJqkdrj.png", echo=F, out.width="100%"}
+#| label: fig-aspectratioset
+#| fig-cap: Setting the correct aspect ratio
+knitr::include_graphics("img/pythonw_aspectauHaJqkdrj.png")
+```

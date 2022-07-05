@@ -1,0 +1,30 @@
+# Trial Sequence
+
+::: {.column-screen-inset-right layout="[1,1]"}
+* In PsychoPy, you use a spreadsheet to define the sequence of trials in your experiment. See @fig-xls1 for a simple example. The convention is that each row of the spreadsheet after the header row corresponds to a single trial. So to plan a sequence of 10 trials we need a spreadsheet with 10 rows after the header row.^[If you want, say, the same trial contents but just repeated 10 times, there is a way to do it with one row representing that trial, and then telling PsychoPy to run the spreadsheet 10 times - but the 'one row per trial' way always works so it's better to learn that way first].
+* If the rows represent trials, how should we think about the columns? Each column is an opportunity to pass in some property of that trial. In our cats and dogs experiment, each trial is going to need an image of a cat or dog. So we make a column called, say, "animal_image"^[must not have any spaces in the column's header] which will hold the filename for the image you want to show on that trial -- so the first row of "animal_image" might contain "cat1.jpg" and the second "dog1.jpg" and so on for ten rows.
+* We also have the opportunity to use the trial sequence spreadsheet to have a column saying, for each trial, what the correct answer is based on which kind of image is being presented in the same row / trial. See the column 'expected_answer' in @fig-xls1 that contains 'c' on rows where a cat is presented and 'd' on rows where a dog is presented.
+
+```{r, fig.link="img/trial_defs_cats_dogs.png", echo=F, out.width="100%"}
+#| label: fig-xls1
+#| fig-cap: Trial Sequence File (click to view bigger)
+knitr::include_graphics("img/trial_defs_cats_dogs.png")
+```
+:::
+
+If we do supply the expected answer like this, then, since everything we put in the input spreadsheet is available to the code at runtime, we can say things like the following to evaluate the response for accuracy:
+```{python}
+#| eval: false
+#| echo: true
+if response.keys:
+  if response.keys == expected_answer:
+    feedback.text="CORRECT!"
+    feedback.text="green"
+  if response_keys != expected_answer:
+    feedback.text="WRONG!"
+    feedback.text="red"
+else:
+  feedback.text="Timeout - please respond faster!"
+  feedback.text="black"
+```
+

@@ -1,4 +1,4 @@
-# authoring tools
+# Authoring Tools
 
 ## Callouts
 
@@ -76,3 +76,8 @@ This is a margin note
 ## Footnotes
 
 This shows how to use a footnote^[This is the content of the footnote]
+
+## Unnumbered sections
+
+Use this on the same line as the section definition, after the section definition:
+>{.unnumbered}

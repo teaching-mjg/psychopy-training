@@ -1,0 +1,31 @@
+# Keyboard Handling {#sec-kbcorrectness}
+
+The keyboard component has 3 attributes. They are named using the name of the keyboard component (which is `key_resp` by default).
+
+1. `key_resp.keys`: a list of the allowed keys that were pressed while the keyboard component was listening for key-presses. Usually this list only has one member, but it's possible to collect multiple key-presses.
+2. `key_resp.rt`: simply RT, in seconds, i.e., how long the keyboard component was active for until an allowed key was pressed
+3. `key_resp.corr`: accuracy coded 0 or 1, but it only exists in cases where you have requested it using the `Store Correct` tick-box of the keyboard component in the `data` tab, and only then if you also supply the correct response in the `Correct answer` field (see screenshot)
+    * ![](img/pythonw_E2393TEDCF.png){width="100%"}
+    
+In our `file3.psyexp`, we have supplied the correct answer on each trial in the column of the input spreadsheet called `$expected_answer`. If we then tick `Store correct` for the keyboard component in the stimulus presentation Routine, and fill out the field `Correct answer`, PsychoPy will create a variable `response.corr` that holds the accuracy on that trial as 0 or 1, and it will write that variable as a a column in the results file, with an entry on each row that was a trial.
+
+
+@fig-finessekb shows how to set up the keyboard to record accuracy.
+
+```{r}
+#| echo: false
+#| label: fig-finessekb
+#| fig-cap: Set up the keyboard to record accuracy
+htmltools::tags$video(src = "obs/2022-07-03 03-13-51.mkv", type = "video/mp4", width="100%", controls=1)
+```
+
+@fig-accresults shows what it looks like in the results file after enabling accuracy recording.
+
+```{r out.width="100%"}
+#| echo: false
+#| label: fig-accresults
+#| fig-cap: Results file showing variables from the keyboard response
+knitr::include_graphics("img/EXCEL_AdOfuIYoer.png")
+```
+
+

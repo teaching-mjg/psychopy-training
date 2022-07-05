@@ -1,0 +1,36 @@
+# Making the trial loop
+
+See @{fig-mkTrialLoop} for:
+
+* add trials Routine
+  * add image
+    * set duration (1.0 seconds)
+    * use `$animal_image` for `image.Image` field and change drop-down from _constant_ to _set every repeat_
+  * add keyboard
+    * set allowed_keys field to `'c','d'`
+    * set duration to 1.0 seconds - now they won't be able to respond after the image disappears. The keyboard's start and stop times are the same as the image's
+  * enclose with loop
+    * The `Conditions` field is where you put the name of the spreadsheet
+    * leave 'random' - the default - but notice that sequential is also available
+    * change the default from 5 to 1 (because we only want to run the ten trials once)
+
+```{r}
+#| echo: false
+#| label: fig-mkTrialLoop
+#| fig-cap: Making the trial loop
+htmltools::tags$video(src = "obs/addTrialsLoop.mp4", type = "video/mp4", width="100%", controls=1)
+```
+
+See @fig-runTrialLoop for the runtime as things stand now.
+
+```{r}
+#| echo: false
+#| label: fig-runTrialLoop
+#| fig-cap: Running the basic loop
+htmltools::tags$video(src = "obs/2022-07-03 01-27-54.mkv", type = "video/mp4", width="100%", controls=1)
+```
+
+:::{.callout-note}
+## Download
+Click [file2](psy/file2.zip) to download the psyexp in a crude but working state.
+:::
