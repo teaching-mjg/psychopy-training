@@ -1,3 +1,49 @@
 # Conditional branching
 
-How to make one of several things happen depending on something that happened earlier.
+**How to make one of several things happen depending on something that happened earlier.**
+
+
+Conditional branching is a bit counter-intuitive in PsychoPy.
+
+Essentially you have to create all possible branches and then say that you want them all to happen zero times -- except the chosen one.
+
+To do this we take advantage of the way that trial control spreadsheet work in PsychoPy. When you make a loop you supply it with a spreadsheet that controls what happens on the loop (which image should be shown each trial; what the correct response is; etc.)
+
+One of the parameters of the trial control spreadsheet indicates how many times the spreadsheet should be run. In a typical situation, you might have, say, 10 trials defined in a single spreadsheet, where the spreadsheet should be run once. That would result in ten trials. If you said that you wanted the spreadsheet to be run 3 times then you would end up with 30 trials, being 3 repetitions of each trial defined in the spreadsheet.
+
+Like many parameters in PsychoPy, this one, `nReps` can be set to a variable value, which means among other things that an outer loop can define how many times an inner loop should run.
+
+For our purposes though, consider what happens if that variable has the value $0$. Under these circumstances no trials are run.
+
+So, to implement conditional branching, you create every branch in its own loop, and set `nReps` to a variable unique to that loop that can be set at some earlier stage in the experiment.
+
+-----
+
+In the example, the experiment is to rate pictures of animals for typicality using a slider. We ask the participant at the start whether they want to rate cats or dogs, and if they respond `cats` you show them only cats; and if they respond 'dogs' you show them only dogs.
+
+In this case with only 2 branches, you have to create a loop for showing cats and a loop for showing dogs^[In fact, in this simple case where the task is the same in each branch, you could implement the same experiment by having a single loop that merely takes the input spreadsheet name depending on the initial choice. But the method shown here scales up for loops that do different tasks.]. The cats loop runs `nRepsCats` times and the dogs loop runs `nRepsDogs` times.
+
+Then in the first part of the experiment where you collect their preference, you set the selected animal's loop to run once and the non-selected animal's loop to run zero times.
+
+```{python}
+#| eval: false
+if mouse.isPressedIn(cats_option):
+    input_xls = "cats.xlsx"
+    nRepsCats=1
+    nRepsDogs=0
+    continueRoutine=False
+if mouse.isPressedIn(dogs_option):
+    input_xls = "dogs.xlsx"
+    nRepsCats=0
+    nRepsDogs=1
+    continueRoutine = False
+
+```
+
+:::{.callout-note}
+## Download
+Click [file10_branching](psy/file10_branching) to download the conditional branching demo psyexp.
+:::
+
+
+

@@ -2,3 +2,9 @@
 
 Some considerations for running online ...
 
+* Need a pavlovia account using uni email
+* Need to be logged in in the PsychoPy interface
+* Write experiment using autoJs as much as possible (and "Both") for things that don't auto-translate
+* Use "Sync" to push experiment up
+* Change from 'piloting' to 'running'
+* ...

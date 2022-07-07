@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "PsychoPy Training",
     "section": "",
-    "text": "This is training in PsychoPy, for the July 2022 cohort, w/c 11th July 2022.\nLast compiled Thursday 07 July 2022 at 17:19:40"
+    "text": "This is training in PsychoPy, for the July 2022 cohort, w/c 11th July 2022.\nLast compiled Thursday 07 July 2022 at 19:30:19"
   },
   {
     "objectID": "part-one.html",
@@ -130,7 +130,7 @@
     "href": "using-images.html#sec-imgfname",
     "title": "11  Advanced images",
     "section": "11.1 The image’s filename.",
-    "text": "11.1 The image’s filename.\n\nWe start with a list of filenames. This happens once at the start of the experiment outside the trial loop – we don’t want to re-randomise the list each trial.\n\nimage_list = [\"cat1.jpg\",\"cat2.jpg\",\"cat3.jpg\",\"cat4.jpg\",\"cat5.jpg\",\"dog1.jpg\",\"dog2.jpg\",\"dog3.jpg\",\"dog4.jpg\",\"dog5.jpg\"]\n\nThen we shuffle the list.\n\nimport random\nfrom random import shuffle\nshuffle(image_list)\n\n\n['dog4.jpg', 'dog1.jpg', 'cat2.jpg', 'cat5.jpg', 'dog5.jpg', 'dog2.jpg', 'dog3.jpg', 'cat1.jpg', 'cat4.jpg', 'cat3.jpg']\n\n\n\nThat shuffled list is the random sequence for this participant. The next participant will get a different shuffle of the original list.\nNow we can index into that list using the current trial number (\\(n\\)) to pick out the \\(n^{th}\\) element of the list to be the filename for the current trial. So let’s say we have a trial counter called trialn, and that we’re on the 4th trial. The following picks out the 4th element in the shuffled list, which has the index \\(3\\) because indexes start at 0 in python.\n\n\n\ntrialn = 4\ncurrent_image = image_list[trialn-1]\nprint(current_image)\n\ncat5.jpg"
+    "text": "11.1 The image’s filename.\n\nWe start with a list of filenames. This happens once at the start of the experiment outside the trial loop – we don’t want to re-randomise the list each trial.\n\nimage_list = [\"cat1.jpg\",\"cat2.jpg\",\"cat3.jpg\",\"cat4.jpg\",\"cat5.jpg\",\"dog1.jpg\",\"dog2.jpg\",\"dog3.jpg\",\"dog4.jpg\",\"dog5.jpg\"]\n\nThen we shuffle the list.\n\nimport random\nfrom random import shuffle\nshuffle(image_list)\n\n\n['dog4.jpg', 'dog2.jpg', 'dog1.jpg', 'cat3.jpg', 'cat1.jpg', 'cat5.jpg', 'dog5.jpg', 'dog3.jpg', 'cat4.jpg', 'cat2.jpg']\n\n\n\nThat shuffled list is the random sequence for this participant. The next participant will get a different shuffle of the original list.\nNow we can index into that list using the current trial number (\\(n\\)) to pick out the \\(n^{th}\\) element of the list to be the filename for the current trial. So let’s say we have a trial counter called trialn, and that we’re on the 4th trial. The following picks out the 4th element in the shuffled list, which has the index \\(3\\) because indexes start at 0 in python.\n\n\n\ntrialn = 4\ncurrent_image = image_list[trialn-1]\nprint(current_image)\n\ncat3.jpg"
   },
   {
     "objectID": "using-images.html#sec-imglocn",
@@ -147,18 +147,18 @@
     "text": "Here we discuss how to use python’s random module, especially random.shuffle\nrandom.shuffle shuffles in place. That means that the original sequence is shuffled.\nJavascript shuffle…\nThe PsychoPy writers have put some work into automatically translating from python to javascript, which is the code that runs in a browser.\nThat means that when you type random.shuffle the auto-translator will replace the javascript side with util.shuffle. util isn’t actually a thing in javascript, it’s a helper function provided by PsychoPy.\nThe auto-translator can’t cope with all of the random library from python though.\nFor example, in the images demo, we wanted to generate a random floating-point number between -0.25 and 0.25. That was easy in python but it doesn’t auto-translate.\nThat’s manageable though because instead of doing auto>js you can do both and supply modified javascript. This is the javascript you need to replace the python in that example. Notice that we have to define a function in the javascript side (lines 2 to 6) because javascript doesn’t have python’s native uniform function that allows you to pass in the “between” values. Then when you call uniform on the python side (lines 15 and 16), you call the supplied function instead on the javascript side (getRandomFloat)\n\n\n\n# python side\n\n\n\n\n\ntrialn = trialn + 1\nthis_image = image_list[trialn]\nthis_aspect_ratio = [0.75, 0.5]\nthis_size = [0.5, 0.5]\nmin_value_x = -0.375\nmax_value_x = 0.375\nmin_value_y = -0.25\nmax_value_y = 0.25\nthis_position_x = uniform(min_value_x, max_value_x)\nthis_position_y = uniform(min_value_y, max_value_y)\nimage.image = this_image\nimage.size = this_aspect_ratio\nimage.pos = [this_position_x, this_position_y]\n\n\n# javascript side\nfunction getRandomFloat(min, max, decimals) {\n    const n = (Math.random() * (max - min) + min).toFixed(decimals);\n    return n;\n  }\n  \ntrialn = (trialn + 1);\nthis_image = image_list[trialn];\nthis_aspect_ratio = [0.75, 0.5];\nthis_size = [0.5, 0.5];\nmin_value_x = (- 0.375);\nmax_value_x = 0.375;\nmin_value_y = (- 0.25);\nmax_value_y = 0.25;\nthis_position_x = getRandomFloat(min_value_x, max_value_x, 3);\nthis_position_y = getRandomFloat(min_value_y, max_value_y, 3);\nimage.image = this_image;\nimage.size = this_aspect_ratio;\nimage.pos = [this_position_x, this_position_y];"
   },
   {
-    "objectID": "online.html",
-    "href": "online.html",
-    "title": "13  Online",
-    "section": "",
-    "text": "Some considerations for running online …"
-  },
-  {
     "objectID": "conditional-branching.html",
     "href": "conditional-branching.html",
-    "title": "14  Conditional branching",
+    "title": "13  Conditional branching",
     "section": "",
-    "text": "How to make one of several things happen depending on something that happened earlier."
+    "text": "Conditional branching is a bit counter-intuitive in PsychoPy.\nEssentially you have to create all possible branches and then say that you want them all to happen zero times – except the chosen one.\nTo do this we take advantage of the way that trial control spreadsheet work in PsychoPy. When you make a loop you supply it with a spreadsheet that controls what happens on the loop (which image should be shown each trial; what the correct response is; etc.)\nOne of the parameters of the trial control spreadsheet indicates how many times the spreadsheet should be run. In a typical situation, you might have, say, 10 trials defined in a single spreadsheet, where the spreadsheet should be run once. That would result in ten trials. If you said that you wanted the spreadsheet to be run 3 times then you would end up with 30 trials, being 3 repetitions of each trial defined in the spreadsheet.\nLike many parameters in PsychoPy, this one, nReps can be set to a variable value, which means among other things that an outer loop can define how many times an inner loop should run.\nFor our purposes though, consider what happens if that variable has the value \\(0\\). Under these circumstances no trials are run.\nSo, to implement conditional branching, you create every branch in its own loop, and set nReps to a variable unique to that loop that can be set at some earlier stage in the experiment.\n\nIn the example, the experiment is to rate pictures of animals for typicality using a slider. We ask the participant at the start whether they want to rate cats or dogs, and if they respond cats you show them only cats; and if they respond ‘dogs’ you show them only dogs.\nIn this case with only 2 branches, you have to create a loop for showing cats and a loop for showing dogs1. The cats loop runs nRepsCats times and the dogs loop runs nRepsDogs times.\nThen in the first part of the experiment where you collect their preference, you set the selected animal’s loop to run once and the non-selected animal’s loop to run zero times.\nif mouse.isPressedIn(cats_option):\n    input_xls = \"cats.xlsx\"\n    nRepsCats=1\n    nRepsDogs=0\n    continueRoutine=False\nif mouse.isPressedIn(dogs_option):\n    input_xls = \"dogs.xlsx\"\n    nRepsCats=0\n    nRepsDogs=1\n    continueRoutine = False\n\n\n\n\n\n\nDownload\n\n\n\nClick file10_branching to download the conditional branching demo psyexp.\n\n\n\n\n\n\n\nIn fact, in this simple case where the task is the same in each branch, you could implement the same experiment by having a single loop that merely takes the input spreadsheet name depending on the initial choice. But the method shown here scales up for loops that do different tasks.↩︎"
+  },
+  {
+    "objectID": "online.html",
+    "href": "online.html",
+    "title": "14  Online",
+    "section": "",
+    "text": "Need a pavlovia account using uni email\nNeed to be logged in in the PsychoPy interface\nWrite experiment using autoJs as much as possible (and “Both”) for things that don’t auto-translate\nUse “Sync” to push experiment up\nChange from ‘piloting’ to ‘running’\n…"
   },
   {
     "objectID": "references.html",

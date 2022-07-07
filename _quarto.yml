@@ -30,8 +30,8 @@ book:
         - using-sound.qmd
         - using-images.qmd
         - randomising.qmd
-        - online.qmd
         - conditional-branching.qmd
+        - online.qmd
     - references.qmd
   appendices:
     - authoring-tools.qmd
