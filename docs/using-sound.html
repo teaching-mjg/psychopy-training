@@ -238,7 +238,28 @@ ul.task-list{list-style: none;}
 
 <p>PsychoPy has methods for playing back sound files; and recording sound files generated during the experiment (like when a Stroop participant says the name of the ink colour out loud - a recent update in PsychoPy allows for spoken responses to be transcribed using speech-to-text).</p>
 <p>Sometimes we want to play a sound file while a visual stimulus is presented<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. For example, there are people in the department who investigate the various effects of different kinds of background sounds on reading comprehension. To do this, we need to present text for them to read while playing sound files into their headphones.</p>
-<p>See the experiment in the folder psy/sound1 for an example.</p>
+<p>See the experiment in the folder <code>psy/sound1</code> for an example.</p>
+<p>In this example participants are presented with a word and asked to respond with how many syllables it contains, while one of two possible sounds are played at the same time (one of a cafe scene, one of a thunderstorm - maybe it’s more disruptive to hear speech while reading than to hear natural sounds without language).</p>
+<p>To achieve this, we use the trial definition spreadsheet to pass in the name of the soundfile on each trial; and to pass in the text of the stimulus word; and to pass in the actual number of syllables.</p>
+<ul>
+<li>In the trial routine we use a Sound component to play the soundfile. Notice that we prepare the soundfile during a blank screen at the start of each trial.</li>
+<li>We use Text components to show the stimulus word and the prompt.</li>
+<li>We use a <a href="https://www.psychopy.org/api/visual/textbox.html">Textbox</a> component to put the response on screen until the participant presses Enter.</li>
+<li>We use a Code component to check on each frame whether the response ends with Enter. If it doesn’t, we show what they have typed so far. If it does, we evaluate the response for accuracy, record the response itself; the RT; and the accuracy to the results file; and move on to the next trial.</li>
+</ul>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Download
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Click <a href="psy/sound1">sound1</a> to download the sound demo psyexp.</p>
+</div>
+</div>
 
 
 <section class="footnotes footnotes-end-of-document" role="doc-endnotes">

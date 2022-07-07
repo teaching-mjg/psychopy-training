@@ -7,3 +7,17 @@ Sometimes we want to play a sound file while a visual stimulus is presented^[Fed
 
 
 See the experiment in the folder `psy/sound1` for an example.
+
+In this example participants are presented with a word and asked to respond with how many syllables it contains, while one of two possible sounds are played at the same time (one of a cafe scene, one of a thunderstorm - maybe it's more disruptive to hear speech while reading than to hear natural sounds without language).
+
+To achieve this, we use the trial definition spreadsheet to pass in the name of the soundfile on each trial; and to pass in the text of the stimulus word; and to pass in the actual number of syllables.
+
+* In the trial routine we use a Sound component to play the soundfile. Notice that we prepare the soundfile during a blank screen at the start of each trial.
+* We use Text components to show the stimulus word and the prompt. 
+* We use a [Textbox](https://www.psychopy.org/api/visual/textbox.html) component to put the response on screen until the participant presses Enter.
+* We use a Code component to check on each frame whether the response ends with Enter. If it doesn't, we show what they have typed so far. If it does, we evaluate the response for accuracy, record the response itself; the RT; and the accuracy to the results file; and move on to the next trial.
+
+:::{.callout-note}
+## Download
+Click [sound1](psy/sound1) to download the sound demo psyexp.
+:::

@@ -10,8 +10,12 @@
 <node CREATED="1656500945743" ID="ID_1512209914" MODIFIED="1656500947747" TEXT="Marina"/>
 <node CREATED="1657192658257" ID="ID_1748652525" MODIFIED="1657192661352" TEXT="Victoria"/>
 </node>
-<node CREATED="1654775781500" ID="ID_755068109" MODIFIED="1654775823574" POSITION="right" TEXT="Simultaneous words and sounds (Fede)"/>
-<node CREATED="1654775810468" ID="ID_1488327134" MODIFIED="1654775815818" POSITION="right" TEXT="feedback (Jane)"/>
+<node CREATED="1654775781500" ID="ID_755068109" MODIFIED="1657203150541" POSITION="right" TEXT="Simultaneous words and sounds (Fede)">
+<icon BUILTIN="button_ok"/>
+</node>
+<node CREATED="1654775810468" ID="ID_1488327134" MODIFIED="1657203166692" POSITION="right" TEXT="feedback (Jane)">
+<icon BUILTIN="button_ok"/>
+</node>
 <node CREATED="1654720109621" ID="ID_1231767992" MODIFIED="1655633047546" POSITION="right" TEXT="&quot;execute once&quot; components, for e.g., breaks"/>
 <node CREATED="1655633055320" ID="ID_1406867811" MODIFIED="1656411323196" POSITION="right" TEXT="let the participant type a free text response"/>
 <node CREATED="1655900591588" ID="ID_522369515" MODIFIED="1655900605203" POSITION="right" TEXT="how to present several images sequentially, in different locations (Tara)"/>

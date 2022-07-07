@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "PsychoPy Training",
     "section": "",
-    "text": "This is training in PsychoPy, for the July 2022 cohort, w/c 11th July 2022.\nLast compiled Thursday 07 July 2022 at 12:27:13"
+    "text": "This is training in PsychoPy, for the July 2022 cohort, w/c 11th July 2022.\nLast compiled Thursday 07 July 2022 at 14:49:53"
   },
   {
     "objectID": "part-one.html",
@@ -116,7 +116,7 @@
     "href": "using-sound.html",
     "title": "10  Using Sound",
     "section": "",
-    "text": "Sometimes we want to play a sound file while a visual stimulus is presented1. For example, there are people in the department who investigate the various effects of different kinds of background sounds on reading comprehension. To do this, we need to present text for them to read while playing sound files into their headphones.\nSee the experiment in the folder psy/sound1 for an example.\n\n\n\n\n\nFede’s request↩︎"
+    "text": "Sometimes we want to play a sound file while a visual stimulus is presented1. For example, there are people in the department who investigate the various effects of different kinds of background sounds on reading comprehension. To do this, we need to present text for them to read while playing sound files into their headphones.\nSee the experiment in the folder psy/sound1 for an example.\nIn this example participants are presented with a word and asked to respond with how many syllables it contains, while one of two possible sounds are played at the same time (one of a cafe scene, one of a thunderstorm - maybe it’s more disruptive to hear speech while reading than to hear natural sounds without language).\nTo achieve this, we use the trial definition spreadsheet to pass in the name of the soundfile on each trial; and to pass in the text of the stimulus word; and to pass in the actual number of syllables.\n\nIn the trial routine we use a Sound component to play the soundfile. Notice that we prepare the soundfile during a blank screen at the start of each trial.\nWe use Text components to show the stimulus word and the prompt.\nWe use a Textbox component to put the response on screen until the participant presses Enter.\nWe use a Code component to check on each frame whether the response ends with Enter. If it doesn’t, we show what they have typed so far. If it does, we evaluate the response for accuracy, record the response itself; the RT; and the accuracy to the results file; and move on to the next trial.\n\n\n\n\n\n\n\nDownload\n\n\n\nClick sound1 to download the sound demo psyexp.\n\n\n\n\n\n\n\nFede’s request↩︎"
   },
   {
     "objectID": "using-images.html",
@@ -137,7 +137,7 @@
     "href": "online.html",
     "title": "13  Online",
     "section": "",
-    "text": "Some considerations fo rrunning online …"
+    "text": "Some considerations for running online …"
   },
   {
     "objectID": "conditional-branching.html",
