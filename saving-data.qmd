@@ -1,0 +1,9 @@
+# Saving data manually
+
+PsychoPy will save a `.csv` results file that contains most of what you will need for analysis, including the participant identifier, and things sent in using url query syntax like SONA id number and Prolific id number, and including anything in the trial definition spreadsheet.
+
+But any variables that you create using code (like subdividing incorrect responses into `incorrect` and `timeout`) need to be explicitly written to file.
+
+The command for doing this is quite simple, and auto-translates from python to javascript well.
+
+`thisExp.addData("name", value)`

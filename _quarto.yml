@@ -23,10 +23,12 @@ book:
         - making-the-trial-loop.qmd
         - finessing-the-trial-loop.qmd
         - keyboard-handling.qmd
-        - implementing-feedback.qmd
+        - feedback.qmd
+        - saving-data.qmd
     - part: part-two.qmd
       chapters:
         - using-sound.qmd
+        - using-images.qmd
         #- present-images-sequentially-in-different-locations.qmd
         #- online.qmd
         #- randomising.qmd

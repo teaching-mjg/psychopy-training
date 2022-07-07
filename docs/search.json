@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "PsychoPy Training",
     "section": "",
-    "text": "This is training in PsychoPy, for the July 2022 cohort, w/c 11th July 2022.\nLast compiled Tuesday 05 July 2022 at 12:06:31"
+    "text": "This is training in PsychoPy, for the July 2022 cohort, w/c 11th July 2022.\nLast compiled Thursday 07 July 2022 at 10:16:28"
   },
   {
     "objectID": "part-one.html",
@@ -70,18 +70,39 @@
     "text": "key_resp.keys: a list of the allowed keys that were pressed while the keyboard component was listening for key-presses. Usually this list only has one member, but it’s possible to collect multiple key-presses.\nkey_resp.rt: simply RT, in seconds, i.e., how long the keyboard component was active for until an allowed key was pressed\nkey_resp.corr: accuracy coded 0 or 1, but it only exists in cases where you have requested it using the Store Correct tick-box of the keyboard component in the data tab, and only then if you also supply the correct response in the Correct answer field (see screenshot)\n\n\n\n\nIn our file3.psyexp, we have supplied the correct answer on each trial in the column of the input spreadsheet called $expected_answer. If we then tick Store correct for the keyboard component in the stimulus presentation Routine, and fill out the field Correct answer, PsychoPy will create a variable response.corr that holds the accuracy on that trial as 0 or 1, and it will write that variable as a a column in the results file, with an entry on each row that was a trial.\nFigure 7.1 shows how to set up the keyboard to record accuracy.\n\n\n\n\nFigure 7.1: Set up the keyboard to record accuracy\n\n\n\nFigure 7.2 shows what it looks like in the results file after enabling accuracy recording.\n\n\n\n\n\nFigure 7.2: Results file showing variables from the keyboard response"
   },
   {
-    "objectID": "implementing-feedback.html",
-    "href": "implementing-feedback.html",
+    "objectID": "feedback.html",
+    "href": "feedback.html",
     "title": "8  Feedback",
     "section": "",
     "text": "There are several ways to implement feedback in PsychoPy for stimulus-response experiments like our cats and dogs example. What they have in common is that they all assume that the response.corr variable that we looked at in Chapter 7 is available.\nOne style is to present the participant with text indicating whether they respond correctly or not for each trial.\nWithin that style there is more than one way to implement the feedback in PsychoPy."
   },
   {
-    "objectID": "implementing-feedback.html#average-rt-and-accuracy",
-    "href": "implementing-feedback.html#average-rt-and-accuracy",
+    "objectID": "feedback.html#per-trial-method-1",
+    "href": "feedback.html#per-trial-method-1",
     "title": "8  Feedback",
-    "section": "8.1 Average RT and accuracy",
-    "text": "8.1 Average RT and accuracy\nfile7.psyexp includes a screen at the end of each trial that presents the cumulative mean RT and mean accuracy.\nthe code for this is part of the evaluate_response component that we used in method one of providing feedback, where we had a single feedback component and used variables to decide what it should show.\n\nif response.keys:\n    if response.corr==1:\n        sum_ac=sum_ac+1\n        sum_rt=sum_rt+response.rt\n        feedback_colour=\"green\"\n        feedback_text=\"CORRECT!\"\n    if response.corr==0:\n        sum_rt=sum_rt+response.rt\n        feedback_colour=\"red\"\n        feedback_text=\"Wrong!\"\nelse:\n    sum_rt=sum_rt+2.0\n    feedback_colour=\"black\"\n    feedback_text=\"Timed out - please respond faster!\"\nmean_ac=sum_ac/(trials.thisTrialN+1)\nmean_rt=sum_rt/(trials.thisTrialN+1)"
+    "section": "8.1 Per-trial method 1",
+    "text": "8.1 Per-trial method 1\nOne way is to insert a feedback Routine after the Trial Routine that contains a single Text Component whose contents and colour are set to variables whose values we calculate using a Code component, based on the value of response.corr. See Figure 8.1 for a screencast of writing this method., and see Figure 8.2 for the runtime. This is file5.psyexp.\n\n\n\n\nFigure 8.1: Feedback using a single text component and passing variables in for text content and text colour\n\n\n\n\n\n\n\nFigure 8.2: Feedback using a single text component and passing variables in for text content and text colour (runtime)"
+  },
+  {
+    "objectID": "feedback.html#per-trial-method-2",
+    "href": "feedback.html#per-trial-method-2",
+    "title": "8  Feedback",
+    "section": "8.2 Per-trial Method 2",
+    "text": "8.2 Per-trial Method 2\nAnother way is to insert the Feedback Routine after the Trial Routine, in the same way, but this time to create a Text component for each of the possible outcomes of the trial - normally correct and incorrect but also sometimes time-out. We then select one single outcome to display with reference to the value of response.corr. This is file6.psyexp.\n\n\n\n\nFigure 8.3: Feedback using multiple text components, one for each outcome, with fixed content and colour, and then supplying as the Start value not a time but a condition\n\n\n\n\n\n\n\nFigure 8.4: Feedback using multiple text components, one for each outcome, with fixed content and colour, and then supplying as the Start value not a time but a condition (runtime)"
+  },
+  {
+    "objectID": "feedback.html#average-rt-and-accuracy",
+    "href": "feedback.html#average-rt-and-accuracy",
+    "title": "8  Feedback",
+    "section": "8.3 Average RT and accuracy",
+    "text": "8.3 Average RT and accuracy\nfile7.psyexp includes a screen at the end of each trial that presents the cumulative mean RT and mean accuracy.\nthe code for this is part of the evaluate_response component that we used in method one of providing feedback, where we had a single feedback component and used variables to decide what it should show.\n\nif response.keys:\n    if response.corr==1:\n        sum_ac=sum_ac+1\n        sum_rt=sum_rt+response.rt\n        feedback_colour=\"green\"\n        feedback_text=\"CORRECT!\"\n    if response.corr==0:\n        sum_rt=sum_rt+response.rt\n        feedback_colour=\"red\"\n        feedback_text=\"Wrong!\"\nelse:\n    sum_rt=sum_rt+2.0\n    feedback_colour=\"black\"\n    feedback_text=\"Timed out - please respond faster!\"\nmean_ac=sum_ac/(trials.thisTrialN+1)\nmean_rt=sum_rt/(trials.thisTrialN+1)"
+  },
+  {
+    "objectID": "saving-data.html",
+    "href": "saving-data.html",
+    "title": "9  Saving data manually",
+    "section": "",
+    "text": "But any variables that you create using code (like subdividing incorrect responses into incorrect and timeout) need to be explicitly written to file.\nThe command for doing this is quite simple, and auto-translates from python to javascript well.\nthisExp.addData(\"name\", value)"
   },
   {
     "objectID": "part-two.html",
@@ -93,9 +114,16 @@
   {
     "objectID": "using-sound.html",
     "href": "using-sound.html",
-    "title": "9  Using Sound",
+    "title": "10  Using Sound",
     "section": "",
     "text": "Sometimes we want to play a sound file while a visual stimulus is presented1. For example, there are people in the department who investigate the various effects of different kinds of background sounds on reading comprehension. To do this, we need to present text for them to read while playing sound files into their headphones.\nSee the experiment in the folder psy/sound1 for an example.\n\n\n\n\n\nFede’s request↩︎"
+  },
+  {
+    "objectID": "using-images.html",
+    "href": "using-images.html",
+    "title": "11  Advanced images",
+    "section": "",
+    "text": "sequentially\nin different places"
   },
   {
     "objectID": "references.html",

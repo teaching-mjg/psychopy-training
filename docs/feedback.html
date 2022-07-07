@@ -88,7 +88,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./part-two.html" rel="next">
+<link href="./saving-data.html" rel="next">
 <link href="./keyboard-handling.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -221,7 +221,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./implementing-feedback.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Feedback</span></a>
+  <a href="./feedback.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Feedback</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./saving-data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Saving data manually</span></a>
   </div>
 </li>
     </ul>
@@ -236,7 +241,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./using-sound.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Using Sound</span></a>
+  <a href="./using-sound.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Using Sound</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./using-images.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Advanced images</span></a>
   </div>
 </li>
     </ul>
@@ -270,7 +280,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#average-rt-and-accuracy" id="toc-average-rt-and-accuracy" class="nav-link active" data-scroll-target="#average-rt-and-accuracy"> <span class="header-section-number">8.1</span> Average RT and accuracy</a></li>
+  <li><a href="#per-trial-method-1" id="toc-per-trial-method-1" class="nav-link active" data-scroll-target="#per-trial-method-1"> <span class="header-section-number">8.1</span> Per-trial method 1</a></li>
+  <li><a href="#per-trial-method-2" id="toc-per-trial-method-2" class="nav-link" data-scroll-target="#per-trial-method-2"> <span class="header-section-number">8.2</span> Per-trial Method 2</a></li>
+  <li><a href="#average-rt-and-accuracy" id="toc-average-rt-and-accuracy" class="nav-link" data-scroll-target="#average-rt-and-accuracy"> <span class="header-section-number">8.3</span> Average RT and accuracy</a></li>
   </ul>
 </nav>
     </div>
@@ -283,9 +295,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>There are several ways to implement feedback in PsychoPy for stimulus-response experiments like our cats and dogs example. What they have in common is that they all assume that the <code>response.corr</code> variable that we looked at in <a href="keyboard-handling.html"><span>Chapter&nbsp;7</span></a> is available.</p>
 <p>One style is to present the participant with text indicating whether they respond correctly or not for each trial.</p>
 <p>Within that style there is more than one way to implement the feedback in PsychoPy.</p>
-<ul>
-<li>Method 1: One way is to insert a feedback Routine after the Trial Routine that contains a single Text Component whose contents and colour are set to variables whose values we calculate using a Code component, based on the value of <code>response.corr</code>. See <a href="#fig-fbackmethod1">Figure&nbsp;<span>8.1</span></a> for a screencast of writing this method., and see <a href="#fig-fbackmethod1runtime">Figure&nbsp;<span>8.2</span></a> for the runtime. This is file5.psyexp.</li>
-</ul>
+<section id="per-trial-method-1" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="per-trial-method-1"><span class="header-section-number">8.1</span> Per-trial method 1</h2>
+<p>One way is to insert a feedback Routine after the Trial Routine that contains a single Text Component whose contents and colour are set to variables whose values we calculate using a Code component, based on the value of <code>response.corr</code>. See <a href="#fig-fbackmethod1">Figure&nbsp;<span>8.1</span></a> for a screencast of writing this method., and see <a href="#fig-fbackmethod1runtime">Figure&nbsp;<span>8.2</span></a> for the runtime. This is file5.psyexp.</p>
 <div class="cell">
 <div id="fig-fbackmethod1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -302,9 +314,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </figure>
 </div>
 </div>
-<ul>
-<li>Method 2: Another way is to insert the Feedback Routine after the Trial Routine, in the same way, but this time to create a Text component for each of the possible outcomes of the trial - normally <em>correct</em> and <em>incorrect</em> but also sometimes <em>time-out</em>. We then select one single outcome to display with reference to the value of <code>response.corr</code>. This is file6.psyexp.</li>
-</ul>
+</section>
+<section id="per-trial-method-2" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="per-trial-method-2"><span class="header-section-number">8.2</span> Per-trial Method 2</h2>
+<p>Another way is to insert the Feedback Routine after the Trial Routine, in the same way, but this time to create a Text component for each of the possible outcomes of the trial - normally <em>correct</em> and <em>incorrect</em> but also sometimes <em>time-out</em>. We then select one single outcome to display with reference to the value of <code>response.corr</code>. This is file6.psyexp.</p>
 <div class="cell">
 <div id="fig-fbackmethod2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -321,8 +334,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </figure>
 </div>
 </div>
-<section id="average-rt-and-accuracy" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="average-rt-and-accuracy"><span class="header-section-number">8.1</span> Average RT and accuracy</h2>
+</section>
+<section id="average-rt-and-accuracy" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="average-rt-and-accuracy"><span class="header-section-number">8.3</span> Average RT and accuracy</h2>
 <p>file7.psyexp includes a screen at the end of each trial that presents the cumulative mean RT and mean accuracy.</p>
 <p>the code for this is part of the <code>evaluate_response</code> component that we used in method one of providing feedback, where we had a single feedback component and used variables to decide what it should show.</p>
 <div class="cell">
@@ -531,8 +545,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./part-two.html" class="pagination-link">
-        <span class="nav-page-text">Part Two: User Requests</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./saving-data.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Saving data manually</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

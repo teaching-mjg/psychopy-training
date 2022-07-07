@@ -6,7 +6,9 @@ One style is to present the participant with text indicating whether they respon
 
 Within that style there is more than one way to implement the feedback in PsychoPy.
 
-* Method 1: One way is to insert a feedback Routine after the Trial Routine that contains a single Text Component whose contents and colour are set to variables  whose values we calculate using a Code component, based on the value of `response.corr`. See @fig-fbackmethod1 for a screencast of writing this method., and see @fig-fbackmethod1runtime for the runtime. This is file5.psyexp.
+## Per-trial method 1
+
+One way is to insert a feedback Routine after the Trial Routine that contains a single Text Component whose contents and colour are set to variables  whose values we calculate using a Code component, based on the value of `response.corr`. See @fig-fbackmethod1 for a screencast of writing this method., and see @fig-fbackmethod1runtime for the runtime. This is file5.psyexp.
 ```{r}
 #| echo: false
 #| label: fig-fbackmethod1
@@ -21,7 +23,9 @@ htmltools::tags$video(src = "obs/2022-07-03 03-43-24.mkv", type = "video/mp4", w
 htmltools::tags$video(src = "obs/2022-07-03 03-52-45.mkv", type = "video/mp4", width="100%", controls=1)
 ```
 
-* Method 2: Another way is to insert the Feedback Routine after the Trial Routine, in the same way, but this time to create a Text component for each of the possible outcomes of the trial - normally _correct_ and _incorrect_ but also sometimes _time-out_. We then select one single outcome to display with reference to the value of `response.corr`. This is file6.psyexp.
+## Per-trial Method 2
+
+Another way is to insert the Feedback Routine after the Trial Routine, in the same way, but this time to create a Text component for each of the possible outcomes of the trial - normally _correct_ and _incorrect_ but also sometimes _time-out_. We then select one single outcome to display with reference to the value of `response.corr`. This is file6.psyexp.
 
 ```{r}
 #| echo: false
