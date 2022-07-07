@@ -29,10 +29,9 @@ book:
       chapters:
         - using-sound.qmd
         - using-images.qmd
-        #- present-images-sequentially-in-different-locations.qmd
-        #- online.qmd
-        #- randomising.qmd
-        #- conditional_branching.qmd
+        - randomising.qmd
+        - online.qmd
+        - conditional-branching.qmd
     - references.qmd
   appendices:
     - authoring-tools.qmd

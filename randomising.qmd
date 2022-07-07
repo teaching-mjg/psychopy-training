@@ -1,0 +1,9 @@
+# Randomising
+
+Most randomisation can be done by setting the trial control spreadsheet to run randomly.
+
+Here we discuss how to use python's `random` module, especially `random.shuffle`
+
+`random.shuffle` shuffles _in place_. That means that the original sequence is shuffled.
+
+Javascript shuffle...

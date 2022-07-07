@@ -6,4 +6,4 @@ Sometimes we want to play a sound file while a visual stimulus is presented^[Fed
 
 
 
-See the experiment in the folder psy/sound1 for an example.
+See the experiment in the folder `psy/sound1` for an example.

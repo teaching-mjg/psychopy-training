@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "PsychoPy Training",
     "section": "",
-    "text": "This is training in PsychoPy, for the July 2022 cohort, w/c 11th July 2022.\nLast compiled Thursday 07 July 2022 at 10:16:28"
+    "text": "This is training in PsychoPy, for the July 2022 cohort, w/c 11th July 2022.\nLast compiled Thursday 07 July 2022 at 12:27:13"
   },
   {
     "objectID": "part-one.html",
@@ -124,6 +124,27 @@
     "title": "11  Advanced images",
     "section": "",
     "text": "sequentially\nin different places"
+  },
+  {
+    "objectID": "randomising.html",
+    "href": "randomising.html",
+    "title": "12  Randomising",
+    "section": "",
+    "text": "Here we discuss how to use python’s random module, especially random.shuffle\nrandom.shuffle shuffles in place. That means that the original sequence is shuffled.\nJavascript shuffle…"
+  },
+  {
+    "objectID": "online.html",
+    "href": "online.html",
+    "title": "13  Online",
+    "section": "",
+    "text": "Some considerations fo rrunning online …"
+  },
+  {
+    "objectID": "conditional-branching.html",
+    "href": "conditional-branching.html",
+    "title": "14  Conditional branching",
+    "section": "",
+    "text": "How to make one of several things happen depending on something that happened earlier."
   },
   {
     "objectID": "references.html",
