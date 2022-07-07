@@ -1,4 +1,98 @@
 # Advanced images
 
-* sequentially
-* in different places
+This chapter is in response to a request to show:
+
+* How to present several images sequentially, in different locations.
+
+One way to characterise this is to start with what is necessary per-image-showing event.
+
+You need to know:
+
+1. the image's filename: @sec-imgfname
+2. the image's location and size (aspect ratio) @sec-imglocn
+
+I'll assume that we have a set of images, and that we want to pick one at random each trial (so, each participant sees a different order of images). 
+
+I'll assume that each image could go anywhere on screen, so its position is chosen randomly each time it is presented.
+
+I'll assume that we only want to show one image on each trial for the first example.
+
+
+## The image's filename. {#sec-imgfname}
+
+* We start with a list of filenames. This happens once at the start of the experiment outside the trial loop -- we don't want to re-randomise the list each trial.
+
+
+```{python}
+#| echo: false
+import random
+from random import shuffle
+```
+
+
+```{python}
+#| eval: true
+image_list = ["cat1.jpg","cat2.jpg","cat3.jpg","cat4.jpg","cat5.jpg","dog1.jpg","dog2.jpg","dog3.jpg","dog4.jpg","dog5.jpg"]
+```
+
+* Then we shuffle the list.
+
+```{python}
+#| eval: true
+import random
+from random import shuffle
+shuffle(image_list)
+```
+
+```{python}
+#| echo: false
+print(image_list)
+```
+
+* That shuffled list is the random sequence for this participant. The next participant will get a different shuffle of the original list.
+
+* Now we can index into that list using the current trial number ($n$) to pick out the $n^{th}$ element of the list to be the filename for the current trial. So let's say we have a trial counter called `trialn`, and that we're on the 4th trial. The following picks out the 4th element in the shuffled list, which has the index $3$ because indexes start at 0 in python.
+
+<!-- ^[Recall that python indexes start at $0$ so if this is the 4th trial and we want the 4th element of the list then our index should be 3. If you start the trial counter at $-1$ instead of $0$ and increment it each trial then you can use the trial counter as the index, otherwise if you start at 0 and increment each trial you have to subtract one from the counter to use it as an index]. -->
+
+
+```{python}
+#| eval: true
+trialn = 4
+current_image = image_list[trialn-1]
+print(current_image)
+```
+
+## The image's location and size {#sec-imglocn}
+
+```{python}
+#| eval: false
+trialn = trialn + 1
+this_image = image_list[trialn]
+# these images are 612 x 408, so 1.5:1 aspect ratio 
+# to occupy the whole screen
+# or half of that to occupy quarter of screen
+this_aspect_ratio = [0.75, 0.5]
+this_size = [0.5, 0.5]
+# If the size is 0.5 of the height
+# then the position has to be less than 0.25 and 
+# greater than -0.25 in the y dimension to avoid 
+# image being shown at least partially offscreen
+# but x can be wider
+min_value_x = -0.375
+max_value_x = 0.375
+min_value_y = -0.25
+max_value_y = 0.25
+this_position_x = uniform(min_value_x, max_value_x)
+this_position_y = uniform(min_value_y, max_value_y)
+image.image = this_image
+image.size = this_aspect_ratio
+image.pos = [this_position_x, this_position_y]
+```
+
+
+:::{.callout-note}
+## Download
+Click [psy\file09_images](psy\file09_images) to download the images demo psyexp.
+:::
+

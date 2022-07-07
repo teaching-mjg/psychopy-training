@@ -1,0 +1,1 @@
+How to present several images sequentially, in different locations.

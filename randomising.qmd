@@ -7,3 +7,67 @@ Here we discuss how to use python's `random` module, especially `random.shuffle`
 `random.shuffle` shuffles _in place_. That means that the original sequence is shuffled.
 
 Javascript shuffle...
+
+The PsychoPy writers have put some work into automatically translating from python to javascript, which is the code that runs in a browser.
+
+That means that when you type `random.shuffle` the auto-translator will replace the javascript side with `util.shuffle`. `util` isn't actually a thing in javascript, it's a helper function provided by PsychoPy.
+
+The auto-translator can't cope with all of the `random` library from python though.
+
+For example, in the images demo, we wanted to generate a random floating-point number between -0.25 and 0.25. That was easy in python but it doesn't auto-translate.
+
+That's manageable though because instead of doing `auto>js` you can do `both` and supply modified javascript. This is the javascript you need to replace the python in that example. Notice that we have to define a function in the javascript side (lines 2 to 6) because javascript doesn't have python's native `uniform` function that allows you to pass in the "between" values. Then when you call `uniform` on the python side (lines 15 and 16), you call the supplied function instead on the javascript side (`getRandomFloat`)
+
+
+::: {.column-screen-inset-right layout="[1,1]"}
+
+
+```{r, eval=F, attr.source='.numberLines'}
+#| eval: false
+# python side
+
+
+
+
+
+trialn = trialn + 1
+this_image = image_list[trialn]
+this_aspect_ratio = [0.75, 0.5]
+this_size = [0.5, 0.5]
+min_value_x = -0.375
+max_value_x = 0.375
+min_value_y = -0.25
+max_value_y = 0.25
+this_position_x = uniform(min_value_x, max_value_x)
+this_position_y = uniform(min_value_y, max_value_y)
+image.image = this_image
+image.size = this_aspect_ratio
+image.pos = [this_position_x, this_position_y]
+```
+
+
+```{r, eval=F, attr.source='.numberLines'}
+#| eval: false
+# javascript side
+function getRandomFloat(min, max, decimals) {
+    const n = (Math.random() * (max - min) + min).toFixed(decimals);
+    return n;
+  }
+  
+trialn = (trialn + 1);
+this_image = image_list[trialn];
+this_aspect_ratio = [0.75, 0.5];
+this_size = [0.5, 0.5];
+min_value_x = (- 0.375);
+max_value_x = 0.375;
+min_value_y = (- 0.25);
+max_value_y = 0.25;
+this_position_x = getRandomFloat(min_value_x, max_value_x, 3);
+this_position_y = getRandomFloat(min_value_y, max_value_y, 3);
+image.image = this_image;
+image.size = this_aspect_ratio;
+image.pos = [this_position_x, this_position_y];
+
+```
+
+:::
