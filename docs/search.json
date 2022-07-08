@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "PsychoPy Training",
     "section": "",
-    "text": "This is training in PsychoPy, for the July 2022 cohort, w/c 11th July 2022.\nLast compiled Thursday 07 July 2022 at 19:30:19"
+    "text": "This is training in PsychoPy, for the July 2022 cohort, w/c 11th July 2022.\nLast compiled Friday 08 July 2022 at 10:23:48"
   },
   {
     "objectID": "part-one.html",
@@ -130,7 +130,7 @@
     "href": "using-images.html#sec-imgfname",
     "title": "11  Advanced images",
     "section": "11.1 The image’s filename.",
-    "text": "11.1 The image’s filename.\n\nWe start with a list of filenames. This happens once at the start of the experiment outside the trial loop – we don’t want to re-randomise the list each trial.\n\nimage_list = [\"cat1.jpg\",\"cat2.jpg\",\"cat3.jpg\",\"cat4.jpg\",\"cat5.jpg\",\"dog1.jpg\",\"dog2.jpg\",\"dog3.jpg\",\"dog4.jpg\",\"dog5.jpg\"]\n\nThen we shuffle the list.\n\nimport random\nfrom random import shuffle\nshuffle(image_list)\n\n\n['dog4.jpg', 'dog2.jpg', 'dog1.jpg', 'cat3.jpg', 'cat1.jpg', 'cat5.jpg', 'dog5.jpg', 'dog3.jpg', 'cat4.jpg', 'cat2.jpg']\n\n\n\nThat shuffled list is the random sequence for this participant. The next participant will get a different shuffle of the original list.\nNow we can index into that list using the current trial number (\\(n\\)) to pick out the \\(n^{th}\\) element of the list to be the filename for the current trial. So let’s say we have a trial counter called trialn, and that we’re on the 4th trial. The following picks out the 4th element in the shuffled list, which has the index \\(3\\) because indexes start at 0 in python.\n\n\n\ntrialn = 4\ncurrent_image = image_list[trialn-1]\nprint(current_image)\n\ncat3.jpg"
+    "text": "11.1 The image’s filename.\n\nWe start with a list of filenames. This happens once at the start of the experiment outside the trial loop – we don’t want to re-randomise the list each trial.\n\nimage_list = [\"cat1.jpg\",\"cat2.jpg\",\"cat3.jpg\",\"cat4.jpg\",\"cat5.jpg\",\"dog1.jpg\",\"dog2.jpg\",\"dog3.jpg\",\"dog4.jpg\",\"dog5.jpg\"]\n\nThen we shuffle the list.\n\nimport random\nfrom random import shuffle\nshuffle(image_list)\n\n\n['dog1.jpg', 'dog3.jpg', 'cat2.jpg', 'cat4.jpg', 'cat1.jpg', 'cat3.jpg', 'dog4.jpg', 'dog2.jpg', 'dog5.jpg', 'cat5.jpg']\n\n\n\nThat shuffled list is the random sequence for this participant. The next participant will get a different shuffle of the original list.\nNow we can index into that list using the current trial number (\\(n\\)) to pick out the \\(n^{th}\\) element of the list to be the filename for the current trial. So let’s say we have a trial counter called trialn, and that we’re on the 4th trial. The following picks out the 4th element in the shuffled list, which has the index \\(3\\) because indexes start at 0 in python.\n\n\n\ntrialn = 4\ncurrent_image = image_list[trialn-1]\nprint(current_image)\n\ncat4.jpg"
   },
   {
     "objectID": "using-images.html#sec-imglocn",
@@ -158,7 +158,7 @@
     "href": "online.html",
     "title": "14  Online",
     "section": "",
-    "text": "Need a pavlovia account using uni email\nNeed to be logged in in the PsychoPy interface\nWrite experiment using autoJs as much as possible (and “Both”) for things that don’t auto-translate\nUse “Sync” to push experiment up\nChange from ‘piloting’ to ‘running’\n…"
+    "text": "Need a pavlovia account using uni email\nNeed to be logged in in the PsychoPy interface\nWrite experiment using autoJs as much as possible (and “Both”) for things that don’t auto-translate\nUse “Sync” to push experiment up\nChange from ‘piloting’ to ‘running’\n…\n\nUse local debug mode to see whether the experiment would work in a browser at all before you puch it to pavlovia to test it"
   },
   {
     "objectID": "references.html",

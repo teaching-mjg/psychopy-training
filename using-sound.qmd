@@ -19,5 +19,5 @@ To achieve this, we use the trial definition spreadsheet to pass in the name of 
 
 :::{.callout-note}
 ## Download
-Click [sound1](psy/sound1) to download the sound demo psyexp.
+Click [sound1](psy/file08_sound/) to download the sound demo psyexp.
 :::

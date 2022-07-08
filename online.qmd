@@ -8,3 +8,6 @@ Some considerations for running online ...
 * Use "Sync" to push experiment up
 * Change from 'piloting' to 'running'
 * ...
+
+
+**Use local debug mode to see whether the experiment would work in a browser at all before you puch it to pavlovia to test it**
