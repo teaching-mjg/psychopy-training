@@ -1,0 +1,12 @@
+# Part I Getting Started
+
+Aims:
+
+* Explain the 3 windows that open up when you start PsychoPy:
+  * Builder
+  * Coder
+  * Runner
+* Explain Builder interface:
+  * Routines 
+  * Components
+  

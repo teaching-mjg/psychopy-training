@@ -73,6 +73,13 @@ Term 2
 This is a margin note
 :::
 
+## Margin Figures
+
+```{r eval=FALSE}
+#| column: margin
+```
+
+
 ## Footnotes
 
 This shows how to use a footnote^[This is the content of the footnote]
@@ -81,3 +88,21 @@ This shows how to use a footnote^[This is the content of the footnote]
 
 Use this on the same line as the section definition, after the section definition:
 >{.unnumbered}
+
+## Side by Side Text and Fig
+
+::: {.column-screen-inset-right layout="[1,1]"}
+
+:::
+
+## Page width
+
+.column-body
+
+.column-body-outset
+
+.column-page
+
+.column-page-inset (a bit narrower than column-page)
+
+.screen-column (aka full bleed)

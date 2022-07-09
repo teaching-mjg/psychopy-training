@@ -1,0 +1,27 @@
+# The interface
+
+Here we take a look around the interface.
+
+The interface has 3 Windows
+
+## Builder
+
+The Builder is where you assemble an experiment. It is the main window.
+
+## Runner
+
+The Runner has 3 parts:
+
+* a list of experiments (typically just the one you are working with at the moment, but can be several)
+* a panel for alerts (can draw your attention to problems with your experiment)
+* a panel called `stdout` stands for `standard out` and gives very detailed messages that can help you to fix (_debug_) your experiment.
+
+You should try to arrange this window so that you can easily read it.
+
+## Coder
+
+The Coder is for advanced use and you don't usually need it open. You can close it.
+
+
+
+

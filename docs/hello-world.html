@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.596">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>PsychoPy Training - 3&nbsp; Hello World</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./the-builder.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Hello World</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">PsychoPy Training</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">About</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./getting-started.html" class="sidebar-item-text sidebar-link">Part I Getting Started</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./the-interface.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The interface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./the-builder.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Builder</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./hello-world.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Hello World</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#text-component" id="toc-text-component" class="nav-link active" data-scroll-target="#text-component"> <span class="header-section-number">3.1</span> Text component</a></li>
+  <li><a href="#image-component" id="toc-image-component" class="nav-link" data-scroll-target="#image-component"> <span class="header-section-number">3.2</span> Image component</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Hello World</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p>“Hello World” is the name of the first program you write when learning any programming language. You can think of PsychoPy as a visual programming language.</p>
+<p>“Hello World” is really simple. It just puts the text <em>Hello World!</em> on the screen, waits, takes it away, and ends.</p>
+<p>Although it is simple, once you can do Hello World, you know enough to do much more complicated things, so it’s a good starting point.</p>
+<p>We’ll look at how to do Hello World in 3 different ways.</p>
+<p>The first thing to do is to save the experiment file.</p>
+<ol type="1">
+<li>Make a folder for this tutorial – maybe <code>psychopy-training</code>.</li>
+<li>Inside that make a folder for this specific experiment – every experiment should get its own folder – maybe <code>hello-world</code></li>
+<li>Save the blank experiment inside that as <code>hello-world.psyexp</code>. <code>File -&gt; Save As</code></li>
+</ol>
+<section id="text-component" class="level2 page-columns page-full" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="text-component"><span class="header-section-number">3.1</span> Text component</h2>
+<div class="column-body quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 40.0%;justify-content: center;">
+<p>Focus the Builder window by clicking in it. Click on the Text Component in Favourites in the Components panel to bring up options for adding text to your experiment - <a href="#fig-hworld1">Figure&nbsp;<span>3.1</span></a>.</p>
+</div>
+<div class="cell quarto-layout-cell" style="flex-basis: 60.0%;justify-content: center;">
+<div class="cell-output-display">
+<div id="fig-hworld1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><a href="img/python_UWnHoJXoev.png"><img src="img/python_UWnHoJXoev.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.1: Add a text Component</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="column-body quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 40.0%;justify-content: center;">
+<p>For now, just edit the contents of the “Text” box. Delete the existing text and replace with `Hello World!“. Press OK. See that the Text Component is now added in Routines in <a href="#fig-hworld2">Figure&nbsp;<span>3.2</span></a>. <strong>Save the experiment now, and every time you change something.</strong></p>
+</div>
+<div class="cell quarto-layout-cell" style="flex-basis: 60.0%;justify-content: center;">
+<div class="cell-output-display">
+<div id="fig-hworld2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><a href="img/INETK005Ti.png"><img src="img/INETK005Ti.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.2: Text Component in the Routines panel</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="column-body quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 40.0%;justify-content: center;">
+<p>This is now a simple but fully-functioning experiment that you can run. If you do this now, your experiment will run in a full-screen window. This is what you want for a real experiment, but while you are building your experiment, it’s better to run in a non-fullscreen window.</p>
+</div>
+<div class="cell quarto-layout-cell" style="flex-basis: 60.0%;justify-content: center;">
+<div class="cell-output-display">
+<div id="fig-hworld3a" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><a href="img/python_wgxKnjZqVG.png"><img src="img/python_wgxKnjZqVG.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.3: Settings menu</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 40.0%;justify-content: center;">
+<ul>
+<li>Click the cog wheel in <a href="#fig-hworld3a">Figure&nbsp;<span>3.3</span></a>. This brings up the box in <a href="#fig-hworld3b">Figure&nbsp;<span>3.4</span></a>.</li>
+<li>Go to the “Screen” tab</li>
+<li>Untick “Full-screen window”</li>
+<li>Change “Window Size” to <code>[1280, 720]</code>. This preserves the shape of a full screen window to help you lay things out so they look the same when the experiment runs for real.</li>
+</ul>
+</div>
+<div class="cell quarto-layout-cell" style="flex-basis: 60.0%;justify-content: center;">
+<div class="cell-output-display">
+<div id="fig-hworld3b" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><a href="img/python_wtApGESOZj.png"><img src="img/python_wtApGESOZj.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.4: Setting to run in non-fullscreen window</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="column-body quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 40.0%;justify-content: center;">
+<p>There are several different kinds of run button that we will explain later. For now use the one in <a href="#fig-hworldrun">Figure&nbsp;<span>3.5</span></a>.</p>
+</div>
+<div class="cell quarto-layout-cell" style="flex-basis: 60.0%;justify-content: center;">
+<div class="cell-output-display">
+<div id="fig-hworldrun" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><a href="img/python_wSp7tPOj9V1.png"><img src="img/python_wSp7tPOj9V1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.5: There are several different kinds of run button - use this one</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="column-body quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 40.0%;justify-content: center;">
+<p>If things are working, you’ll see the process captured in the screencast in <a href="#fig-hworldrunning">Figure&nbsp;<span>3.6</span></a>. This also illustrates how I suggest you lay out the Runner and Builder windows.</p>
+</div>
+<div class="cell quarto-layout-cell" style="flex-basis: 60.0%;justify-content: center;">
+<div class="cell-output-display">
+<div id="fig-hworldrunning" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><video src="obs/hworld.mp4" class="img-fluid" style="width:100.0%" controls=""><a href="obs/hworld.mp4">Video</a></video></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.6: Video screencast of a running hello world</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="image-component" class="level2 page-columns page-full" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="image-component"><span class="header-section-number">3.2</span> Image component</h2>
+<p>The same principles that applied to doing Hello World using a Text Component also apply for the method that uses an Image Component.</p>
+<p>Start with a new experiment: <code>File -&gt; New</code></p>
+<p>Save it into a folder of its own, maybe <code>hello-world-image</code>.</p>
+<div class="column-body quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 40.0%;justify-content: center;">
+<p>Now you need an image of the words “Hello World!”. You can make one in Paint, or Powerpoint; or you can grab this one in <a href="#fig-hworldimggift">Figure&nbsp;<span>3.7</span></a>. Save it in the same folder as your experiment, under the name <code>stimulus.png</code></p>
+</div>
+<div class="cell quarto-layout-cell" style="flex-basis: 60.0%;justify-content: center;">
+<div class="cell-output-display">
+<div id="fig-hworldimggift" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><a href="img/HelloWorldImage.png"><img src="img/HelloWorldImage.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.7: Image of hello world text</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="column-body quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 40.0%;justify-content: center;">
+<p>From the Components panel, choose an <code>Image</code> Component. In the box that opens up, in the <code>Image</code> field, write the name of the image file, <code>stimulus.png</code> as in <a href="#fig-hworldimgcomp">Figure&nbsp;<span>3.8</span></a>.</p>
+</div>
+<div class="cell quarto-layout-cell" style="flex-basis: 60.0%;justify-content: center;">
+<div class="cell-output-display">
+<div id="fig-hworldimgcomp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><a href="img/pythonw_0z1OSnVLCL.png"><img src="img/pythonw_0z1OSnVLCL.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.8: Enter the image name</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="column-body quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 40.0%;justify-content: center;">
+<p>Have a look at the <code>Layout</code> tab too. Notice that by default, images are shown square: The <code>Size [w, h]</code> field is set to <code>(0.5, 0.5)</code>. Our image is oblong so if we constrain it to be square it will look squashed. The actual dimensions of our image are <code>(602, 164)</code>. That’s <code>3.67:1</code> as a ratio. If we want the image 0.5 wide, we need to divide 3.67 by (3.67/0.5) = 7.34, so, to maintain the aspect ratio we need to divide 1 by 7.34 too (1/7.34) = 0.136. Put in <code>(0.5,0.136)</code> for <code>Size [w,h]</code>, and press <code>OK</code> (<a href="#fig-hworldimgaspectratio">Figure&nbsp;<span>3.9</span></a>).</p>
+</div>
+<div class="cell quarto-layout-cell" style="flex-basis: 60.0%;justify-content: center;">
+<div class="cell-output-display">
+<div id="fig-hworldimgaspectratio" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><a href="img/pythonw_Goiz1UhdCw.png"><img src="img/pythonw_Goiz1UhdCw.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.9: Correct the aspect ratio</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Don’t forget to save the experiment, then run it in the same way as for the <code>Text</code> Component version.</p>
+<div class="column-body quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 40.0%;justify-content: center;">
+<p>Here’s what you should see:</p>
+</div>
+<div class="cell quarto-layout-cell" style="flex-basis: 60.0%;justify-content: center;">
+<div class="cell-output-display">
+<div id="fig-hworldrun123" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><video src="obs/2022-07-09%2019-53-56.mp4" class="img-fluid" controls=""><a href="obs/2022-07-09%2019-53-56.mp4">Video</a></video></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.10: Expected outcome</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+    } else {
+      disableStylesheet(alternateStylesheets);
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } 
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./the-builder.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Builder</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>PsychoPy Training - 5&nbsp; Making the trial loop</title>
+<title>PsychoPy Training - Part I Getting Started</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,8 +25,8 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./finessing-the-trial-loop.html" rel="next">
-<link href="./stimulus-files.html" rel="prev">
+<link href="./the-interface.html" rel="next">
+<link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -67,7 +67,7 @@ ul.task-list{list-style: none;}
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Making the trial loop</span></h1>
+      <h1 class="quarto-secondary-nav-title">Part I Getting Started</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -100,7 +100,7 @@ ul.task-list{list-style: none;}
 </li>
         <li class="sidebar-item sidebar-item-section">
     <div class="sidebar-item-container"> 
-        <a href="./part-one.html" class="sidebar-item-text sidebar-link">Part One: Cats and Dogs</a>
+        <a href="./getting-started.html" class="sidebar-item-text sidebar-link active">Part I Getting Started</a>
       <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
         <i class="bi bi-chevron-right ms-2"></i>
       </a>
@@ -108,82 +108,17 @@ ul.task-list{list-style: none;}
     <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./instructions-routine.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Instructions Routine</span></a>
+  <a href="./the-interface.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The interface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./trial-procedure.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Trial Procedure</span></a>
+  <a href="./the-builder.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Builder</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./trial-sequence.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Trial Sequence</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./stimulus-files.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Stimulus Files</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./making-the-trial-loop.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Making the trial loop</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./finessing-the-trial-loop.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Finessing the Trial Loop</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./keyboard-handling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Keyboard Handling</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./feedback.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Feedback</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./saving-data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Saving data manually</span></a>
-  </div>
-</li>
-    </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="./part-two.html" class="sidebar-item-text sidebar-link">Part Two: User Requests</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./using-sound.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Using Sound</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./using-images.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Advanced images</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./randomising.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Randomising</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./conditional-branching.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Conditional branching</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./online.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Online</span></a>
+  <a href="./hello-world.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Hello World</span></a>
   </div>
 </li>
     </ul>
@@ -200,7 +135,7 @@ ul.task-list{list-style: none;}
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Making the trial loop</span></h1>
+<h1 class="title d-none d-lg-block">Part I Getting Started</h1>
 </div>
 
 
@@ -214,58 +149,20 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<p>See <a href="#fig-mkTrialLoop">Figure&nbsp;<span>5.1</span></a> for:</p>
+<p>Aims:</p>
 <ul>
-<li>add trials Routine
+<li>Explain the 3 windows that open up when you start PsychoPy:
 <ul>
-<li>add image
-<ul>
-<li>set duration (1.0 seconds)</li>
-<li>use <code>$animal_image</code> for <code>image.Image</code> field and change drop-down from <em>constant</em> to <em>set every repeat</em></li>
+<li>Builder</li>
+<li>Coder</li>
+<li>Runner</li>
 </ul></li>
-<li>add keyboard
+<li>Explain Builder interface:
 <ul>
-<li>set allowed_keys field to <code>'c','d'</code></li>
-<li>set duration to 1.0 seconds - now they won’t be able to respond after the image disappears. The keyboard’s start and stop times are the same as the image’s</li>
-</ul></li>
-<li>enclose with loop
-<ul>
-<li>The <code>Conditions</code> field is where you put the name of the spreadsheet</li>
-<li>leave ‘random’ - the default - but notice that sequential is also available</li>
-<li>change the default from 5 to 1 (because we only want to run the ten trials once)</li>
-</ul></li>
+<li>Routines</li>
+<li>Components</li>
 </ul></li>
 </ul>
-<div class="cell">
-<div id="fig-mkTrialLoop" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><video src="obs/addTrialsLoop.mp4" type="video/mp4" width="100%" controls="1"></video></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 5.1: Making the trial loop</figcaption><p></p>
-</figure>
-</div>
-</div>
-<p>See <a href="#fig-runTrialLoop">Figure&nbsp;<span>5.2</span></a> for the runtime as things stand now.</p>
-<div class="cell">
-<div id="fig-runTrialLoop" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><video src="obs/2022-07-03 01-27-54.mkv" type="video/mp4" width="100%" controls="1"></video></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 5.2: Running the basic loop</figcaption><p></p>
-</figure>
-</div>
-</div>
-<div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Download
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Click <a href="psy/file2.zip">file2</a> to download the psyexp in a crude but working state.</p>
-</div>
-</div>
 
 
 
@@ -448,13 +345,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./stimulus-files.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Stimulus Files</span></span>
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">About</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./finessing-the-trial-loop.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Finessing the Trial Loop</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./the-interface.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The interface</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

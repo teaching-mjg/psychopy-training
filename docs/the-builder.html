@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>PsychoPy Training - Part One: Cats and Dogs</title>
+<title>PsychoPy Training - 2&nbsp; The Builder</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,8 +25,8 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./instructions-routine.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./hello-world.html" rel="next">
+<link href="./the-interface.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -67,7 +67,7 @@ ul.task-list{list-style: none;}
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Part One: Cats and Dogs</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Builder</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -100,7 +100,7 @@ ul.task-list{list-style: none;}
 </li>
         <li class="sidebar-item sidebar-item-section">
     <div class="sidebar-item-container"> 
-        <a href="./part-one.html" class="sidebar-item-text sidebar-link active">Part One: Cats and Dogs</a>
+        <a href="./getting-started.html" class="sidebar-item-text sidebar-link">Part I Getting Started</a>
       <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
         <i class="bi bi-chevron-right ms-2"></i>
       </a>
@@ -108,82 +108,17 @@ ul.task-list{list-style: none;}
     <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./instructions-routine.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Instructions Routine</span></a>
+  <a href="./the-interface.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The interface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./trial-procedure.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Trial Procedure</span></a>
+  <a href="./the-builder.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Builder</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./trial-sequence.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Trial Sequence</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./stimulus-files.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Stimulus Files</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./making-the-trial-loop.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Making the trial loop</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./finessing-the-trial-loop.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Finessing the Trial Loop</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./keyboard-handling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Keyboard Handling</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./feedback.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Feedback</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./saving-data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Saving data manually</span></a>
-  </div>
-</li>
-    </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="./part-two.html" class="sidebar-item-text sidebar-link">Part Two: User Requests</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./using-sound.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Using Sound</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./using-images.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Advanced images</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./randomising.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Randomising</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./conditional-branching.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Conditional branching</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./online.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Online</span></a>
+  <a href="./hello-world.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Hello World</span></a>
   </div>
 </li>
     </ul>
@@ -193,14 +128,22 @@ ul.task-list{list-style: none;}
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#flow" id="toc-flow" class="nav-link active" data-scroll-target="#flow"> <span class="header-section-number">2.1</span> Flow</a></li>
+  <li><a href="#components" id="toc-components" class="nav-link" data-scroll-target="#components"> <span class="header-section-number">2.2</span> Components</a></li>
+  <li><a href="#routines" id="toc-routines" class="nav-link" data-scroll-target="#routines"> <span class="header-section-number">2.3</span> Routines</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Part One: Cats and Dogs</h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Builder</span></h1>
 </div>
 
 
@@ -214,21 +157,36 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<p>In this part we create a simple experiment, bit by bit, with instructions, stimuli, and responses, where the stimuli are pictures of dogs and cats, and the task is to identify whether the current trial’s animal is a dog or a cat using the keyboard to press ‘c’ for cat or ‘d’ for dog.</p>
-<p>Doing this might seem trivial but doing this gives us a way to cover the following topics:</p>
-<ul>
-<li>How to present text where you know in advance what the content will be - like instructions to the participant at the start of the experiment.</li>
-<li>How to vary the duration that the text is presented for.</li>
-<li>How to vary the properties of the text (font, colour, size, location)</li>
-<li>How to use the basic building blocks of a PsychoPy experiment - its <em>Routines</em> and <em>Components</em></li>
-<li>How to collect a response from the participant; record its RT; and evaluate it for accuracy.</li>
-<li>How to present an image (when you don’t know in advance what its content should be because the order of presentation should be randomised over trials) [using a spreadsheet to supply the image filenames and handle randomisation]</li>
-<li>How to present many stimuli over the course of an experiment without creating a new image every time - by using a <em>loop</em> over a single stimulus Component.</li>
-<li>[How to vary the properties of the image like position, size, rotation so that they can be different on different trials]</li>
-<li>How to show feedback whose content differs according to the response given on each trial.</li>
-</ul>
+<p>Here we look in more depth at the Builder window.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-builderMain" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><a href="img/python_sUOQKDBtET.png"><img src="img/python_sUOQKDBtET.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.1: The Builder (click to enlarge)</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="flow" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="flow"><span class="header-section-number">2.1</span> Flow</h2>
+<p>Bottom in the Builder - in blue in the figure.</p>
+<p>To start with the Flow panel shows only a time-course and a single Routine named <code>trial</code>.</p>
+<p>You build up an experiment by adding Routines to the Flow. Before the <code>trial</code> Routine, you probably want to put a <code>Instructions</code> Routine, for example. To add a Routine to the Flow, click on <code>Insert Routine</code>.</p>
+</section>
+<section id="components" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="components"><span class="header-section-number">2.2</span> Components</h2>
+<p>Top right in the Builder - in yellow in the figure.</p>
+<p>The Components panel lists all the available components of an experiment: broadly speaking, stimuli and responses, so things like Text; Image; Keyboard; Mouse; Slider. Also includes some components that are only needed for specific kinds of experiment like eye-tracking or EEG.</p>
+</section>
+<section id="routines" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="routines"><span class="header-section-number">2.3</span> Routines</h2>
+<p>Top left in the Builder - in green in the figure.</p>
+<p>To start with, the Routines panel shows the <code>trial</code> Routine and its timeline. There aren’t any components in the <code>trial</code> Routine yet, so it looks a bit empty.</p>
+<p>You build up an experiment by adding Components to the Routines panel. To add a Component to a Routine, click on the relevant Component.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -409,13 +367,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">About</span>
+      <a href="./the-interface.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The interface</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./instructions-routine.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Instructions Routine</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./hello-world.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Hello World</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

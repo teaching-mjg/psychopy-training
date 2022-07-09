@@ -1,0 +1,142 @@
+# Hello World
+
+
+"Hello World" is the name of the first program you write when learning any programming language. You can think of PsychoPy as a visual programming language.
+
+"Hello World" is really simple. It just puts the text _Hello World!_ on the screen, waits, takes it away, and ends.
+
+Although it is simple, once you can do Hello World, you know enough to do much more complicated things, so it's a good starting point.
+
+We'll look at how to do Hello World in 3 different ways.
+
+The first thing to do is to save the experiment file. 
+
+1. Make a folder for this tutorial -- maybe `psychopy-training`.
+2. Inside that make a folder for this specific experiment -- every experiment should get its own folder -- maybe `hello-world`
+3. Save the blank experiment inside that as `hello-world.psyexp`. `File -> Save As`
+
+
+## Text component
+
+::: {.column-body layout="[40,60]"}
+Focus the Builder window by clicking in it. Click on the Text Component in Favourites in the Components panel to bring up options for adding text to your experiment - @fig-hworld1.
+
+```{r, fig.link="img/python_UWnHoJXoev.png",  out.width="100%"}
+#| echo: false
+#| label: fig-hworld1
+#| fig-cap: Add a text Component 
+knitr::include_graphics("img/python_UWnHoJXoev.png")
+```
+:::
+
+
+::: {.column-body layout="[40,60]"}
+For now, just edit the contents of the "Text" box. Delete the existing text and replace with `Hello World!". Press OK. See that the Text Component is now added in Routines in @fig-hworld2. **Save the experiment now, and every time you change something.**
+
+```{r, fig.link="img/INETK005Ti.png", out.width="100%"}
+#| echo: false
+#| label: fig-hworld2
+#| fig-cap: Text Component in the Routines panel 
+knitr::include_graphics("img/INETK005Ti.png")
+```
+:::
+
+::: {.column-body layout="[[40,60],[40,60]]"}
+This is now a simple but fully-functioning experiment that you can run. If you do this now, your experiment will run in a full-screen window. This is what you want for a real experiment, but while you are building your experiment, it's better to run in a non-fullscreen window.
+
+```{r, fig.link="img/python_wgxKnjZqVG.png", out.width="100%"}
+#| echo: false
+#| label: fig-hworld3a
+#| fig-cap: Settings menu
+knitr::include_graphics("img/python_wgxKnjZqVG.png")
+```
+
+* Click the cog wheel in @fig-hworld3a. This brings up the box in @fig-hworld3b.
+* Go to the "Screen" tab
+* Untick "Full-screen window"
+* Change "Window Size" to `[1280, 720]`. This preserves the shape of a full screen window to help you lay things out so they look the same when the experiment runs for real.
+
+```{r, fig.link="img/python_wtApGESOZj.png", out.width="100%"}
+#| echo: false
+#| label: fig-hworld3b
+#| fig-cap: Setting to run in non-fullscreen window 
+knitr::include_graphics("img/python_wtApGESOZj.png")
+```
+:::
+
+::: {.column-body layout="[40,60]"}
+There are several different kinds of run button that we will explain later. For now use the one in @fig-hworldrun. 
+
+```{r, fig.link="img/python_wSp7tPOj9V1.png",  out.width="100%"}
+#| echo: false
+#| label: fig-hworldrun
+#| fig-cap: There are several different kinds of run button - use this one 
+knitr::include_graphics("img/python_wSp7tPOj9V1.png")
+```
+:::
+
+
+::: {.column-body layout="[40,60]"}
+If things are working, you'll see the process captured in the screencast in @fig-hworldrunning. This also illustrates how I suggest you lay out the Runner and Builder windows.
+
+```{r, out.width="100%"}
+#| echo: false
+#| label: fig-hworldrunning
+#| fig-cap: Video screencast of a running hello world
+knitr::include_graphics("obs/hworld.mp4")
+```
+:::
+
+
+## Image component
+
+The same principles that applied to doing Hello World using a Text Component also apply for the method that uses an Image Component.
+
+Start with a new experiment: `File -> New`
+
+Save it into a folder of its own, maybe `hello-world-image`.
+
+::: {.column-body layout="[40,60]"}
+Now you need an image of the words "Hello World!". You can make one in Paint, or Powerpoint; or you can grab this one in  @fig-hworldimggift. Save it in the same folder as your experiment, under the name `stimulus.png`
+
+```{r, fig.link="img/HelloWorldImage.png", out.width="100%"}
+#| echo: false
+#| label: fig-hworldimggift
+#| fig-cap: Image of hello world text
+knitr::include_graphics("img/HelloWorldImage.png")
+```
+:::
+
+::: {.column-body layout="[40,60]"}
+From the Components panel, choose an `Image` Component. In the box that opens up, in the `Image` field, write the name of the image file, `stimulus.png` as in @fig-hworldimgcomp.
+
+```{r, fig.link="img/pythonw_0z1OSnVLCL.png", out.width="100%"}
+#| echo: false
+#| label: fig-hworldimgcomp
+#| fig-cap: Enter the image name
+knitr::include_graphics("img/pythonw_0z1OSnVLCL.png")
+```
+:::
+
+::: {.column-body layout="[40,60]"}
+Have a look at the `Layout` tab too. Notice that by default, images are shown square: The `Size [w, h]` field is set to `(0.5, 0.5)`. Our image is oblong so if we constrain it to be square it will look squashed. The actual dimensions of our image are `(602, 164)`. That's `3.67:1` as a ratio. If we want the image 0.5 wide, we need to divide 3.67 by (3.67/0.5) = 7.34, so,  to maintain the aspect ratio we need to divide 1 by 7.34 too (1/7.34) = 0.136. Put in `(0.5,0.136)` for `Size [w,h]`, and press `OK` (@fig-hworldimgaspectratio).
+
+```{r, fig.link="img/pythonw_Goiz1UhdCw.png", out.width="100%"}
+#| echo: false
+#| label: fig-hworldimgaspectratio
+#| fig-cap: Correct the aspect ratio
+knitr::include_graphics("img/pythonw_Goiz1UhdCw.png")
+```
+:::
+
+Don't forget to save the experiment, then run it in the same way as for the `Text` Component version.
+
+::: {.column-body layout="[40,60]"}
+Here's what you should see:
+```{r}
+#| echo: false
+#| label: fig-hworldrun123
+#| fig-cap: Expected outcome
+knitr::include_graphics("obs/2022-07-09 19-53-56.mp4")
+```
+:::

@@ -2,42 +2,63 @@ project:
   type: book
   output-dir: docs
 
-# crossref:
-#     fig-title: Screencast
-#     fig-prefix: Screencast
-
 book:
   title: "PsychoPy Training"
   author: "Matt Green"
   date: last-modified
   date-format: "dddd D MMM YYYY [at] HH[:]mm[:]ss"
+  toc-depth: 3
 
   chapters:
     - index.qmd
-    - part: part-one.qmd
+    - part: getting-started.qmd
       chapters:
-        - instructions-routine.qmd
-        - trial-procedure.qmd
-        - trial-sequence.qmd
-        - stimulus-files.qmd
-        - making-the-trial-loop.qmd
-        - finessing-the-trial-loop.qmd
-        - keyboard-handling.qmd
-        - feedback.qmd
-        - saving-data.qmd
-    - part: part-two.qmd
-      chapters:
-        - using-sound.qmd
-        - using-images.qmd
-        - randomising.qmd
-        - conditional-branching.qmd
-        - online.qmd
-  #  - references.qmd
-  #appendices:
-  #  - authoring-tools.qmd
+        - the-interface.qmd
+        - the-builder.qmd
+        - hello-world.qmd
+    #    - instructions-routine.qmd
+    #     - trial-procedure.qmd
+    #     - trial-sequence.qmd
+    #     - stimulus-files.qmd
+    #     - making-the-trial-loop.qmd
+    #     - finessing-the-trial-loop.qmd
+    #     - keyboard-handling.qmd
+    #     - feedback.qmd
+    #     - saving-data.qmd
+    # - part: part-two.qmd
+    #   chapters:
+    #     - using-sound.qmd
+    #     - using-images.qmd
+    #     - randomising.qmd
+    #     - conditional-branching.qmd
+    #     - online.qmd
 
-bibliography: 
-  references.bib
+  # chapters:
+  #   - index.qmd
+  #   - part: part-one.qmd
+  #     chapters:
+  #       - instructions-routine.qmd
+  #       - trial-procedure.qmd
+  #       - trial-sequence.qmd
+  #       - stimulus-files.qmd
+  #       - making-the-trial-loop.qmd
+  #       - finessing-the-trial-loop.qmd
+  #       - keyboard-handling.qmd
+  #       - feedback.qmd
+  #       - saving-data.qmd
+  #   - part: part-two.qmd
+  #     chapters:
+  #       - using-sound.qmd
+  #       - using-images.qmd
+  #       - randomising.qmd
+  #       - conditional-branching.qmd
+  #       - online.qmd
+  # #  - references.qmd
+  # #appendices:
+  # #  - authoring-tools.qmd
+
+# bibliography: 
+#   references.bib
 
 format:
   html:
@@ -46,12 +67,15 @@ format:
       dark: [cosmo, theme-dark.scss]
       
       
-editor: 
-  source
+# editor: 
+#   source
   
-title-block-banner: 
-  #true
-  false
+# title-block-banner: 
+#   #true
+#   false
 
+# crossref:
+#     fig-title: Screencast
+#     fig-prefix: Screencast
 
 

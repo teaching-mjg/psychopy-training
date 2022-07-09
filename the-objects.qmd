@@ -1,0 +1,17 @@
+# The Builder
+
+Here look in more depth at the Builder window.
+
+![Builder Window Structure](img/python_sUOQKDBtET.png){#fig-buildermain}
+
+## Routines
+
+In green in the figure
+
+## Components
+
+In yellow in the figure
+
+## Flow
+
+In blue in the figure

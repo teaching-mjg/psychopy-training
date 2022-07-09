@@ -1,0 +1,35 @@
+# The Builder
+
+Here we look in more depth at the Builder window.
+
+```{r, fig.link="img/python_sUOQKDBtET.png", out.width="100%"}
+#| echo: false
+#| label: fig-builderMain
+#| fig-cap: The Builder (click to enlarge)
+knitr::include_graphics("img/python_sUOQKDBtET.png")
+```
+
+## Flow
+
+Bottom in the Builder - in blue in the figure.
+
+To start with the Flow panel shows only a time-course and a single Routine named `trial`.
+
+You build up an experiment by adding Routines to the Flow. Before the `trial` Routine, you probably want to put a `Instructions` Routine, for example. To add a Routine to the Flow, click on `Insert Routine`.
+
+## Components
+
+Top right in the Builder - in yellow in the figure.
+
+The Components panel lists all the available components of an experiment: broadly speaking, stimuli and responses, so things like Text; Image; Keyboard; Mouse; Slider. 
+Also includes some components that are only needed for specific kinds of experiment like eye-tracking or EEG.
+
+
+## Routines
+
+Top left in the Builder - in green in the figure.
+
+To start with, the Routines panel shows the `trial` Routine and its timeline. There aren't any components in the `trial` Routine yet, so it looks a bit empty.
+
+You build up an experiment by adding Components to the Routines panel. To add a Component to a Routine, click on the relevant Component.
+
