@@ -32,9 +32,9 @@ book:
         - randomising.qmd
         - conditional-branching.qmd
         - online.qmd
-    - references.qmd
-  appendices:
-    - authoring-tools.qmd
+  #  - references.qmd
+  #appendices:
+  #  - authoring-tools.qmd
 
 bibliography: 
   references.bib
@@ -50,7 +50,8 @@ editor:
   source
   
 title-block-banner: 
-  true
+  #true
+  false
 
 
 

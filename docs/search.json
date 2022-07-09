@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "PsychoPy Training",
     "section": "",
-    "text": "This is training in PsychoPy, for the July 2022 cohort, w/c 11th July 2022.\nLast compiled Friday 08 July 2022 at 10:23:48"
+    "text": "This is training in PsychoPy, for the July 2022 cohort, w/c 11th July 2022.\nLast compiled Saturday 09 July 2022 at 13:21:48"
   },
   {
     "objectID": "part-one.html",
@@ -130,7 +130,7 @@
     "href": "using-images.html#sec-imgfname",
     "title": "11  Advanced images",
     "section": "11.1 The image’s filename.",
-    "text": "11.1 The image’s filename.\n\nWe start with a list of filenames. This happens once at the start of the experiment outside the trial loop – we don’t want to re-randomise the list each trial.\n\nimage_list = [\"cat1.jpg\",\"cat2.jpg\",\"cat3.jpg\",\"cat4.jpg\",\"cat5.jpg\",\"dog1.jpg\",\"dog2.jpg\",\"dog3.jpg\",\"dog4.jpg\",\"dog5.jpg\"]\n\nThen we shuffle the list.\n\nimport random\nfrom random import shuffle\nshuffle(image_list)\n\n\n['dog1.jpg', 'dog3.jpg', 'cat2.jpg', 'cat4.jpg', 'cat1.jpg', 'cat3.jpg', 'dog4.jpg', 'dog2.jpg', 'dog5.jpg', 'cat5.jpg']\n\n\n\nThat shuffled list is the random sequence for this participant. The next participant will get a different shuffle of the original list.\nNow we can index into that list using the current trial number (\\(n\\)) to pick out the \\(n^{th}\\) element of the list to be the filename for the current trial. So let’s say we have a trial counter called trialn, and that we’re on the 4th trial. The following picks out the 4th element in the shuffled list, which has the index \\(3\\) because indexes start at 0 in python.\n\n\n\ntrialn = 4\ncurrent_image = image_list[trialn-1]\nprint(current_image)\n\ncat4.jpg"
+    "text": "11.1 The image’s filename.\n\nWe start with a list of filenames. This happens once at the start of the experiment outside the trial loop – we don’t want to re-randomise the list each trial.\n\nimage_list = [\"cat1.jpg\",\"cat2.jpg\",\"cat3.jpg\",\"cat4.jpg\",\"cat5.jpg\",\"dog1.jpg\",\"dog2.jpg\",\"dog3.jpg\",\"dog4.jpg\",\"dog5.jpg\"]\n\nThen we shuffle the list.\n\nimport random\nfrom random import shuffle\nshuffle(image_list)\n\n\n['dog5.jpg', 'cat5.jpg', 'cat3.jpg', 'dog4.jpg', 'cat1.jpg', 'cat4.jpg', 'cat2.jpg', 'dog2.jpg', 'dog1.jpg', 'dog3.jpg']\n\n\n\nThat shuffled list is the random sequence for this participant. The next participant will get a different shuffle of the original list.\nNow we can index into that list using the current trial number (\\(n\\)) to pick out the \\(n^{th}\\) element of the list to be the filename for the current trial. So let’s say we have a trial counter called trialn, and that we’re on the 4th trial. The following picks out the 4th element in the shuffled list, which has the index \\(3\\) because indexes start at 0 in python.\n\n\n\ntrialn = 4\ncurrent_image = image_list[trialn-1]\nprint(current_image)\n\ndog4.jpg"
   },
   {
     "objectID": "using-images.html#sec-imglocn",
@@ -159,61 +159,5 @@
     "title": "14  Online",
     "section": "",
     "text": "Need a pavlovia account using uni email\nNeed to be logged in in the PsychoPy interface\nWrite experiment using autoJs as much as possible (and “Both”) for things that don’t auto-translate\nUse “Sync” to push experiment up\nChange from ‘piloting’ to ‘running’\n…\n\nUse local debug mode to see whether the experiment would work in a browser at all before you puch it to pavlovia to test it"
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Peirce, Jonathan, Rebecca Hirst, and Michael MacAskill. 2022.\nBuilding Experiments in PsychoPy. Sage."
-  },
-  {
-    "objectID": "authoring-tools.html",
-    "href": "authoring-tools.html",
-    "title": "Appendix A — Authoring Tools",
-    "section": "",
-    "text": "There are five types of callouts:\n\nnote; warning; important; tip; caution.\n\n\n\n\n\n\n\nNote\n\n\n\nThis is a callout-note.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nThis is a callout-warning.\n\n\n\n\n\n\n\n\nImportant\n\n\n\nThis is a callout-important.\n\n\n\n\n\n\n\n\nTip\n\n\n\nThis is a callout-tip.\n\n\n\n\n\n\n\n\nDanger\n\n\n\nThis is a callout-caution that actually says danger\n\n\nYou can issue a second-level header inside the callout to edit the text content at the top of the box in the coloured bit: here the header is hash hash Tip Your Waiter, and Tip Your Waiter is considered to be a caption\n\n\n\n\n\n\nTip Your Waiter\n\n\n\nThis is an example of a callout with a caption.\n\n\nYou can imitate rmarkdown’s code=‘hide’ approach to get boxes of text that reveal on being clicked - in quarto jargon this is collapse done by adding the chunk option collapse=\"true\" to get collapsed until clicked\n\n\n\n\n\n\nClick to reveal the answer\n\n\n\n\n\nThe answer is 42\n\n\n\nor collapse=\"false\" to get expanded until dismissed.\n\n\n\n\n\n\nClick to hide the code\n\n\n\n\n\nThis code gets rolled up when you click"
-  },
-  {
-    "objectID": "authoring-tools.html#citations",
-    "href": "authoring-tools.html#citations",
-    "title": "Appendix A — Authoring Tools",
-    "section": "A.2 Citations",
-    "text": "A.2 Citations\nHere’s an example of quarto citation syntax:\n“Have a look in the PsychoPy textbook (Peirce, Hirst, and MacAskill 2022, 34–35) for more information.”"
-  },
-  {
-    "objectID": "authoring-tools.html#sec-crossref",
-    "href": "authoring-tools.html#sec-crossref",
-    "title": "Appendix A — Authoring Tools",
-    "section": "A.3 Cross-references",
-    "text": "A.3 Cross-references\nThis is how you do a cross-reference - see Section A.3."
-  },
-  {
-    "objectID": "authoring-tools.html#definition-lists",
-    "href": "authoring-tools.html#definition-lists",
-    "title": "Appendix A — Authoring Tools",
-    "section": "A.4 Definition Lists",
-    "text": "A.4 Definition Lists\n\nTerm 1\n\nDefinition 1\n\nTerm 2\n\nDefinition 2a\n\n\nDefinition 2b"
-  },
-  {
-    "objectID": "authoring-tools.html#margin-note",
-    "href": "authoring-tools.html#margin-note",
-    "title": "Appendix A — Authoring Tools",
-    "section": "A.5 Margin Note",
-    "text": "A.5 Margin Note\n\n\nThis is a margin note"
-  },
-  {
-    "objectID": "authoring-tools.html#footnotes",
-    "href": "authoring-tools.html#footnotes",
-    "title": "Appendix A — Authoring Tools",
-    "section": "A.6 Footnotes",
-    "text": "A.6 Footnotes\nThis shows how to use a footnote1"
-  },
-  {
-    "objectID": "authoring-tools.html#unnumbered-sections",
-    "href": "authoring-tools.html#unnumbered-sections",
-    "title": "Appendix A — Authoring Tools",
-    "section": "A.7 Unnumbered sections",
-    "text": "A.7 Unnumbered sections\nUse this on the same line as the section definition, after the section definition: >{.unnumbered}\n\n\n\n\nPeirce, Jonathan, Rebecca Hirst, and Michael MacAskill. 2022. Building Experiments in PsychoPy. Sage."
   }
 ]
