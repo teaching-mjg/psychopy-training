@@ -1,8 +1,8 @@
 ﻿#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-This experiment was created using PsychoPy3 Experiment Builder (v2022.2.0),
-    on July 07, 2022, at 19:20
+This experiment was created using PsychoPy3 Experiment Builder (v2022.2.1),
+    on July 09, 2022, at 12:53
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -34,7 +34,7 @@ from psychopy.hardware import keyboard
 _thisDir = os.path.dirname(os.path.abspath(__file__))
 os.chdir(_thisDir)
 # Store info about the experiment session
-psychopyVersion = '2022.2.0'
+psychopyVersion = '2022.2.1'
 expName = 'file10_branching'  # from the Builder filename that created this script
 expInfo = {
     'participant': f"{randint(0, 999999):06.0f}",
@@ -123,6 +123,9 @@ mouse = event.Mouse(win=win)
 x, y = [None, None]
 mouse.mouseClock = core.Clock()
 
+# --- Initialize components for Routine "blank" ---
+ISI = clock.StaticPeriod(win=win, screenHz=expInfo['frameRate'], name='ISI')
+
 # --- Initialize components for Routine "cats" ---
 text = visual.TextStim(win=win, name='text',
     text='Please rate for typicality',
@@ -146,6 +149,9 @@ slider = visual.Slider(win=win, name='slider',
     labelColor='LightGray', markerColor='Red', lineColor='White', colorSpace='rgb',
     font='Open Sans', labelHeight=0.05,
     flip=True, ori=0.0, depth=-2, readOnly=False)
+
+# --- Initialize components for Routine "blank" ---
+ISI = clock.StaticPeriod(win=win, screenHz=expInfo['frameRate'], name='ISI')
 
 # --- Initialize components for Routine "dogs" ---
 text_2 = visual.TextStim(win=win, name='text_2',
@@ -386,10 +392,76 @@ for thisTrial in trials:
             for paramName in thisCatloop:
                 exec('{} = thisCatloop[paramName]'.format(paramName))
         
+        # --- Prepare to start Routine "blank" ---
+        continueRoutine = True
+        # update component parameters for each repeat
+        # keep track of which components have finished
+        blankComponents = [ISI]
+        for thisComponent in blankComponents:
+            thisComponent.tStart = None
+            thisComponent.tStop = None
+            thisComponent.tStartRefresh = None
+            thisComponent.tStopRefresh = None
+            if hasattr(thisComponent, 'status'):
+                thisComponent.status = NOT_STARTED
+        # reset timers
+        t = 0
+        _timeToFirstFrame = win.getFutureFlipTime(clock="now")
+        frameN = -1
+        
+        # --- Run Routine "blank" ---
+        while continueRoutine and routineTimer.getTime() < 1.0:
+            # get current time
+            t = routineTimer.getTime()
+            tThisFlip = win.getFutureFlipTime(clock=routineTimer)
+            tThisFlipGlobal = win.getFutureFlipTime(clock=None)
+            frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+            # update/draw components on each frame
+            # *ISI* period
+            if ISI.status == NOT_STARTED and t >= 0-frameTolerance:
+                # keep track of start time/frame for later
+                ISI.frameNStart = frameN  # exact frame index
+                ISI.tStart = t  # local t and not account for scr refresh
+                ISI.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(ISI, 'tStartRefresh')  # time at next scr refresh
+                # add timestamp to datafile
+                thisExp.addData('ISI.started', t)
+                ISI.start(1)
+            elif ISI.status == STARTED:  # one frame should pass before updating params and completing
+                # Updating other components during *ISI*
+                image.setImage(animal_image)
+                image_2.setImage(animal_image)
+                # Component updates done
+                ISI.complete()  # finish the static period
+                ISI.tStop = ISI.tStart + 1  # record stop time
+            
+            # check for quit (typically the Esc key)
+            if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
+                core.quit()
+            
+            # check if all components have finished
+            if not continueRoutine:  # a component has requested a forced-end of Routine
+                break
+            continueRoutine = False  # will revert to True if at least one component still running
+            for thisComponent in blankComponents:
+                if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                    continueRoutine = True
+                    break  # at least one component has not yet finished
+            
+            # refresh the screen
+            if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+                win.flip()
+        
+        # --- Ending Routine "blank" ---
+        for thisComponent in blankComponents:
+            if hasattr(thisComponent, "setAutoDraw"):
+                thisComponent.setAutoDraw(False)
+        # using non-slip timing so subtract the expected duration of this Routine
+        routineTimer.addTime(-1.000000)
+        
         # --- Prepare to start Routine "cats" ---
         continueRoutine = True
         # update component parameters for each repeat
-        image.setImage(animal_image)
         slider.reset()
         # keep track of which components have finished
         catsComponents = [text, image, slider]
@@ -500,10 +572,76 @@ for thisTrial in trials:
             for paramName in thisDogloop:
                 exec('{} = thisDogloop[paramName]'.format(paramName))
         
+        # --- Prepare to start Routine "blank" ---
+        continueRoutine = True
+        # update component parameters for each repeat
+        # keep track of which components have finished
+        blankComponents = [ISI]
+        for thisComponent in blankComponents:
+            thisComponent.tStart = None
+            thisComponent.tStop = None
+            thisComponent.tStartRefresh = None
+            thisComponent.tStopRefresh = None
+            if hasattr(thisComponent, 'status'):
+                thisComponent.status = NOT_STARTED
+        # reset timers
+        t = 0
+        _timeToFirstFrame = win.getFutureFlipTime(clock="now")
+        frameN = -1
+        
+        # --- Run Routine "blank" ---
+        while continueRoutine and routineTimer.getTime() < 1.0:
+            # get current time
+            t = routineTimer.getTime()
+            tThisFlip = win.getFutureFlipTime(clock=routineTimer)
+            tThisFlipGlobal = win.getFutureFlipTime(clock=None)
+            frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+            # update/draw components on each frame
+            # *ISI* period
+            if ISI.status == NOT_STARTED and t >= 0-frameTolerance:
+                # keep track of start time/frame for later
+                ISI.frameNStart = frameN  # exact frame index
+                ISI.tStart = t  # local t and not account for scr refresh
+                ISI.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(ISI, 'tStartRefresh')  # time at next scr refresh
+                # add timestamp to datafile
+                thisExp.addData('ISI.started', t)
+                ISI.start(1)
+            elif ISI.status == STARTED:  # one frame should pass before updating params and completing
+                # Updating other components during *ISI*
+                image.setImage(animal_image)
+                image_2.setImage(animal_image)
+                # Component updates done
+                ISI.complete()  # finish the static period
+                ISI.tStop = ISI.tStart + 1  # record stop time
+            
+            # check for quit (typically the Esc key)
+            if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
+                core.quit()
+            
+            # check if all components have finished
+            if not continueRoutine:  # a component has requested a forced-end of Routine
+                break
+            continueRoutine = False  # will revert to True if at least one component still running
+            for thisComponent in blankComponents:
+                if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                    continueRoutine = True
+                    break  # at least one component has not yet finished
+            
+            # refresh the screen
+            if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+                win.flip()
+        
+        # --- Ending Routine "blank" ---
+        for thisComponent in blankComponents:
+            if hasattr(thisComponent, "setAutoDraw"):
+                thisComponent.setAutoDraw(False)
+        # using non-slip timing so subtract the expected duration of this Routine
+        routineTimer.addTime(-1.000000)
+        
         # --- Prepare to start Routine "dogs" ---
         continueRoutine = True
         # update component parameters for each repeat
-        image_2.setImage(animal_image)
         slider_2.reset()
         # keep track of which components have finished
         dogsComponents = [text_2, image_2, slider_2]
