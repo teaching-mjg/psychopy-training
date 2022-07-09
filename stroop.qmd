@@ -1,0 +1,11 @@
+# Stroop task
+
+Instead of building our own Stroop task, we'll take advantage of the fact that PsychoPy ships with demos.
+
+The Stroop task allows us to see :
+
+* how to vary the properties of our stimuli per-trial
+* how to collect responses to our stimuli
+* how to evaluate responses for accuracy and timing
+* how to give simple feedback
+* how to implement separate practice and experimental blocks

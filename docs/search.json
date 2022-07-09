@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "PsychoPy Training",
     "section": "",
-    "text": "This is training in PsychoPy, for the July 2022 cohort, w/c 11th July 2022.\nLast compiled Saturday 09 July 2022 at 16:31:04"
+    "text": "This is training in PsychoPy, for the July 2022 cohort, w/c 11th July 2022.\nLast compiled Saturday 09 July 2022 at 21:26:41"
   },
   {
     "objectID": "getting-started.html",
@@ -49,6 +49,13 @@
     "text": "Here we look in more depth at the Builder window."
   },
   {
+    "objectID": "the-builder.html#flow",
+    "href": "the-builder.html#flow",
+    "title": "2  The Builder",
+    "section": "2.1 Flow",
+    "text": "2.1 Flow\nBottom in the Builder - in blue in the figure.\nTo start with the Flow panel shows only a time-course and a single Routine named trial.\nYou build up an experiment by adding Routines to the Flow. Before the trial Routine, you probably want to put a Instructions Routine, for example. To add a Routine to the Flow, click on Insert Routine."
+  },
+  {
     "objectID": "the-builder.html#components",
     "href": "the-builder.html#components",
     "title": "2  The Builder",
@@ -61,13 +68,6 @@
     "title": "2  The Builder",
     "section": "2.3 Routines",
     "text": "2.3 Routines\nTop left in the Builder - in green in the figure.\nTo start with, the Routines panel shows the trial Routine and its timeline. There aren’t any components in the trial Routine yet, so it looks a bit empty.\nYou build up an experiment by adding Components to the Routines panel. To add a Component to a Routine, click on the relevant Component."
-  },
-  {
-    "objectID": "the-builder.html#flow",
-    "href": "the-builder.html#flow",
-    "title": "2  The Builder",
-    "section": "2.1 Flow",
-    "text": "2.1 Flow\nBottom in the Builder - in blue in the figure.\nTo start with the Flow panel shows only a time-course and a single Routine named trial.\nYou build up an experiment by adding Routines to the Flow. Before the trial Routine, you probably want to put a Instructions Routine, for example. To add a Routine to the Flow, click on Insert Routine."
   },
   {
     "objectID": "hello-world.html",
@@ -89,5 +89,124 @@
     "title": "3  Hello World",
     "section": "3.2 Image component",
     "text": "3.2 Image component\nThe same principles that applied to doing Hello World using a Text Component also apply for the method that uses an Image Component.\nStart with a new experiment: File -> New\nSave it into a folder of its own, maybe hello-world-image.\n\n\n\nNow you need an image of the words “Hello World!”. You can make one in Paint, or Powerpoint; or you can grab this one in Figure 3.7. Save it in the same folder as your experiment, under the name stimulus.png\n\n\n\n\n\n\nFigure 3.7: Image of hello world text\n\n\n\n\n\n\n\n\n\nFrom the Components panel, choose an Image Component. In the box that opens up, in the Image field, write the name of the image file, stimulus.png as in Figure 3.8.\n\n\n\n\n\n\nFigure 3.8: Enter the image name\n\n\n\n\n\n\n\n\n\nHave a look at the Layout tab too. Notice that by default, images are shown square: The Size [w, h] field is set to (0.5, 0.5). Our image is oblong so if we constrain it to be square it will look squashed. The actual dimensions of our image are (602, 164). That’s 3.67:1 as a ratio. If we want the image 0.5 wide, we need to divide 3.67 by (3.67/0.5) = 7.34, so, to maintain the aspect ratio we need to divide 1 by 7.34 too (1/7.34) = 0.136. Put in (0.5,0.136) for Size [w,h], and press OK (Figure 3.9).\n\n\n\n\n\n\nFigure 3.9: Correct the aspect ratio\n\n\n\n\n\n\nDon’t forget to save the experiment, then run it in the same way as for the Text Component version.\n\n\n\nHere’s what you should see:\n\n\n\n\n\nVideo\nFigure 3.10: Expected outcome"
+  },
+  {
+    "objectID": "hello-world.html#spreadsheet-method",
+    "href": "hello-world.html#spreadsheet-method",
+    "title": "3  Hello World",
+    "section": "3.3 Spreadsheet method",
+    "text": "3.3 Spreadsheet method\nThe final way of doing Hello World is by using a spreadsheet to supply the name of the image.\n\n\n\nStart with the spreadsheet. All you need is a single column, with a header and a cell for content. The header should be image_name or similar, and the content needs to be the name of the image file: stimulus.png, as in Figure 3.11. Save the spreadsheet into the same folder as the experiment, with the name hello-world-loop.xlsx.\n\n\n\n\n\n\nFigure 3.11: A speadsheet to control the loop\n\n\n\n\n\n\n\n\n\nIn the Image component, we will need to make a change in the Image field so that it reads $image_name (notice the dollar sign). We also need to change the drop-down from constant to set every repeat since the name of the image now depends on the spreadsheet and isn’t constant any more. See Figure 3.12.\n\n\n\n\n\n\nFigure 3.12: Change the Image Component\n\n\n\n\n\n\nSo far the experiment doesn’t know about the spreadsheet, so we need to supply the spreadsheet to the experiment.\n\n\n\nThe first step is to create a loop over the trial Routine. In the Flow panel, at the bottom-left, click on Insert loop - you now need to click before and after the trial Routine in the Flow. A box opens called Loop Properties. In the Conditions field, we use the browse button next to it to locate the spreadsheet in a file browser. This fills out the name of the spreadsheet, and you’ll also notice that the text no paramaters set changes to 1 conditions with 1 parameters [image_name]. Finally change the nReps field from 5 to 1. See Figure 3.13\n\n\n\n\n\n\nFigure 3.13: Change the Image Component\n\n\n\n\n\n\n\n\n\nThe experiment overview will look very similar to before, expect that in the Flow panel you’ll see the loop – named trials (plural) – around the trial Routine as in Figure 3.14. If all that went smoothly, when you run it, you should see exactly the same thing happen as with the previous version that showed the image.\n\n\n\n\n\n\nFigure 3.14: A loop over the trial Routine"
+  },
+  {
+    "objectID": "hello-world.html#conclusion",
+    "href": "hello-world.html#conclusion",
+    "title": "3  Hello World",
+    "section": "3.4 Conclusion",
+    "text": "3.4 Conclusion\nWhat you have made so far might seem a long way from an experiment that you would want to run for real.\nHowever by making those simple experiments run, you have successfully taught yourself most of the techniques that you’ll need to know in order to make full experiments that you might want to run in the real world. You should now be ready to tackle the next chapters in the training material."
+  },
+  {
+    "objectID": "intermediate.html",
+    "href": "intermediate.html",
+    "title": "Part II Intermediate",
+    "section": "",
+    "text": "Examine a fully-working classic experiment that you already understand to see how PsychoPy implements its features.\nUse the cats and dogs example to explore some more advanced features that give you finer control of your own experiments."
+  },
+  {
+    "objectID": "stroop.html",
+    "href": "stroop.html",
+    "title": "4  Stroop task",
+    "section": "",
+    "text": "The Stroop task allows us to see :\n\nhow to vary the properties of our stimuli per-trial\nhow to collect responses to our stimuli\nhow to evaluate responses for accuracy and timing\nhow to give simple feedback\nhow to implement separate practice and experimental blocks"
+  },
+  {
+    "objectID": "advanced.html",
+    "href": "advanced.html",
+    "title": "Part III Advanced",
+    "section": "",
+    "text": "These chapters are mainly in response to specific topics that were requested\n\nFeedback, including identifying time-outs; go/no-go type responses\nSaving data that you create during a trial instead of supplying in the loop control spreadsheet\nUsing sound\nPresenting images in randomised places and sequences\nConditional branching\nRunning online"
+  },
+  {
+    "objectID": "feedback.html",
+    "href": "feedback.html",
+    "title": "5  Feedback",
+    "section": "",
+    "text": "There are several ways to implement feedback in PsychoPy for stimulus-response experiments. What they have in common is that they all assume that the response.corr variable is available.\nOne style is to present the participant with text indicating whether they respond correctly or not for each trial.\nWithin that style there is more than one way to implement the feedback in PsychoPy."
+  },
+  {
+    "objectID": "feedback.html#per-trial-method-1",
+    "href": "feedback.html#per-trial-method-1",
+    "title": "5  Feedback",
+    "section": "5.1 Per-trial method 1",
+    "text": "5.1 Per-trial method 1\nOne way is to insert a feedback Routine after the Trial Routine that contains a single Text Component whose contents and colour are set to variables whose values we calculate using a Code component, based on the value of response.corr. See Figure 5.1 for a screencast of writing this method., and see Figure 5.2 for the runtime. This is file5.psyexp.\n\n\n\n\nFigure 5.1: Feedback using a single text component and passing variables in for text content and text colour\n\n\n\n\n\n\n\nFigure 5.2: Feedback using a single text component and passing variables in for text content and text colour (runtime)"
+  },
+  {
+    "objectID": "feedback.html#per-trial-method-2",
+    "href": "feedback.html#per-trial-method-2",
+    "title": "5  Feedback",
+    "section": "5.2 Per-trial Method 2",
+    "text": "5.2 Per-trial Method 2\nAnother way is to insert the Feedback Routine after the Trial Routine, in the same way, but this time to create a Text component for each of the possible outcomes of the trial - normally correct and incorrect but also sometimes time-out. We then select one single outcome to display with reference to the value of response.corr. This is file6.psyexp.\n\n\n\n\nFigure 5.3: Feedback using multiple text components, one for each outcome, with fixed content and colour, and then supplying as the Start value not a time but a condition\n\n\n\n\n\n\n\nFigure 5.4: Feedback using multiple text components, one for each outcome, with fixed content and colour, and then supplying as the Start value not a time but a condition (runtime)"
+  },
+  {
+    "objectID": "feedback.html#average-rt-and-accuracy",
+    "href": "feedback.html#average-rt-and-accuracy",
+    "title": "5  Feedback",
+    "section": "5.3 Average RT and accuracy",
+    "text": "5.3 Average RT and accuracy\nfile7.psyexp includes a screen at the end of each trial that presents the cumulative mean RT and mean accuracy.\nthe code for this is part of the evaluate_response component that we used in method one of providing feedback, where we had a single feedback component and used variables to decide what it should show.\n\nif response.keys:\n    if response.corr==1:\n        sum_ac=sum_ac+1\n        sum_rt=sum_rt+response.rt\n        feedback_colour=\"green\"\n        feedback_text=\"CORRECT!\"\n    if response.corr==0:\n        sum_rt=sum_rt+response.rt\n        feedback_colour=\"red\"\n        feedback_text=\"Wrong!\"\nelse:\n    sum_rt=sum_rt+2.0\n    feedback_colour=\"black\"\n    feedback_text=\"Timed out - please respond faster!\"\nmean_ac=sum_ac/(trials.thisTrialN+1)\nmean_rt=sum_rt/(trials.thisTrialN+1)"
+  },
+  {
+    "objectID": "saving-data.html",
+    "href": "saving-data.html",
+    "title": "6  Saving data manually",
+    "section": "",
+    "text": "But any variables that you create using code (like subdividing incorrect responses into incorrect and timeout) need to be explicitly written to file.\nThe command for doing this is quite simple, and auto-translates from python to javascript well.\nthisExp.addData(\"name\", value)"
+  },
+  {
+    "objectID": "using-sound.html",
+    "href": "using-sound.html",
+    "title": "7  Using Sound",
+    "section": "",
+    "text": "Sometimes we want to play a sound file while a visual stimulus is presented1. For example, there are people in the department who investigate the various effects of different kinds of background sounds on reading comprehension. To do this, we need to present text for them to read while playing sound files into their headphones.\nSee the experiment in the folder psy/sound1 for an example.\nIn this example participants are presented with a word and asked to respond with how many syllables it contains, while one of two possible sounds are played at the same time (one of a cafe scene, one of a thunderstorm - maybe it’s more disruptive to hear speech while reading than to hear natural sounds without language).\nTo achieve this, we use the trial definition spreadsheet to pass in the name of the soundfile on each trial; and to pass in the text of the stimulus word; and to pass in the actual number of syllables.\n\nIn the trial routine we use a Sound component to play the soundfile. Notice that we prepare the soundfile during a blank screen at the start of each trial.\nWe use Text components to show the stimulus word and the prompt.\nWe use a Textbox component to put the response on screen until the participant presses Enter.\nWe use a Code component to check on each frame whether the response ends with Enter. If it doesn’t, we show what they have typed so far. If it does, we evaluate the response for accuracy, record the response itself; the RT; and the accuracy to the results file; and move on to the next trial.\n\n\n\n\n\n\n\nDownload\n\n\n\nClick sound1 to download the sound demo psyexp.\n\n\n\n\n\n\n\nFede’s request↩︎"
+  },
+  {
+    "objectID": "using-images.html",
+    "href": "using-images.html",
+    "title": "8  Advanced images",
+    "section": "",
+    "text": "This chapter is in response to a request to show:\nOne way to characterise this is to start with what is necessary per-image-showing event.\nYou need to know:\nI’ll assume that we have a set of images, and that we want to pick one at random each trial (so, each participant sees a different order of images).\nI’ll assume that each image could go anywhere on screen, so its position is chosen randomly each time it is presented.\nI’ll assume that we only want to show one image on each trial for the first example."
+  },
+  {
+    "objectID": "using-images.html#sec-imgfname",
+    "href": "using-images.html#sec-imgfname",
+    "title": "8  Advanced images",
+    "section": "8.1 The image’s filename.",
+    "text": "8.1 The image’s filename.\n\nWe start with a list of filenames. This happens once at the start of the experiment outside the trial loop – we don’t want to re-randomise the list each trial.\n\nimage_list = [\"cat1.jpg\",\"cat2.jpg\",\"cat3.jpg\",\"cat4.jpg\",\"cat5.jpg\",\"dog1.jpg\",\"dog2.jpg\",\"dog3.jpg\",\"dog4.jpg\",\"dog5.jpg\"]\n\nThen we shuffle the list.\n\nimport random\nfrom random import shuffle\nshuffle(image_list)\n\n\n['dog4.jpg', 'cat4.jpg', 'dog5.jpg', 'cat2.jpg', 'dog3.jpg', 'dog1.jpg', 'cat1.jpg', 'cat5.jpg', 'cat3.jpg', 'dog2.jpg']\n\n\n\nThat shuffled list is the random sequence for this participant. The next participant will get a different shuffle of the original list.\nNow we can index into that list using the current trial number (\\(n\\)) to pick out the \\(n^{th}\\) element of the list to be the filename for the current trial. So let’s say we have a trial counter called trialn, and that we’re on the 4th trial. The following picks out the 4th element in the shuffled list, which has the index \\(3\\) because indexes start at 0 in python.\n\n\n\ntrialn = 4\ncurrent_image = image_list[trialn-1]\nprint(current_image)\n\ncat2.jpg"
+  },
+  {
+    "objectID": "using-images.html#sec-imglocn",
+    "href": "using-images.html#sec-imglocn",
+    "title": "8  Advanced images",
+    "section": "8.2 The image’s location and size",
+    "text": "8.2 The image’s location and size\ntrialn = trialn + 1\nthis_image = image_list[trialn]\n# these images are 612 x 408, so 1.5:1 aspect ratio \n# to occupy the whole screen\n# or half of that to occupy quarter of screen\nthis_aspect_ratio = [0.75, 0.5]\nthis_size = [0.5, 0.5]\n# If the size is 0.5 of the height\n# then the position has to be less than 0.25 and \n# greater than -0.25 in the y dimension to avoid \n# image being shown at least partially offscreen\n# but x can be wider\nmin_value_x = -0.375\nmax_value_x = 0.375\nmin_value_y = -0.25\nmax_value_y = 0.25\nthis_position_x = uniform(min_value_x, max_value_x)\nthis_position_y = uniform(min_value_y, max_value_y)\nimage.image = this_image\nimage.size = this_aspect_ratio\nimage.pos = [this_position_x, this_position_y]\n\n\n\n\n\n\nDownload\n\n\n\nClick psy_images to download the images demo psyexp."
+  },
+  {
+    "objectID": "randomising.html",
+    "href": "randomising.html",
+    "title": "9  Randomising",
+    "section": "",
+    "text": "Here we discuss how to use python’s random module, especially random.shuffle\nrandom.shuffle shuffles in place. That means that the original sequence is shuffled.\nJavascript shuffle…\nThe PsychoPy writers have put some work into automatically translating from python to javascript, which is the code that runs in a browser.\nThat means that when you type random.shuffle the auto-translator will replace the javascript side with util.shuffle. util isn’t actually a thing in javascript, it’s a helper function provided by PsychoPy.\nThe auto-translator can’t cope with all of the random library from python though.\nFor example, in the images demo, we wanted to generate a random floating-point number between -0.25 and 0.25. That was easy in python but it doesn’t auto-translate.\nThat’s manageable though because instead of doing auto>js you can do both and supply modified javascript. This is the javascript you need to replace the python in that example. Notice that we have to define a function in the javascript side (lines 2 to 6) because javascript doesn’t have python’s native uniform function that allows you to pass in the “between” values. Then when you call uniform on the python side (lines 15 and 16), you call the supplied function instead on the javascript side (getRandomFloat)\n\n\n\n# python side\n\n\n\n\n\ntrialn = trialn + 1\nthis_image = image_list[trialn]\nthis_aspect_ratio = [0.75, 0.5]\nthis_size = [0.5, 0.5]\nmin_value_x = -0.375\nmax_value_x = 0.375\nmin_value_y = -0.25\nmax_value_y = 0.25\nthis_position_x = uniform(min_value_x, max_value_x)\nthis_position_y = uniform(min_value_y, max_value_y)\nimage.image = this_image\nimage.size = this_aspect_ratio\nimage.pos = [this_position_x, this_position_y]\n\n\n# javascript side\nfunction getRandomFloat(min, max, decimals) {\n    const n = (Math.random() * (max - min) + min).toFixed(decimals);\n    return n;\n  }\n  \ntrialn = (trialn + 1);\nthis_image = image_list[trialn];\nthis_aspect_ratio = [0.75, 0.5];\nthis_size = [0.5, 0.5];\nmin_value_x = (- 0.375);\nmax_value_x = 0.375;\nmin_value_y = (- 0.25);\nmax_value_y = 0.25;\nthis_position_x = getRandomFloat(min_value_x, max_value_x, 3);\nthis_position_y = getRandomFloat(min_value_y, max_value_y, 3);\nimage.image = this_image;\nimage.size = this_aspect_ratio;\nimage.pos = [this_position_x, this_position_y];"
+  },
+  {
+    "objectID": "conditional-branching.html",
+    "href": "conditional-branching.html",
+    "title": "10  Conditional branching",
+    "section": "",
+    "text": "Demo available\n\n\n\nPsychoPy ships with a demo on conditional branching - I found out too late to incorporate it here but I should show it\n\n\nConditional branching is a bit counter-intuitive in PsychoPy.\nEssentially you have to create all possible branches and then say that you want them all to happen zero times – except the chosen one.\nTo do this we take advantage of the way that trial control spreadsheet work in PsychoPy. When you make a loop you supply it with a spreadsheet that controls what happens on the loop (which image should be shown each trial; what the correct response is; etc.)\nOne of the parameters of the trial control spreadsheet indicates how many times the spreadsheet should be run. In a typical situation, you might have, say, 10 trials defined in a single spreadsheet, where the spreadsheet should be run once. That would result in ten trials. If you said that you wanted the spreadsheet to be run 3 times then you would end up with 30 trials, being 3 repetitions of each trial defined in the spreadsheet.\nLike many parameters in PsychoPy, this one, nReps can be set to a variable value, which means among other things that an outer loop can define how many times an inner loop should run.\nFor our purposes though, consider what happens if that variable has the value \\(0\\). Under these circumstances no trials are run.\nSo, to implement conditional branching, you create every branch in its own loop, and set nReps to a variable unique to that loop that can be set at some earlier stage in the experiment.\n\nIn the example, the experiment is to rate pictures of animals for typicality using a slider. We ask the participant at the start whether they want to rate cats or dogs, and if they respond cats you show them only cats; and if they respond ‘dogs’ you show them only dogs.\nIn this case with only 2 branches, you have to create a loop for showing cats and a loop for showing dogs1. The cats loop runs nRepsCats times and the dogs loop runs nRepsDogs times.\nThen in the first part of the experiment where you collect their preference, you set the selected animal’s loop to run once and the non-selected animal’s loop to run zero times.\nif mouse.isPressedIn(cats_option):\n    input_xls = \"cats.xlsx\"\n    nRepsCats=1\n    nRepsDogs=0\n    continueRoutine=False\nif mouse.isPressedIn(dogs_option):\n    input_xls = \"dogs.xlsx\"\n    nRepsCats=0\n    nRepsDogs=1\n    continueRoutine = False\n\n\n\n\n\n\nDownload\n\n\n\nClick file10_branching to download the conditional branching demo psyexp.\n\n\n\n\n\n\n\nIn fact, in this simple case where the task is the same in each branch, you could implement the same experiment by having a single loop that merely takes the input spreadsheet name depending on the initial choice. But the method shown here scales up for loops that do different tasks.↩︎"
+  },
+  {
+    "objectID": "online.html",
+    "href": "online.html",
+    "title": "11  Online",
+    "section": "",
+    "text": "Need a pavlovia account using uni email\nNeed to be logged in in the PsychoPy interface\nWrite experiment using autoJs as much as possible (and “Both”) for things that don’t auto-translate\nUse “Sync” to push experiment up\nChange from ‘piloting’ to ‘running’\n…\n\nUse local debug mode to see whether the experiment would work in a browser at all before you puch it to pavlovia to test it"
   }
 ]

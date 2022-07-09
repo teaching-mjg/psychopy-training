@@ -16,6 +16,19 @@ book:
         - the-interface.qmd
         - the-builder.qmd
         - hello-world.qmd
+    - part: intermediate.qmd
+      chapters: 
+        - stroop.qmd
+    - part: advanced.qmd
+      chapters: 
+        - feedback.qmd
+        - saving-data.qmd
+        - using-sound.qmd
+        - using-images.qmd
+        - randomising.qmd
+        - conditional-branching.qmd
+        - online.qmd
+    
     #    - instructions-routine.qmd
     #     - trial-procedure.qmd
     #     - trial-sequence.qmd
@@ -23,15 +36,8 @@ book:
     #     - making-the-trial-loop.qmd
     #     - finessing-the-trial-loop.qmd
     #     - keyboard-handling.qmd
-    #     - feedback.qmd
-    #     - saving-data.qmd
-    # - part: part-two.qmd
-    #   chapters:
-    #     - using-sound.qmd
-    #     - using-images.qmd
-    #     - randomising.qmd
-    #     - conditional-branching.qmd
-    #     - online.qmd
+    #     
+    #     
 
   # chapters:
   #   - index.qmd

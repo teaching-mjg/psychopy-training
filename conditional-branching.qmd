@@ -2,6 +2,10 @@
 
 **How to make one of several things happen depending on something that happened earlier.**
 
+:::{.callout-note}
+## Demo available
+PsychoPy ships with a demo on conditional branching - I found out too late to incorporate it here but I should show it
+:::
 
 Conditional branching is a bit counter-intuitive in PsychoPy.
 

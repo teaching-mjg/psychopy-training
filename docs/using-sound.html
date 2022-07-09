@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>PsychoPy Training - 2&nbsp; The Builder</title>
+<title>PsychoPy Training - 7&nbsp; Using Sound</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,8 +25,8 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./hello-world.html" rel="next">
-<link href="./the-interface.html" rel="prev">
+<link href="./using-images.html" rel="next">
+<link href="./saving-data.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -67,7 +67,7 @@ ul.task-list{list-style: none;}
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Builder</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Using Sound</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -113,7 +113,7 @@ ul.task-list{list-style: none;}
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./the-builder.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Builder</span></a>
+  <a href="./the-builder.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Builder</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -158,7 +158,7 @@ ul.task-list{list-style: none;}
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./using-sound.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Using Sound</span></a>
+  <a href="./using-sound.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Using Sound</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -188,22 +188,14 @@ ul.task-list{list-style: none;}
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#flow" id="toc-flow" class="nav-link active" data-scroll-target="#flow"> <span class="header-section-number">2.1</span> Flow</a></li>
-  <li><a href="#components" id="toc-components" class="nav-link" data-scroll-target="#components"> <span class="header-section-number">2.2</span> Components</a></li>
-  <li><a href="#routines" id="toc-routines" class="nav-link" data-scroll-target="#routines"> <span class="header-section-number">2.3</span> Routines</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Builder</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Using Sound</span></h1>
 </div>
 
 
@@ -217,35 +209,37 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<p>Here we look in more depth at the Builder window.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-builderMain" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><a href="img/python_sUOQKDBtET.png"><img src="img/python_sUOQKDBtET.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.1: The Builder (click to enlarge)</figcaption><p></p>
-</figure>
+<p>PsychoPy has methods for playing back sound files; and recording sound files generated during the experiment (like when a Stroop participant says the name of the ink colour out loud - a recent update in PsychoPy allows for spoken responses to be transcribed using speech-to-text).</p>
+<p>Sometimes we want to play a sound file while a visual stimulus is presented<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. For example, there are people in the department who investigate the various effects of different kinds of background sounds on reading comprehension. To do this, we need to present text for them to read while playing sound files into their headphones.</p>
+<p>See the experiment in the folder <code>psy/sound1</code> for an example.</p>
+<p>In this example participants are presented with a word and asked to respond with how many syllables it contains, while one of two possible sounds are played at the same time (one of a cafe scene, one of a thunderstorm - maybe it’s more disruptive to hear speech while reading than to hear natural sounds without language).</p>
+<p>To achieve this, we use the trial definition spreadsheet to pass in the name of the soundfile on each trial; and to pass in the text of the stimulus word; and to pass in the actual number of syllables.</p>
+<ul>
+<li>In the trial routine we use a Sound component to play the soundfile. Notice that we prepare the soundfile during a blank screen at the start of each trial.</li>
+<li>We use Text components to show the stimulus word and the prompt.</li>
+<li>We use a <a href="https://www.psychopy.org/api/visual/textbox.html">Textbox</a> component to put the response on screen until the participant presses Enter.</li>
+<li>We use a Code component to check on each frame whether the response ends with Enter. If it doesn’t, we show what they have typed so far. If it does, we evaluate the response for accuracy, record the response itself; the RT; and the accuracy to the results file; and move on to the next trial.</li>
+</ul>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Download
 </div>
 </div>
+<div class="callout-body-container callout-body">
+<p>Click <a href="psy/file08_sound/">sound1</a> to download the sound demo psyexp.</p>
 </div>
-<section id="flow" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="flow"><span class="header-section-number">2.1</span> Flow</h2>
-<p>Bottom in the Builder - in blue in the figure.</p>
-<p>To start with the Flow panel shows only a time-course and a single Routine named <code>trial</code>.</p>
-<p>You build up an experiment by adding Routines to the Flow. Before the <code>trial</code> Routine, you probably want to put a <code>Instructions</code> Routine, for example. To add a Routine to the Flow, click on <code>Insert Routine</code>.</p>
-</section>
-<section id="components" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="components"><span class="header-section-number">2.2</span> Components</h2>
-<p>Top right in the Builder - in yellow in the figure.</p>
-<p>The Components panel lists all the available components of an experiment: broadly speaking, stimuli and responses, so things like Text; Image; Keyboard; Mouse; Slider. Also includes some components that are only needed for specific kinds of experiment like eye-tracking or EEG.</p>
-</section>
-<section id="routines" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="routines"><span class="header-section-number">2.3</span> Routines</h2>
-<p>Top left in the Builder - in green in the figure.</p>
-<p>To start with, the Routines panel shows the <code>trial</code> Routine and its timeline. There aren’t any components in the <code>trial</code> Routine yet, so it looks a bit empty.</p>
-<p>You build up an experiment by adding Components to the Routines panel. To add a Component to a Routine, click on the relevant Component.</p>
+</div>
 
 
+<section class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1" role="doc-endnote"><p>Fede’s request<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -427,13 +421,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./the-interface.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The interface</span></span>
+      <a href="./saving-data.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Saving data manually</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./hello-world.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Hello World</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./using-images.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Advanced images</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

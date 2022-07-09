@@ -1,0 +1,12 @@
+# Part III Advanced
+
+Aims:
+
+These chapters are mainly in response to specific topics that were requested
+
+* Feedback, including identifying time-outs; go/no-go type responses
+* Saving data that you create during a trial instead of supplying in the loop control spreadsheet
+* Using sound
+* Presenting images in randomised places and sequences
+* Conditional branching
+* Running online

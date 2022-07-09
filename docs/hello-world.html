@@ -25,6 +25,7 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./intermediate.html" rel="next">
 <link href="./the-builder.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -122,6 +123,66 @@ ul.task-list{list-style: none;}
 </li>
     </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./intermediate.html" class="sidebar-item-text sidebar-link">Part II Intermediate</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./stroop.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Stroop task</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./advanced.html" class="sidebar-item-text sidebar-link">Part III Advanced</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./feedback.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Feedback</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./saving-data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Saving data manually</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./using-sound.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Using Sound</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./using-images.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Advanced images</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./randomising.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Randomising</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./conditional-branching.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Conditional branching</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./online.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Online</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -133,6 +194,8 @@ ul.task-list{list-style: none;}
   <ul>
   <li><a href="#text-component" id="toc-text-component" class="nav-link active" data-scroll-target="#text-component"> <span class="header-section-number">3.1</span> Text component</a></li>
   <li><a href="#image-component" id="toc-image-component" class="nav-link" data-scroll-target="#image-component"> <span class="header-section-number">3.2</span> Image component</a></li>
+  <li><a href="#spreadsheet-method" id="toc-spreadsheet-method" class="nav-link" data-scroll-target="#spreadsheet-method"> <span class="header-section-number">3.3</span> Spreadsheet method</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"> <span class="header-section-number">3.4</span> Conclusion</a></li>
   </ul>
 </nav>
     </div>
@@ -347,6 +410,84 @@ ul.task-list{list-style: none;}
 </div>
 </div>
 </div>
+</section>
+<section id="spreadsheet-method" class="level2 page-columns page-full" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="spreadsheet-method"><span class="header-section-number">3.3</span> Spreadsheet method</h2>
+<p>The final way of doing Hello World is by using a spreadsheet to supply the name of the image.</p>
+<div class="column-body quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 40.0%;justify-content: center;">
+<p>Start with the spreadsheet. All you need is a single column, with a header and a cell for content. The header should be <code>image_name</code> or similar, and the content needs to be the name of the image file: <code>stimulus.png</code>, as in <a href="#fig-xls">Figure&nbsp;<span>3.11</span></a>. Save the spreadsheet into the same folder as the experiment, with the name <code>hello-world-loop.xlsx</code>.</p>
+</div>
+<div class="cell quarto-layout-cell" style="flex-basis: 60.0%;justify-content: center;">
+<div class="cell-output-display">
+<div id="fig-xls" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><a href="img/shx6TEIiN3.png"><img src="img/shx6TEIiN3.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.11: A speadsheet to control the loop</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="column-body quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 40.0%;justify-content: center;">
+<p>In the <code>Image</code> component, we will need to make a change in the <code>Image</code> field so that it reads <code>$image_name</code> (notice the dollar sign). We also need to change the drop-down from <code>constant</code> to <code>set every repeat</code> since the name of the image now depends on the spreadsheet and isn’t constant any more. See <a href="#fig-xlsimg">Figure&nbsp;<span>3.12</span></a>.</p>
+</div>
+<div class="cell quarto-layout-cell" style="flex-basis: 60.0%;justify-content: center;">
+<div class="cell-output-display">
+<div id="fig-xlsimg" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><a href="img/pythonw_ak3yJN2M44.png"><img src="img/pythonw_ak3yJN2M44.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.12: Change the <code>Image</code> Component</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>So far the experiment doesn’t know about the spreadsheet, so we need to supply the spreadsheet to the experiment.</p>
+<div class="column-body quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 40.0%;justify-content: center;">
+<p>The first step is to create a loop over the <code>trial</code> Routine. In the <code>Flow</code> panel, at the bottom-left, click on <code>Insert loop</code> - you now need to click before and after the <code>trial</code> Routine in the Flow. A box opens called <code>Loop Properties</code>. In the <code>Conditions</code> field, we use the browse button next to it to locate the spreadsheet in a file browser. This fills out the name of the spreadsheet, and you’ll also notice that the text <em>no paramaters set</em> changes to <em>1 conditions with 1 parameters [image_name]</em>. Finally change the <code>nReps</code> field from 5 to 1. See <a href="#fig-xlsimgloopprops">Figure&nbsp;<span>3.13</span></a></p>
+</div>
+<div class="cell quarto-layout-cell" style="flex-basis: 60.0%;justify-content: center;">
+<div class="cell-output-display">
+<div id="fig-xlsimgloopprops" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><a href="img/pythonw_uX1CLERFuP.png"><img src="img/pythonw_uX1CLERFuP.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.13: Change the <code>Image</code> Component</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="column-body quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 40.0%;justify-content: center;">
+<p>The experiment overview will look very similar to before, expect that in the Flow panel you’ll see the loop – named <code>trials</code> (plural) – around the <code>trial</code> Routine as in <a href="#fig-xlsimgloopflow">Figure&nbsp;<span>3.14</span></a>. If all that went smoothly, when you run it, you should see exactly the same thing happen as with the previous version that showed the image.</p>
+</div>
+<div class="cell quarto-layout-cell" style="flex-basis: 60.0%;justify-content: center;">
+<div class="cell-output-display">
+<div id="fig-xlsimgloopflow" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><a href="img/pythonw_uX1CLERFuP.png"><img src="img/trialloophelloworld.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.14: A loop over the trial Routine</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="conclusion" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">3.4</span> Conclusion</h2>
+<p>What you have made so far might seem a long way from an experiment that you would want to run for real.</p>
+<p>However by making those simple experiments run, you have successfully taught yourself most of the techniques that you’ll need to know in order to make full experiments that you might want to run in the real world. You should now be ready to tackle the next chapters in the training material.</p>
 
 
 </section>
@@ -535,6 +676,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./intermediate.html" class="pagination-link">
+        <span class="nav-page-text">Part II Intermediate</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

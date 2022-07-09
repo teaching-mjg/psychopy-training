@@ -1,0 +1,7 @@
+# Part II Intermediate
+
+Aims:
+
+* Examine a fully-working classic experiment that you already understand to see how PsychoPy implements its features.
+
+* Use the cats and dogs example to explore some more advanced features that give you finer control of your own experiments.

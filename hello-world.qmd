@@ -140,3 +140,61 @@ Here's what you should see:
 knitr::include_graphics("obs/2022-07-09 19-53-56.mp4")
 ```
 :::
+
+## Spreadsheet method
+
+The final way of doing Hello World is by using a spreadsheet to supply the name of the image.
+
+
+::: {.column-body layout="[40,60]"}
+Start with the spreadsheet. All you need is a single column, with a header and a cell for content. The header should be `image_name` or similar, and the content needs to be the name of the image file: `stimulus.png`, as in @fig-xls. Save the spreadsheet into the same folder as the experiment, with the name `hello-world-loop.xlsx`.
+
+```{r, fig.link="img/shx6TEIiN3.png", out.width="100%"}
+#| echo: false
+#| label: fig-xls
+#| fig-cap: A speadsheet to control the loop
+knitr::include_graphics("img/shx6TEIiN3.png")
+```
+:::
+
+::: {.column-body layout="[40,60]"}
+In the `Image` component, we will need to make a change in the `Image` field so that it reads `$image_name` (notice the dollar sign). We also need to change the drop-down from `constant` to `set every repeat` since the name of the image now depends on the spreadsheet and isn't constant any more. See @fig-xlsimg.
+
+```{r, fig.link="img/pythonw_ak3yJN2M44.png", out.width="100%"}
+#| echo: false
+#| label: fig-xlsimg
+#| fig-cap: Change the `Image` Component
+knitr::include_graphics("img/pythonw_ak3yJN2M44.png")
+```
+:::
+
+So far the experiment doesn't know about the spreadsheet, so we need to supply the spreadsheet to the experiment. 
+
+::: {.column-body layout="[40,60]"}
+The first step is to create a loop over the `trial` Routine. In the `Flow` panel, at the bottom-left, click on `Insert loop` - you now need to click before and after the `trial` Routine in the Flow. A box opens called `Loop Properties`. In the `Conditions` field, we use the browse button next to it to locate the spreadsheet in a file browser. This fills out the name of the spreadsheet, and you'll also notice that the text _no paramaters set_ changes to _1 conditions with 1 parameters [image_name]_. Finally change the `nReps` field from 5 to 1. See @fig-xlsimgloopprops
+
+```{r, fig.link="img/pythonw_uX1CLERFuP.png", out.width="100%"}
+#| echo: false
+#| label: fig-xlsimgloopprops
+#| fig-cap: Change the `Image` Component
+knitr::include_graphics("img/pythonw_uX1CLERFuP.png")
+```
+:::
+
+::: {.column-body layout="[40,60]"}
+The experiment overview will look very similar to before, expect that in the Flow panel you'll see the loop -- named `trials` (plural) --  around the `trial` Routine as in @fig-xlsimgloopflow. If all that went smoothly, when you run it, you should see exactly the same thing happen as with the previous version that showed the image.
+
+```{r, fig.link="img/pythonw_uX1CLERFuP.png", out.width="100%"}
+#| echo: false
+#| label: fig-xlsimgloopflow
+#| fig-cap: A loop over the trial Routine
+knitr::include_graphics("img/trialloophelloworld.png")
+```
+:::
+
+## Conclusion
+
+What you have made so far might seem a long way from an experiment that you would want to run for real.
+
+However by making those simple experiments run, you have successfully taught yourself most of the techniques that you'll need to know in order to make full experiments that you might want to run in the real world. You should now be ready to tackle the next chapters in the training material.
+
