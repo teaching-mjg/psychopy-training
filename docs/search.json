@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "PsychoPy Training",
     "section": "",
-    "text": "This is training in PsychoPy, for the July 2022 cohort, w/c 11th July 2022.\nLast compiled Saturday 09 July 2022 at 21:26:41"
+    "text": "This is training in PsychoPy, for the July 2022 cohort, w/c 11th July 2022.\nLast compiled Monday 11 July 2022 at 12:35:06"
   },
   {
     "objectID": "getting-started.html",
@@ -123,7 +123,7 @@
     "href": "advanced.html",
     "title": "Part III Advanced",
     "section": "",
-    "text": "These chapters are mainly in response to specific topics that were requested\n\nFeedback, including identifying time-outs; go/no-go type responses\nSaving data that you create during a trial instead of supplying in the loop control spreadsheet\nUsing sound\nPresenting images in randomised places and sequences\nConditional branching\nRunning online"
+    "text": "These chapters are mainly in response to specific topics that were requested\n\nFeedback, including identifying time-outs; go/no-go type responses\nSaving data that you create during a trial instead of supplying in the loop control spreadsheet\nUsing sound\nPresenting images in randomised places and sequences\nRandomising in python and javascript\nConditional branching\nRunning online"
   },
   {
     "objectID": "feedback.html",
@@ -179,7 +179,7 @@
     "href": "using-images.html#sec-imgfname",
     "title": "8  Advanced images",
     "section": "8.1 The image’s filename.",
-    "text": "8.1 The image’s filename.\n\nWe start with a list of filenames. This happens once at the start of the experiment outside the trial loop – we don’t want to re-randomise the list each trial.\n\nimage_list = [\"cat1.jpg\",\"cat2.jpg\",\"cat3.jpg\",\"cat4.jpg\",\"cat5.jpg\",\"dog1.jpg\",\"dog2.jpg\",\"dog3.jpg\",\"dog4.jpg\",\"dog5.jpg\"]\n\nThen we shuffle the list.\n\nimport random\nfrom random import shuffle\nshuffle(image_list)\n\n\n['dog4.jpg', 'cat4.jpg', 'dog5.jpg', 'cat2.jpg', 'dog3.jpg', 'dog1.jpg', 'cat1.jpg', 'cat5.jpg', 'cat3.jpg', 'dog2.jpg']\n\n\n\nThat shuffled list is the random sequence for this participant. The next participant will get a different shuffle of the original list.\nNow we can index into that list using the current trial number (\\(n\\)) to pick out the \\(n^{th}\\) element of the list to be the filename for the current trial. So let’s say we have a trial counter called trialn, and that we’re on the 4th trial. The following picks out the 4th element in the shuffled list, which has the index \\(3\\) because indexes start at 0 in python.\n\n\n\ntrialn = 4\ncurrent_image = image_list[trialn-1]\nprint(current_image)\n\ncat2.jpg"
+    "text": "8.1 The image’s filename.\n\nWe start with a list of filenames. This happens once at the start of the experiment outside the trial loop – we don’t want to re-randomise the list each trial.\n\nimage_list = [\"cat1.jpg\",\"cat2.jpg\",\"cat3.jpg\",\"cat4.jpg\",\"cat5.jpg\",\"dog1.jpg\",\"dog2.jpg\",\"dog3.jpg\",\"dog4.jpg\",\"dog5.jpg\"]\n\nThen we shuffle the list.\n\nimport random\nfrom random import shuffle\nshuffle(image_list)\n\n\n['dog1.jpg', 'cat1.jpg', 'cat2.jpg', 'dog3.jpg', 'cat4.jpg', 'dog2.jpg', 'cat5.jpg', 'cat3.jpg', 'dog5.jpg', 'dog4.jpg']\n\n\n\nThat shuffled list is the random sequence for this participant. The next participant will get a different shuffle of the original list.\nNow we can index into that list using the current trial number (\\(n\\)) to pick out the \\(n^{th}\\) element of the list to be the filename for the current trial. So let’s say we have a trial counter called trialn, and that we’re on the 4th trial. The following picks out the 4th element in the shuffled list, which has the index \\(3\\) because indexes start at 0 in python.\n\n\n\ntrialn = 4\ncurrent_image = image_list[trialn-1]\nprint(current_image)\n\ndog3.jpg"
   },
   {
     "objectID": "using-images.html#sec-imglocn",

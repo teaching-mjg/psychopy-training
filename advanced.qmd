@@ -8,5 +8,6 @@ These chapters are mainly in response to specific topics that were requested
 * Saving data that you create during a trial instead of supplying in the loop control spreadsheet
 * Using sound
 * Presenting images in randomised places and sequences
+* Randomising in python and javascript
 * Conditional branching
 * Running online
