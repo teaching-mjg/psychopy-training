@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" ?>
-<PsychoPy2experiment encoding="utf-8" version="2022.2.0">
+<PsychoPy2experiment encoding="utf-8" version="2022.2.1">
   <Settings>
     <Param val="use prefs" valType="str" updates="None" name="Audio latency priority"/>
     <Param val="use prefs" valType="str" updates="None" name="Audio lib"/>
@@ -40,7 +40,7 @@
     <Param val="RIGHT_EYE" valType="str" updates="None" name="elTrackEyes"/>
     <Param val="PUPIL_CR_TRACKING" valType="str" updates="None" name="elTrackingMode"/>
     <Param val="file09_images" valType="str" updates="None" name="expName"/>
-    <Param val="on Save" valType="str" updates="None" name="exportHTML"/>
+    <Param val="on Sync" valType="str" updates="None" name="exportHTML"/>
     <Param val="None" valType="str" updates="None" name="eyetracker"/>
     <Param val="127.0.0.1" valType="str" updates="None" name="gpAddress"/>
     <Param val="4242" valType="num" updates="None" name="gpPort"/>
@@ -141,7 +141,7 @@
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="True" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="code_2" valType="code" updates="None" name="name"/>
       </CodeComponent>
     </Routine>

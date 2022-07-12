@@ -1,8 +1,8 @@
 ﻿#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-This experiment was created using PsychoPy3 Experiment Builder (v2022.2.0),
-    on July 07, 2022, at 17:00
+This experiment was created using PsychoPy3 Experiment Builder (v2022.2.1),
+    on July 12, 2022, at 11:55
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -34,7 +34,7 @@ from psychopy.hardware import keyboard
 _thisDir = os.path.dirname(os.path.abspath(__file__))
 os.chdir(_thisDir)
 # Store info about the experiment session
-psychopyVersion = '2022.2.0'
+psychopyVersion = '2022.2.1'
 expName = 'file09_images'  # from the Builder filename that created this script
 expInfo = {
     'participant': f"{randint(0, 999999):06.0f}",
@@ -96,6 +96,9 @@ eyetracker = None
 defaultKeyboard = keyboard.Keyboard(backend='iohub')
 
 # --- Initialize components for Routine "setup_expt" ---
+# Run 'Begin Experiment' code from code_2
+import random
+from random import uniform
 
 # --- Initialize components for Routine "trial" ---
 image = visual.ImageStim(
@@ -210,8 +213,8 @@ for thisTrial in trials:
     max_value_x = 0.375
     min_value_y = -0.25
     max_value_y = 0.25
-    this_position_x = uniform(min_value_x, max_value_x)
-    this_position_y = uniform(min_value_y, max_value_y)
+    this_position_x = random.uniform(min_value_x, max_value_x)
+    this_position_y = random.uniform(min_value_y, max_value_y)
     image.image = this_image
     image.size = this_aspect_ratio
     image.pos = [this_position_x, this_position_y]

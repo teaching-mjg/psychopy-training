@@ -33,20 +33,20 @@ Then in the first part of the experiment where you collect their preference, you
 #| eval: false
 if mouse.isPressedIn(cats_option):
     input_xls = "cats.xlsx"
-    nRepsCats=1
-    nRepsDogs=0
-    continueRoutine=False
+    nRepsCats = 1
+    nRepsDogs = 0
+    continueRoutine = False
 if mouse.isPressedIn(dogs_option):
     input_xls = "dogs.xlsx"
-    nRepsCats=0
-    nRepsDogs=1
+    nRepsCats = 0
+    nRepsDogs = 1
     continueRoutine = False
 
 ```
 
 :::{.callout-note}
 ## Download
-Click [file10_branching](psy/file10_branching) to download the conditional branching demo psyexp.
+Click [file10_branching](psy/file10_branching.zip) to download the conditional branching demo psyexp.
 :::
 
 

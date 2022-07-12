@@ -93,6 +93,6 @@ image.pos = [this_position_x, this_position_y]
 
 :::{.callout-note}
 ## Download
-Click [psy\file09_images](psy\file09_images) to download the images demo psyexp.
+Click [file09_images](psy/file09_images.zip) to download the images demo psyexp.
 :::
 

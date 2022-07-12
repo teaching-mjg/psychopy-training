@@ -7,7 +7,4 @@ Some considerations for running online ...
 * Write experiment using autoJs as much as possible (and "Both") for things that don't auto-translate
 * Use "Sync" to push experiment up
 * Change from 'piloting' to 'running'
-* ...
-
-
-**Use local debug mode to see whether the experiment would work in a browser at all before you puch it to pavlovia to test it**
+* **Use _local debug mode_ to see whether the experiment would work in a browser at all before you sync it to pavlovia to test it**

@@ -4,9 +4,7 @@ PsychoPy has methods for playing back sound files; and recording sound files gen
 
 Sometimes we want to play a sound file while a visual stimulus is presented^[Fede's request]. For example, there are people in the department who investigate the various effects of different kinds of background sounds on reading comprehension. To do this, we need to present text for them to read while playing sound files into their headphones.
 
-
-
-See the experiment in the folder `psy/sound1` for an example.
+[file08_sound](psy/file08_sound.zip) gives an example.
 
 In this example participants are presented with a word and asked to respond with how many syllables it contains, while one of two possible sounds are played at the same time (one of a cafe scene, one of a thunderstorm - maybe it's more disruptive to hear speech while reading than to hear natural sounds without language).
 
@@ -19,5 +17,5 @@ To achieve this, we use the trial definition spreadsheet to pass in the name of 
 
 :::{.callout-note}
 ## Download
-Click [sound1](psy/file08_sound/) to download the sound demo psyexp.
+Click [file08_sound](psy/file08_sound.zip) to download the sound demo psyexp.
 :::

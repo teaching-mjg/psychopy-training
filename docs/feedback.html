@@ -285,7 +285,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Within that style there is more than one way to implement the feedback in PsychoPy.</p>
 <section id="per-trial-method-1" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="per-trial-method-1"><span class="header-section-number">5.1</span> Per-trial method 1</h2>
-<p>One way is to insert a feedback Routine after the Trial Routine that contains a single Text Component whose contents and colour are set to variables whose values we calculate using a Code component, based on the value of <code>response.corr</code>. See <a href="#fig-fbackmethod1">Figure&nbsp;<span>5.1</span></a> for a screencast of writing this method., and see <a href="#fig-fbackmethod1runtime">Figure&nbsp;<span>5.2</span></a> for the runtime. This is file5.psyexp.</p>
+<p>One way is to insert a feedback Routine after the Trial Routine that contains a single Text Component whose contents and colour are set to variables whose values we calculate using a Code component, based on the value of <code>response.corr</code>. See <a href="#fig-fbackmethod1">Figure&nbsp;<span>5.1</span></a> for a screencast of writing this method., and see <a href="#fig-fbackmethod1runtime">Figure&nbsp;<span>5.2</span></a> for the runtime. This is <a href="psy/file5.zip">file5.psyexp</a>.</p>
 <div class="cell">
 <div id="fig-fbackmethod1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -305,7 +305,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="per-trial-method-2" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="per-trial-method-2"><span class="header-section-number">5.2</span> Per-trial Method 2</h2>
-<p>Another way is to insert the Feedback Routine after the Trial Routine, in the same way, but this time to create a Text component for each of the possible outcomes of the trial - normally <em>correct</em> and <em>incorrect</em> but also sometimes <em>time-out</em>. We then select one single outcome to display with reference to the value of <code>response.corr</code>. This is file6.psyexp.</p>
+<p>Another way is to insert the Feedback Routine after the Trial Routine, in the same way, but this time to create a Text component for each of the possible outcomes of the trial - normally <em>correct</em> and <em>incorrect</em> but also sometimes <em>time-out</em>. We then select one single outcome to display with reference to the value of <code>response.corr</code>. This is <a href="psy/file6.zip">file6.psyexp</a>.</p>
 <div class="cell">
 <div id="fig-fbackmethod2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -325,8 +325,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="average-rt-and-accuracy" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="average-rt-and-accuracy"><span class="header-section-number">5.3</span> Average RT and accuracy</h2>
-<p>file7.psyexp includes a screen at the end of each trial that presents the cumulative mean RT and mean accuracy.</p>
-<p>the code for this is part of the <code>evaluate_response</code> component that we used in method one of providing feedback, where we had a single feedback component and used variables to decide what it should show.</p>
+<p><a href="psy/file7.zip">file7.psyexp</a> includes a screen at the end of each trial that presents the cumulative mean RT and mean accuracy.</p>
+<p>The code for this is part of the <code>evaluate_response</code> component that we used in method one of providing feedback, where we had a single feedback component and used variables to decide what it should show.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> response.keys:</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> response.corr<span class="op">==</span><span class="dv">1</span>:</span>
