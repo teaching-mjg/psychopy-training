@@ -1,6 +1,6 @@
 # About {.unnumbered}
 
-This is training in PsychoPy, for the July 2022 cohort, w/c 11th July 2022.
+This is training in PsychoPy, for Level 6 BSc on 15th November 2022.
 
 Last compiled `r format(Sys.time(), '%A %d %B %Y at %X')`
 
