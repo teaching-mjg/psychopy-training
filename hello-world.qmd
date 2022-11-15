@@ -182,7 +182,7 @@ knitr::include_graphics("img/pythonw_uX1CLERFuP.png")
 :::
 
 ::: {.column-body layout="[40,60]"}
-The experiment overview will look very similar to before, expect that in the Flow panel you'll see the loop -- named `trials` (plural) --  around the `trial` Routine as in @fig-xlsimgloopflow. If all that went smoothly, when you run it, you should see exactly the same thing happen as with the previous version that showed the image.
+The experiment overview will look very similar to before, except that in the Flow panel you'll see the loop -- named `trials` (plural) --  around the `trial` Routine as in @fig-xlsimgloopflow. If all that went smoothly, when you run it, you should see exactly the same thing happen as with the previous version that showed the image.
 
 ```{r, fig.link="img/pythonw_uX1CLERFuP.png", out.width="100%"}
 #| echo: false
