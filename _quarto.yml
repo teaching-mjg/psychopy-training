@@ -7,7 +7,7 @@ book:
   author: "Matt Green"
   date: last-modified
   date-format: "dddd D MMM YYYY [at] HH[:]mm[:]ss"
-  toc-depth: 3
+  google-analytics: "G-ZWVX8HSWF5"
 
   chapters:
     - index.qmd
