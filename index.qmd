@@ -1,6 +1,6 @@
 # About {.unnumbered}
 
-This is training in PsychoPy, for Level 6 BSc, scheduled for 9th February 2023.
+This is training in PsychoPy, for Level 6 BSc, scheduled for 3rd December 2024.
 
 Last compiled `r format(Sys.time(), '%A %d %B %Y at %X')`
 

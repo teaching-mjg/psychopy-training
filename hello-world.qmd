@@ -15,22 +15,17 @@ The first thing to do is to save the experiment file.
 2. Inside that make a folder for this specific experiment -- every experiment should get its own folder -- maybe `hello-world`
 3. Save the blank experiment inside that as `hello-world.psyexp`. `File -> Save As`
 
-
 ## Text component
 
-::: {.column-body layout="[40,60]"}
 Focus the Builder window by clicking in it. Click on the Text Component in Favourites in the Components panel to bring up options for adding text to your experiment - @fig-hworld1.
 
-```{r, fig.link="img/python_UWnHoJXoev.png",  out.width="100%"}
+```{r, fig.link="img/python_UWnHoJXoev.png", out.width="100%"}
 #| echo: false
 #| label: fig-hworld1
-#| fig-cap: Add a text Component 
+#| fig-cap: Add a text Component
 knitr::include_graphics("img/python_UWnHoJXoev.png")
 ```
-:::
 
-
-::: {.column-body layout="[40,60]"}
 For now, just edit the contents of the "Text" box. Delete the existing text and replace with `Hello World!". Press OK. See that the Text Component is now added in Routines in @fig-hworld2. **Save the experiment now, and every time you change something.**
 
 ```{r, fig.link="img/INETK005Ti.png", out.width="100%"}
@@ -39,9 +34,7 @@ For now, just edit the contents of the "Text" box. Delete the existing text and 
 #| fig-cap: Text Component in the Routines panel 
 knitr::include_graphics("img/INETK005Ti.png")
 ```
-:::
 
-::: {.column-body layout="[[40,60],[40,60]]"}
 This is now a simple but fully-functioning experiment that you can run. If you do this now, your experiment will run in a full-screen window. This is what you want for a real experiment, but while you are building your experiment, it's better to run in a non-fullscreen window.
 
 ```{r, fig.link="img/python_wgxKnjZqVG.png", out.width="100%"}
@@ -62,9 +55,7 @@ knitr::include_graphics("img/python_wgxKnjZqVG.png")
 #| fig-cap: Setting to run in non-fullscreen window 
 knitr::include_graphics("img/python_wtApGESOZj.png")
 ```
-:::
 
-::: {.column-body layout="[40,60]"}
 There are several different kinds of run button that we will explain later. For now use the one in @fig-hworldrun. 
 
 ```{r, fig.link="img/python_wSp7tPOj9V1.png",  out.width="100%"}
@@ -73,8 +64,6 @@ There are several different kinds of run button that we will explain later. For 
 #| fig-cap: There are several different kinds of run button - use this one 
 knitr::include_graphics("img/python_wSp7tPOj9V1.png")
 ```
-:::
-
 
 ::: {.column-body layout="[40,60]"}
 If things are working, you'll see the process captured in the screencast in @fig-hworldrunning. This also illustrates how I suggest you lay out the Runner and Builder windows.
@@ -96,7 +85,6 @@ Start with a new experiment: `File -> New`
 
 Save it into a folder of its own, maybe `hello-world-image`.
 
-::: {.column-body layout="[40,60]"}
 Now you need an image of the words "Hello World!". You can make one in Paint, or Powerpoint; or you can grab this one in  @fig-hworldimggift. Save it in the same folder as your experiment, under the name `stimulus.png`
 
 ```{r, fig.link="img/HelloWorldImage.png", out.width="100%"}
@@ -105,9 +93,7 @@ Now you need an image of the words "Hello World!". You can make one in Paint, or
 #| fig-cap: Image of hello world text
 knitr::include_graphics("img/HelloWorldImage.png")
 ```
-:::
 
-::: {.column-body layout="[40,60]"}
 From the Components panel, choose an `Image` Component. In the box that opens up, in the `Image` field, write the name of the image file, `stimulus.png` as in @fig-hworldimgcomp.
 
 ```{r, fig.link="img/pythonw_0z1OSnVLCL.png", out.width="100%"}
@@ -116,9 +102,7 @@ From the Components panel, choose an `Image` Component. In the box that opens up
 #| fig-cap: Enter the image name
 knitr::include_graphics("img/pythonw_0z1OSnVLCL.png")
 ```
-:::
 
-::: {.column-body layout="[40,60]"}
 Have a look at the `Layout` tab too. Notice that by default, images are shown square: The `Size [w, h]` field is set to `(0.5, 0.5)`. Our image is oblong so if we constrain it to be square it will look squashed. The actual dimensions of our image are `(602, 164)`. That's `3.67:1` as a ratio. If we want the image 0.5 wide, we need to divide 3.67 by (3.67/0.5) = 7.34, so,  to maintain the aspect ratio we need to divide 1 by 7.34 too (1/7.34) = 0.136. Put in `(0.5,0.136)` for `Size [w,h]`, and press `OK` (@fig-hworldimgaspectratio).
 
 ```{r, fig.link="img/pythonw_Goiz1UhdCw.png", out.width="100%"}
@@ -127,7 +111,6 @@ Have a look at the `Layout` tab too. Notice that by default, images are shown sq
 #| fig-cap: Correct the aspect ratio
 knitr::include_graphics("img/pythonw_Goiz1UhdCw.png")
 ```
-:::
 
 Don't forget to save the experiment, then run it in the same way as for the `Text` Component version.
 
@@ -145,8 +128,6 @@ knitr::include_graphics("obs/2022-07-09 19-53-56.mp4")
 
 The final way of doing Hello World is by using a spreadsheet to supply the name of the image.
 
-
-::: {.column-body layout="[40,60]"}
 Start with the spreadsheet. All you need is a single column, with a header and a cell for content. The header should be `image_name` or similar, and the content needs to be the name of the image file: `stimulus.png`, as in @fig-xls. Save the spreadsheet into the same folder as the experiment, with the name `hello-world-loop.xlsx`.
 
 ```{r, fig.link="img/shx6TEIiN3.png", out.width="100%"}
@@ -155,9 +136,7 @@ Start with the spreadsheet. All you need is a single column, with a header and a
 #| fig-cap: A speadsheet to control the loop
 knitr::include_graphics("img/shx6TEIiN3.png")
 ```
-:::
 
-::: {.column-body layout="[40,60]"}
 In the `Image` component, we will need to make a change in the `Image` field so that it reads `$image_name` (notice the dollar sign). We also need to change the drop-down from `constant` to `set every repeat` since the name of the image now depends on the spreadsheet and isn't constant any more. See @fig-xlsimg.
 
 ```{r, fig.link="img/pythonw_ak3yJN2M44.png", out.width="100%"}
@@ -166,11 +145,9 @@ In the `Image` component, we will need to make a change in the `Image` field so 
 #| fig-cap: Change the `Image` Component
 knitr::include_graphics("img/pythonw_ak3yJN2M44.png")
 ```
-:::
 
 So far the experiment doesn't know about the spreadsheet, so we need to supply the spreadsheet to the experiment. 
 
-::: {.column-body layout="[40,60]"}
 The first step is to create a loop over the `trial` Routine. In the `Flow` panel, at the bottom-left, click on `Insert loop` - you now need to click before and after the `trial` Routine in the Flow. A box opens called `Loop Properties`. In the `Conditions` field, we use the browse button next to it to locate the spreadsheet in a file browser. This fills out the name of the spreadsheet, and you'll also notice that the text _no paramaters set_ changes to _1 conditions with 1 parameters [image_name]_. Finally change the `nReps` field from 5 to 1. See @fig-xlsimgloopprops
 
 ```{r, fig.link="img/pythonw_uX1CLERFuP.png", out.width="100%"}
@@ -179,9 +156,7 @@ The first step is to create a loop over the `trial` Routine. In the `Flow` panel
 #| fig-cap: Change the `Image` Component
 knitr::include_graphics("img/pythonw_uX1CLERFuP.png")
 ```
-:::
 
-::: {.column-body layout="[40,60]"}
 The experiment overview will look very similar to before, except that in the Flow panel you'll see the loop -- named `trials` (plural) --  around the `trial` Routine as in @fig-xlsimgloopflow. If all that went smoothly, when you run it, you should see exactly the same thing happen as with the previous version that showed the image.
 
 ```{r, fig.link="img/pythonw_uX1CLERFuP.png", out.width="100%"}
@@ -190,7 +165,6 @@ The experiment overview will look very similar to before, except that in the Flo
 #| fig-cap: A loop over the trial Routine
 knitr::include_graphics("img/trialloophelloworld.png")
 ```
-:::
 
 ## Conclusion
 
